@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\models\\dataacceslayer\\usersdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "LoginView.xaml",
               "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\LoginView.xaml",
               "RelativeDocumentMoniker": "Supermarket\\Views\\LoginView.xaml",
@@ -70,8 +70,7 @@
               "RelativeToolTip": "Supermarket\\Models\\DataAccesLayer\\DALHelper.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAAAAA8AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T15:01:05.726Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T15:01:05.726Z"
             },
             {
               "$type": "Document",
@@ -83,12 +82,11 @@
               "RelativeToolTip": "Supermarket\\Models\\DataAccesLayer\\UsersDAL.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwB0AAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T15:01:02.606Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T15:01:02.606Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "PasswordHelper.cs",
               "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\PasswordHelper.cs",
               "RelativeDocumentMoniker": "Supermarket\\Views\\PasswordHelper.cs",
@@ -107,7 +105,7 @@
               "RelativeDocumentMoniker": "Supermarket\\ViewModels\\LoginVM.cs",
               "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\LoginVM.cs",
               "RelativeToolTip": "Supermarket\\ViewModels\\LoginVM.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAvwFEAAAArAAAA",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAkwJYAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T07:00:54.936Z",
               "EditorCaption": ""
@@ -122,8 +120,7 @@
               "RelativeToolTip": "Supermarket\\Models\\BusinessLogicLayer\\UsersBLL.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T06:50:38.741Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T06:50:38.741Z"
             }
           ]
         }

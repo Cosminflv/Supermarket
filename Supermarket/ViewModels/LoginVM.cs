@@ -1,22 +1,34 @@
 ﻿using Supermarket.Commands;
 using Supermarket.Models.BusinessLogicLayer;
 using Supermarket.Models.EntityLayer;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using System.Timers;
 
 namespace Supermarket.ViewModels
 {
-     class LoginVM : BaseVM
+    class LoginVM : BaseVM
     {
         UsersBLL usersBLL = new UsersBLL();
 
-        private string username;
+        private Visibility errorVisibility = Visibility.Collapsed;
 
+        public Visibility ErrorVisibility
+        {
+            get
+            {
+                return errorVisibility;
+            }
+             set
+            {
+                errorVisibility = value;
+                OnPropertyChanged("ErrorVisibility");
+            }
+
+        }
+
+        private string username;
         public string Username
         {
             get
@@ -132,8 +144,19 @@ namespace Supermarket.ViewModels
                     return;
                 }
             }
-
             // No matching user found, display error message
+            ErrorVisibility = Visibility.Visible;
+
+            // Set up a timer to hide the error message after 5 seconds
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Interval = 5000; // 5000 milliseconds = 5 seconds
+            timer.AutoReset = false; // Only fire once
+            timer.Elapsed += (sender, e) =>
+            {
+                ErrorVisibility = Visibility.Hidden;
+                timer.Dispose(); // Dispose the timer to release resources
+            };
+            timer.Start();
         }
     }
 }

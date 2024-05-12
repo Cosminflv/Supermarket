@@ -39,6 +39,7 @@
         <TextBlock Style="{StaticResource CustomTextStyle}" TextAlignment="Center" Margin="147,158,0,0" TextWrapping="Wrap" Text="Username"  Height="32" Width="99" FontSize="18"/>
         <TextBlock Style="{StaticResource CustomTextStyle}" TextAlignment="Center" Margin="147,200,0,0" TextWrapping="Wrap" Text="Password"  Height="30" Width="99" FontSize="18"/>
         <Button Content="Login" HorizontalAlignment="Center" FontSize="20" Margin="0,248,0,0" VerticalAlignment="Top" Height="48" Width="132" Command="{Binding LoginButtonPressedCommand}"/>
+        <TextBlock Style="{StaticResource CustomTextStyle}" Foreground="Red" Visibility="{Binding ErrorVisibility}" TextAlignment="Center" Margin="284,123,0,0" TextWrapping="Wrap" Text="Invalid email/password"  Height="30" Width="220" FontSize="18"/>
 
     </Grid>
 </UserControl>
