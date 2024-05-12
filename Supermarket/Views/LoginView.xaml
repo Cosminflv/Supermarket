@@ -32,11 +32,13 @@
 
     </UserControl.Resources>
     <Grid>
-        <TextBox  HorizontalAlignment="Center" Margin="0,158,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="269" Height="32"/>
-        <PasswordBox  HorizontalAlignment="Center" Margin="0,198,0,0" FontSize="20" VerticalAlignment="Top" Width="269" Height="32"/>
+        <PasswordBox local:PasswordHelper.BoundPassword="{Binding Password}"
+             local:PasswordHelper.BindPassword="True"  HorizontalAlignment="Center" Margin="0,198,0,0" FontSize="20" VerticalAlignment="Top" Width="269" Height="32"/>
+        <TextBox Text="{Binding Username}"  HorizontalAlignment="Center" Margin="0,158,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="269" Height="32"/>
+
         <TextBlock Style="{StaticResource CustomTextStyle}" TextAlignment="Center" Margin="147,158,0,0" TextWrapping="Wrap" Text="Username"  Height="32" Width="99" FontSize="18"/>
         <TextBlock Style="{StaticResource CustomTextStyle}" TextAlignment="Center" Margin="147,200,0,0" TextWrapping="Wrap" Text="Password"  Height="30" Width="99" FontSize="18"/>
-        <Button Content="Login" HorizontalAlignment="Center" FontSize="20" Margin="0,248,0,0" VerticalAlignment="Top" Height="48" Width="132" Command="{Binding SwitchToCashierCommand}"/>
+        <Button Content="Login" HorizontalAlignment="Center" FontSize="20" Margin="0,248,0,0" VerticalAlignment="Top" Height="48" Width="132" Command="{Binding LoginButtonPressedCommand}"/>
 
     </Grid>
 </UserControl>
