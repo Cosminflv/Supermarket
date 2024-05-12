@@ -4,9 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Supermarket"
+        xmlns:viewmodels="clr-namespace:Supermarket.ViewModels"
+        xmlns:views="clr-namespace:Supermarket.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
-    </Grid>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:LoginVM}">
+            <views:LoginView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:AdministratorMenuVM}">
+            <views:AdministratorMenuView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:CashierMenuVM}">
+            <views:CashierMenuView/>
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <ContentControl Content="{Binding SelectedVM}"/>
+
 </Window>

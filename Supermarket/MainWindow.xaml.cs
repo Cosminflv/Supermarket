@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Supermarket.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,6 +19,7 @@ namespace Supermarket
     {
         public MainWindow()
         {
+            this.DataContext = new MainWindowVM();
             InitializeComponent();
         }
     }

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Supermarket
-build_property.ProjectDir = D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket\Supermarket\
+build_property.ProjectDir = D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

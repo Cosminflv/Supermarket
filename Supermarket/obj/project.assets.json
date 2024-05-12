@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket\\Supermarket\\Supermarket.csproj",
+      "projectUniqueName": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Supermarket.csproj",
       "projectName": "Supermarket",
-      "projectPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket\\Supermarket\\Supermarket.csproj",
+      "projectPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Supermarket.csproj",
       "packagesPath": "C:\\Users\\cosmi\\.nuget\\packages\\",
-      "outputPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket\\Supermarket\\obj\\",
+      "outputPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cosmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
