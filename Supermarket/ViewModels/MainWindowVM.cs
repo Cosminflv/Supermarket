@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Supermarket.Models.EntityLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,21 +32,29 @@ namespace Supermarket.ViewModels
         public void switchToLogin()
         {
             LoginViewModel = new LoginVM();
-            LoginViewModel.OnSwitchToAdministratorMenu = switchToAdministratorMenu;
-            LoginViewModel.OnSwitchToCashierMenu = switchToCashierMenu;
+            LoginViewModel.OnLoginSuccess = (user) =>
+            {
+                if (user.UserType == UserType.Administrator)
+                {
+                    switchToAdministratorMenu(user);
+                } else
+                {
+                    switchToCashierMenu(user);
+                }
+            };
             SelectedVM = LoginViewModel;
         }
 
-        public void switchToAdministratorMenu()
+        public void switchToAdministratorMenu(UserEntity user)
         {
-            AdministratorMenuViewModel = new AdministratorMenuVM();
+            AdministratorMenuViewModel = new AdministratorMenuVM(user);
             AdministratorMenuViewModel.OnSwitchToLogin = switchToLogin;
             SelectedVM = AdministratorMenuViewModel;
         }
 
-        public void switchToCashierMenu()
+        public void switchToCashierMenu(UserEntity user)
         {
-            CashierMenuViewModel = new CashierMenuVM();
+            CashierMenuViewModel = new CashierMenuVM(user);
             CashierMenuViewModel.OnSwitchToLogin = switchToLogin;
             SelectedVM = CashierMenuViewModel;
         }

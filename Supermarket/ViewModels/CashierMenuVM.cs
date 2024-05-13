@@ -1,4 +1,5 @@
 ﻿using Supermarket.Commands;
+using Supermarket.Models.EntityLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,18 @@ namespace Supermarket.ViewModels
 {
     class CashierMenuVM : BaseVM
     {
+        private UserEntity? user;
+
+        public CashierMenuVM()
+        {
+            user = null;
+        }
+
+        public CashierMenuVM(UserEntity userOperating)
+        {
+            user = userOperating;
+        }
+
 
         // COMMANDS
 

@@ -112,6 +112,9 @@ namespace Supermarket.ViewModels
         public delegate void SwitchToCashierMenu();
         public SwitchToCashierMenu OnSwitchToCashierMenu { get; set; }
 
+        public delegate void LoginSuccess(UserEntity user);
+        public LoginSuccess OnLoginSuccess { get; set; }
+
         // METHODS
 
         private bool CanLogin(object parameter)
@@ -130,17 +133,7 @@ namespace Supermarket.ViewModels
                 if (user.Username == Username && user.Password == Password)
                 {
                     // User found, perform login actions
-                    if (user.UserType == UserType.Administrator)
-                    {
-                        //TODO: Switch to admin menu
-                        SwitchToAdministratorMenuCommand.Execute(user);
-
-                    }
-                    else
-                    {
-                        //TODO: Switch to cashier menu
-                        SwitchToCashierMenuCommand.Execute(user);
-                    }
+                    OnLoginSuccess?.Invoke(user);
                     return;
                 }
             }

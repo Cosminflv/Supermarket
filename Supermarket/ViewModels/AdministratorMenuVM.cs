@@ -1,4 +1,5 @@
 ﻿using Supermarket.Commands;
+using Supermarket.Models.EntityLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,23 @@ namespace Supermarket.ViewModels
 {
     class AdministratorMenuVM : BaseVM
     {
+        UserEntity? user;
+
+        public UserEntity User
+        {
+            get { return user; }
+            set { 
+                user = value; 
+                OnPropertyChanged(); 
+            }
+        }
+
+        public AdministratorMenuVM() { user = null; }
+
+        public AdministratorMenuVM(UserEntity userOperating) { 
+            User = userOperating; 
+        }
+
         // COMMANDS
 
         private ICommand switchToLoginCommand;
