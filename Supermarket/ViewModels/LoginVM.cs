@@ -1,16 +1,28 @@
 ﻿using Supermarket.Commands;
+using Supermarket.Models;
 using Supermarket.Models.BusinessLogicLayer;
-using Supermarket.Models.EntityLayer;
+using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
-using System.Timers;
 
 namespace Supermarket.ViewModels
 {
     class LoginVM : BaseVM
     {
-        UsersBLL usersBLL = new UsersBLL();
+        UsersBLL usersBLL;
+
+        public LoginVM()
+        {
+            usersBLL = new UsersBLL();
+            UsersList = usersBLL.GetAllUsers();
+        }
+
+        public ObservableCollection<Utilizatori> UsersList
+        {
+            get => usersBLL.Users;
+            set => usersBLL.Users = value;
+        }
 
         private Visibility errorVisibility = Visibility.Collapsed;
 
@@ -112,7 +124,7 @@ namespace Supermarket.ViewModels
         public delegate void SwitchToCashierMenu();
         public SwitchToCashierMenu OnSwitchToCashierMenu { get; set; }
 
-        public delegate void LoginSuccess(UserEntity user);
+        public delegate void LoginSuccess(Utilizatori user);
         public LoginSuccess OnLoginSuccess { get; set; }
 
         // METHODS
@@ -125,12 +137,10 @@ namespace Supermarket.ViewModels
 
         private void Login(object parameter)
         {
-            ObservableCollection<UserEntity> allUsers = usersBLL.GetAllUsers();
-
             // Find the user with the entered username and password
-            foreach (var user in allUsers)
+            foreach (var user in UsersList)
             {
-                if (user.Username == Username && user.Password == Password)
+                if (user.NumeUtilizator == Username && user.Parola == Password)
                 {
                     // User found, perform login actions
                     OnLoginSuccess?.Invoke(user);

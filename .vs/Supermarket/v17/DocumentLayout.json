@@ -3,44 +3,44 @@
   "WorkspaceRootPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\mainwindowvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\mainwindowvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\cashiermenuvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\cashiermenuvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\administratormenuvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratormenuvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\commands\\relaypagescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\commands\\relaypagescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\models\\entitylayer\\basepropertychanged.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\models\\entitylayer\\basepropertychanged.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\models\\dataacceslayer\\dalhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\models\\dataacceslayer\\dalhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\models\\dataacceslayer\\usersdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\models\\dataacceslayer\\usersdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\models\\businesslogiclayer\\usersbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\models\\businesslogiclayer\\usersbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\producerscrudview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\producerscrudview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\categoriescrudview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\categoriescrudview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\userscrudview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\userscrudview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\administratormenuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\administratormenuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\cashiermenuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{89BFBC8C-FC93-4AF8-8106-4EE3E65CEB9C}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\cashiermenuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,150 +66,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RelayPagesCommand.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Commands\\RelayPagesCommand.cs",
-              "RelativeDocumentMoniker": "Supermarket\\Commands\\RelayPagesCommand.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Commands\\RelayPagesCommand.cs",
-              "RelativeToolTip": "Supermarket\\Commands\\RelayPagesCommand.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAqwCUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T15:01:42.778Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginVM.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\LoginVM.cs",
-              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\LoginVM.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\LoginVM.cs",
-              "RelativeToolTip": "Supermarket\\ViewModels\\LoginVM.cs",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAvwIgAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T14:58:56.043Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindowVM.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\MainWindowVM.cs",
-              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\MainWindowVM.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\MainWindowVM.cs",
-              "RelativeToolTip": "Supermarket\\ViewModels\\MainWindowVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAMAAAA",
+              "Title": "BasePropertyChanged.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\EntityLayer\\BasePropertyChanged.cs",
+              "RelativeDocumentMoniker": "Supermarket\\Models\\EntityLayer\\BasePropertyChanged.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\EntityLayer\\BasePropertyChanged.cs",
+              "RelativeToolTip": "Supermarket\\Models\\EntityLayer\\BasePropertyChanged.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T14:51:05.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdministratorMenuVM.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorMenuVM.cs",
-              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorMenuVM.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorMenuVM.cs",
-              "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorMenuVM.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAuwCYAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T14:49:51.501Z",
+              "WhenOpened": "2024-05-16T05:58:53.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CashierMenuVM.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\CashierMenuVM.cs",
-              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\CashierMenuVM.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\CashierMenuVM.cs",
-              "RelativeToolTip": "Supermarket\\ViewModels\\CashierMenuVM.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAADgvxcAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T14:44:13.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DALHelper.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\DataAccesLayer\\DALHelper.cs",
-              "RelativeDocumentMoniker": "Supermarket\\Models\\DataAccesLayer\\DALHelper.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\DataAccesLayer\\DALHelper.cs",
-              "RelativeToolTip": "Supermarket\\Models\\DataAccesLayer\\DALHelper.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAAA8AAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T15:01:05.726Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UsersDAL.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\DataAccesLayer\\UsersDAL.cs",
-              "RelativeDocumentMoniker": "Supermarket\\Models\\DataAccesLayer\\UsersDAL.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\DataAccesLayer\\UsersDAL.cs",
-              "RelativeToolTip": "Supermarket\\Models\\DataAccesLayer\\UsersDAL.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwB0AAABJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T15:01:02.606Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PasswordHelper.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\PasswordHelper.cs",
-              "RelativeDocumentMoniker": "Supermarket\\Views\\PasswordHelper.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\PasswordHelper.cs",
-              "RelativeToolTip": "Supermarket\\Views\\PasswordHelper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T14:28:32.784Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UsersBLL.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\BusinessLogicLayer\\UsersBLL.cs",
-              "RelativeDocumentMoniker": "Supermarket\\Models\\BusinessLogicLayer\\UsersBLL.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\BusinessLogicLayer\\UsersBLL.cs",
-              "RelativeToolTip": "Supermarket\\Models\\BusinessLogicLayer\\UsersBLL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T06:50:38.741Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "d0091c42-35bf-4436-b883-1168501b86f2",
-        "Display": 0,
-        "X": 32,
-        "Y": 70,
-        "Width": 1443,
-        "Height": 665,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "LoginView.xaml",
               "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\LoginView.xaml",
               "RelativeDocumentMoniker": "Supermarket\\Views\\LoginView.xaml",
               "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\LoginView.xaml",
               "RelativeToolTip": "Supermarket\\Views\\LoginView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-12T15:15:18.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-16T05:57:31.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginVM.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\LoginVM.cs",
+              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\LoginVM.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\LoginVM.cs",
+              "RelativeToolTip": "Supermarket\\ViewModels\\LoginVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T05:57:26.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Supermarket\\MainWindow.xaml",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\MainWindow.xaml",
+              "RelativeToolTip": "Supermarket\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-16T05:53:16.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Supermarket\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Supermarket\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T05:52:13.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProducersCRUDView.xaml",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\ProducersCRUDView.xaml",
+              "RelativeDocumentMoniker": "Supermarket\\Views\\ProducersCRUDView.xaml",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\ProducersCRUDView.xaml",
+              "RelativeToolTip": "Supermarket\\Views\\ProducersCRUDView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-13T15:38:01.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CategoriesCRUDView.xaml",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\CategoriesCRUDView.xaml",
+              "RelativeDocumentMoniker": "Supermarket\\Views\\CategoriesCRUDView.xaml",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\CategoriesCRUDView.xaml",
+              "RelativeToolTip": "Supermarket\\Views\\CategoriesCRUDView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-13T15:30:42.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsersCRUDView.xaml",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\UsersCRUDView.xaml",
+              "RelativeDocumentMoniker": "Supermarket\\Views\\UsersCRUDView.xaml",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\UsersCRUDView.xaml",
+              "RelativeToolTip": "Supermarket\\Views\\UsersCRUDView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-13T15:23:47.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdministratorMenuView.xaml",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\AdministratorMenuView.xaml",
+              "RelativeDocumentMoniker": "Supermarket\\Views\\AdministratorMenuView.xaml",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\AdministratorMenuView.xaml",
+              "RelativeToolTip": "Supermarket\\Views\\AdministratorMenuView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-13T15:19:33.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CashierMenuView.xaml",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\CashierMenuView.xaml",
+              "RelativeDocumentMoniker": "Supermarket\\Views\\CashierMenuView.xaml",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\CashierMenuView.xaml",
+              "RelativeToolTip": "Supermarket\\Views\\CashierMenuView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-13T15:19:29.428Z"
             }
           ]
         }

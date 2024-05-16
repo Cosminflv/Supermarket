@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SupermarketModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BonuriCasa">
+    <Key>
+      <PropertyRef Name="BonID" />
+    </Key>
+    <Property Name="BonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataEliberarii" Type="date" Nullable="false" />
+    <Property Name="UtilizatorID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categorii">
+    <Key>
+      <PropertyRef Name="CategorieID" />
+    </Key>
+    <Property Name="CategorieID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeCategorie" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetaliiBon">
+    <Key>
+      <PropertyRef Name="DetaliuID" />
+    </Key>
+    <Property Name="DetaliuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BonID" Type="int" Nullable="false" />
+    <Property Name="ProdusID" Type="int" Nullable="false" />
+    <Property Name="Cantitate" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producatori">
+    <Key>
+      <PropertyRef Name="ProducatorID" />
+    </Key>
+    <Property Name="ProducatorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeProducator" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TaraOrigine" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Produse">
+    <Key>
+      <PropertyRef Name="ProdusID" />
+    </Key>
+    <Property Name="ProdusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeProdus" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodBare" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CategorieID" Type="int" Nullable="false" />
+    <Property Name="ProducatorID" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stocuri">
+    <Key>
+      <PropertyRef Name="StocID" />
+    </Key>
+    <Property Name="StocID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProdusID" Type="int" />
+    <Property Name="Cantitate" Type="int" Nullable="false" />
+    <Property Name="UnitateMasura" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DataAprovizionare" Type="date" Nullable="false" />
+    <Property Name="DataExpirare" Type="date" Nullable="false" />
+    <Property Name="PretAchizitie" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="PretVanzare" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Utilizatori">
+    <Key>
+      <PropertyRef Name="UtilizatorID" />
+    </Key>
+    <Property Name="UtilizatorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeUtilizator" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Parola" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TipUtilizator" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__BonuriCas__Utili__5629CD9C">
+    <End Role="Utilizatori" Type="Self.Utilizatori" Multiplicity="1" />
+    <End Role="BonuriCasa" Type="Self.BonuriCasa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizatori">
+        <PropertyRef Name="UtilizatorID" />
+      </Principal>
+      <Dependent Role="BonuriCasa">
+        <PropertyRef Name="UtilizatorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetaliiBo__BonID__59063A47">
+    <End Role="BonuriCasa" Type="Self.BonuriCasa" Multiplicity="1" />
+    <End Role="DetaliiBon" Type="Self.DetaliiBon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BonuriCasa">
+        <PropertyRef Name="BonID" />
+      </Principal>
+      <Dependent Role="DetaliiBon">
+        <PropertyRef Name="BonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetaliiBo__Produ__59FA5E80">
+    <End Role="Produse" Type="Self.Produse" Multiplicity="1" />
+    <End Role="DetaliiBon" Type="Self.DetaliiBon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produse">
+        <PropertyRef Name="ProdusID" />
+      </Principal>
+      <Dependent Role="DetaliiBon">
+        <PropertyRef Name="ProdusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Produse__Categor__4F7CD00D">
+    <End Role="Categorii" Type="Self.Categorii" Multiplicity="1" />
+    <End Role="Produse" Type="Self.Produse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorii">
+        <PropertyRef Name="CategorieID" />
+      </Principal>
+      <Dependent Role="Produse">
+        <PropertyRef Name="CategorieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Produse__Produca__5070F446">
+    <End Role="Producatori" Type="Self.Producatori" Multiplicity="1" />
+    <End Role="Produse" Type="Self.Produse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producatori">
+        <PropertyRef Name="ProducatorID" />
+      </Principal>
+      <Dependent Role="Produse">
+        <PropertyRef Name="ProducatorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stocuri__ProdusI__534D60F1">
+    <End Role="Produse" Type="Self.Produse" Multiplicity="0..1" />
+    <End Role="Stocuri" Type="Self.Stocuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produse">
+        <PropertyRef Name="ProdusID" />
+      </Principal>
+      <Dependent Role="Stocuri">
+        <PropertyRef Name="ProdusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AddCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddProducer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProducerName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Barcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="ProducerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeactivateCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeactivateProducer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProducerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeactivateProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeactivateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UpdateCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateProducer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProducerID" Type="int" Mode="In" />
+    <Parameter Name="ProducerName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="ProductName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Barcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="ProducerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateStockQuantity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="QuantitySold" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ViewCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ViewLargestDailyReceipt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SelectedDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ViewProducers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ViewProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ViewUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ViewUserSalesByDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="Month" Type="int" Mode="In" />
+    <Parameter Name="Year" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="SupermarketModelStoreContainer">
+    <EntitySet Name="BonuriCasa" EntityType="Self.BonuriCasa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categorii" EntityType="Self.Categorii" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetaliiBon" EntityType="Self.DetaliiBon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Producatori" EntityType="Self.Producatori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Produse" EntityType="Self.Produse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stocuri" EntityType="Self.Stocuri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilizatori" EntityType="Self.Utilizatori" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BonuriCas__Utili__5629CD9C" Association="Self.FK__BonuriCas__Utili__5629CD9C">
+      <End Role="Utilizatori" EntitySet="Utilizatori" />
+      <End Role="BonuriCasa" EntitySet="BonuriCasa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetaliiBo__BonID__59063A47" Association="Self.FK__DetaliiBo__BonID__59063A47">
+      <End Role="BonuriCasa" EntitySet="BonuriCasa" />
+      <End Role="DetaliiBon" EntitySet="DetaliiBon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetaliiBo__Produ__59FA5E80" Association="Self.FK__DetaliiBo__Produ__59FA5E80">
+      <End Role="Produse" EntitySet="Produse" />
+      <End Role="DetaliiBon" EntitySet="DetaliiBon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Produse__Categor__4F7CD00D" Association="Self.FK__Produse__Categor__4F7CD00D">
+      <End Role="Categorii" EntitySet="Categorii" />
+      <End Role="Produse" EntitySet="Produse" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Produse__Produca__5070F446" Association="Self.FK__Produse__Produca__5070F446">
+      <End Role="Producatori" EntitySet="Producatori" />
+      <End Role="Produse" EntitySet="Produse" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stocuri__ProdusI__534D60F1" Association="Self.FK__Stocuri__ProdusI__534D60F1">
+      <End Role="Produse" EntitySet="Produse" />
+      <End Role="Stocuri" EntitySet="Stocuri" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

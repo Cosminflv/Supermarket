@@ -1,9 +1,5 @@
-﻿using Supermarket.Models.EntityLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Supermarket.Models;
 
 namespace Supermarket.ViewModels
 {
@@ -34,7 +30,7 @@ namespace Supermarket.ViewModels
             LoginViewModel = new LoginVM();
             LoginViewModel.OnLoginSuccess = (user) =>
             {
-                if (user.UserType == UserType.Administrator)
+                if (user.TipUtilizator == "Administrator")
                 {
                     switchToAdministratorMenu(user);
                 } else
@@ -45,14 +41,14 @@ namespace Supermarket.ViewModels
             SelectedVM = LoginViewModel;
         }
 
-        public void switchToAdministratorMenu(UserEntity user)
+        public void switchToAdministratorMenu(Utilizatori user)
         {
             AdministratorMenuViewModel = new AdministratorMenuVM(user);
             AdministratorMenuViewModel.OnSwitchToLogin = switchToLogin;
             SelectedVM = AdministratorMenuViewModel;
         }
 
-        public void switchToCashierMenu(UserEntity user)
+        public void switchToCashierMenu(Utilizatori user)
         {
             CashierMenuViewModel = new CashierMenuVM(user);
             CashierMenuViewModel.OnSwitchToLogin = switchToLogin;

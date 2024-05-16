@@ -38,5 +38,8 @@
         </Button>
         <Label Content="Cashier" Style="{StaticResource CustomLabelStyle}"/>
 
+        <Button Content="Cauta Produs" HorizontalAlignment="Center" Margin="0,138,0,0" VerticalAlignment="Top" Height="45" Width="186"/>
+        <Button Content="Emite Bon" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Height="45" Width="186"/>
+
     </Grid>
 </UserControl>

@@ -1,19 +1,14 @@
 ﻿using Supermarket.Commands;
-using Supermarket.Models.EntityLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Supermarket.Models;
 using System.Windows.Input;
 
 namespace Supermarket.ViewModels
 {
     class AdministratorMenuVM : BaseVM
     {
-        UserEntity? user;
+        Utilizatori user;
 
-        public UserEntity User
+        public Utilizatori User
         {
             get { return user; }
             set { 
@@ -24,7 +19,7 @@ namespace Supermarket.ViewModels
 
         public AdministratorMenuVM() { user = null; }
 
-        public AdministratorMenuVM(UserEntity userOperating) { 
+        public AdministratorMenuVM(Utilizatori userOperating) { 
             User = userOperating; 
         }
 

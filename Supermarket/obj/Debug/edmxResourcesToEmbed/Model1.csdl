@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SupermarketModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BonuriCasa">
+    <Key>
+      <PropertyRef Name="BonID" />
+    </Key>
+    <Property Name="BonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataEliberarii" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UtilizatorID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Utilizatori" Relationship="Self.FK__BonuriCas__Utili__5629CD9C" FromRole="BonuriCasa" ToRole="Utilizatori" />
+    <NavigationProperty Name="DetaliiBons" Relationship="Self.FK__DetaliiBo__BonID__59063A47" FromRole="BonuriCasa" ToRole="DetaliiBon" />
+  </EntityType>
+  <EntityType Name="Categorii">
+    <Key>
+      <PropertyRef Name="CategorieID" />
+    </Key>
+    <Property Name="CategorieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumeCategorie" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Produses" Relationship="Self.FK__Produse__Categor__4F7CD00D" FromRole="Categorii" ToRole="Produse" />
+  </EntityType>
+  <EntityType Name="DetaliiBon">
+    <Key>
+      <PropertyRef Name="DetaliuID" />
+    </Key>
+    <Property Name="DetaliuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BonID" Type="Int32" Nullable="false" />
+    <Property Name="ProdusID" Type="Int32" Nullable="false" />
+    <Property Name="Cantitate" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BonuriCasa" Relationship="Self.FK__DetaliiBo__BonID__59063A47" FromRole="DetaliiBon" ToRole="BonuriCasa" />
+    <NavigationProperty Name="Produse" Relationship="Self.FK__DetaliiBo__Produ__59FA5E80" FromRole="DetaliiBon" ToRole="Produse" />
+  </EntityType>
+  <EntityType Name="Producatori">
+    <Key>
+      <PropertyRef Name="ProducatorID" />
+    </Key>
+    <Property Name="ProducatorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumeProducator" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TaraOrigine" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Produses" Relationship="Self.FK__Produse__Produca__5070F446" FromRole="Producatori" ToRole="Produse" />
+  </EntityType>
+  <EntityType Name="Produse">
+    <Key>
+      <PropertyRef Name="ProdusID" />
+    </Key>
+    <Property Name="ProdusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumeProdus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodBare" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategorieID" Type="Int32" Nullable="false" />
+    <Property Name="ProducatorID" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Categorii" Relationship="Self.FK__Produse__Categor__4F7CD00D" FromRole="Produse" ToRole="Categorii" />
+    <NavigationProperty Name="DetaliiBons" Relationship="Self.FK__DetaliiBo__Produ__59FA5E80" FromRole="Produse" ToRole="DetaliiBon" />
+    <NavigationProperty Name="Producatori" Relationship="Self.FK__Produse__Produca__5070F446" FromRole="Produse" ToRole="Producatori" />
+    <NavigationProperty Name="Stocuris" Relationship="Self.FK__Stocuri__ProdusI__534D60F1" FromRole="Produse" ToRole="Stocuri" />
+  </EntityType>
+  <EntityType Name="Stocuri">
+    <Key>
+      <PropertyRef Name="StocID" />
+    </Key>
+    <Property Name="StocID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProdusID" Type="Int32" />
+    <Property Name="Cantitate" Type="Int32" Nullable="false" />
+    <Property Name="UnitateMasura" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DataAprovizionare" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DataExpirare" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PretAchizitie" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="PretVanzare" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="Produse" Relationship="Self.FK__Stocuri__ProdusI__534D60F1" FromRole="Stocuri" ToRole="Produse" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Utilizatori">
+    <Key>
+      <PropertyRef Name="UtilizatorID" />
+    </Key>
+    <Property Name="UtilizatorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumeUtilizator" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Parola" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TipUtilizator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BonuriCasas" Relationship="Self.FK__BonuriCas__Utili__5629CD9C" FromRole="Utilizatori" ToRole="BonuriCasa" />
+  </EntityType>
+  <Association Name="FK__BonuriCas__Utili__5629CD9C">
+    <End Role="Utilizatori" Type="Self.Utilizatori" Multiplicity="1" />
+    <End Role="BonuriCasa" Type="Self.BonuriCasa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizatori">
+        <PropertyRef Name="UtilizatorID" />
+      </Principal>
+      <Dependent Role="BonuriCasa">
+        <PropertyRef Name="UtilizatorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetaliiBo__BonID__59063A47">
+    <End Role="BonuriCasa" Type="Self.BonuriCasa" Multiplicity="1" />
+    <End Role="DetaliiBon" Type="Self.DetaliiBon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BonuriCasa">
+        <PropertyRef Name="BonID" />
+      </Principal>
+      <Dependent Role="DetaliiBon">
+        <PropertyRef Name="BonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Produse__Categor__4F7CD00D">
+    <End Role="Categorii" Type="Self.Categorii" Multiplicity="1" />
+    <End Role="Produse" Type="Self.Produse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorii">
+        <PropertyRef Name="CategorieID" />
+      </Principal>
+      <Dependent Role="Produse">
+        <PropertyRef Name="CategorieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetaliiBo__Produ__59FA5E80">
+    <End Role="Produse" Type="Self.Produse" Multiplicity="1" />
+    <End Role="DetaliiBon" Type="Self.DetaliiBon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produse">
+        <PropertyRef Name="ProdusID" />
+      </Principal>
+      <Dependent Role="DetaliiBon">
+        <PropertyRef Name="ProdusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Produse__Produca__5070F446">
+    <End Role="Producatori" Type="Self.Producatori" Multiplicity="1" />
+    <End Role="Produse" Type="Self.Produse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producatori">
+        <PropertyRef Name="ProducatorID" />
+      </Principal>
+      <Dependent Role="Produse">
+        <PropertyRef Name="ProducatorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stocuri__ProdusI__534D60F1">
+    <End Role="Produse" Type="Self.Produse" Multiplicity="0..1" />
+    <End Role="Stocuri" Type="Self.Stocuri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produse">
+        <PropertyRef Name="ProdusID" />
+      </Principal>
+      <Dependent Role="Stocuri">
+        <PropertyRef Name="ProdusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SupermarketEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BonuriCasas" EntityType="Self.BonuriCasa" />
+    <EntitySet Name="Categoriis" EntityType="Self.Categorii" />
+    <EntitySet Name="DetaliiBons" EntityType="Self.DetaliiBon" />
+    <EntitySet Name="Producatoris" EntityType="Self.Producatori" />
+    <EntitySet Name="Produses" EntityType="Self.Produse" />
+    <EntitySet Name="Stocuris" EntityType="Self.Stocuri" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Utilizatoris" EntityType="Self.Utilizatori" />
+    <AssociationSet Name="FK__BonuriCas__Utili__5629CD9C" Association="Self.FK__BonuriCas__Utili__5629CD9C">
+      <End Role="Utilizatori" EntitySet="Utilizatoris" />
+      <End Role="BonuriCasa" EntitySet="BonuriCasas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetaliiBo__BonID__59063A47" Association="Self.FK__DetaliiBo__BonID__59063A47">
+      <End Role="BonuriCasa" EntitySet="BonuriCasas" />
+      <End Role="DetaliiBon" EntitySet="DetaliiBons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Produse__Categor__4F7CD00D" Association="Self.FK__Produse__Categor__4F7CD00D">
+      <End Role="Categorii" EntitySet="Categoriis" />
+      <End Role="Produse" EntitySet="Produses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetaliiBo__Produ__59FA5E80" Association="Self.FK__DetaliiBo__Produ__59FA5E80">
+      <End Role="Produse" EntitySet="Produses" />
+      <End Role="DetaliiBon" EntitySet="DetaliiBons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Produse__Produca__5070F446" Association="Self.FK__Produse__Produca__5070F446">
+      <End Role="Producatori" EntitySet="Producatoris" />
+      <End Role="Produse" EntitySet="Produses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stocuri__ProdusI__534D60F1" Association="Self.FK__Stocuri__ProdusI__534D60F1">
+      <End Role="Produse" EntitySet="Produses" />
+      <End Role="Stocuri" EntitySet="Stocuris" />
+    </AssociationSet>
+    <FunctionImport Name="AddCategory">
+      <Parameter Name="CategoryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddProducer">
+      <Parameter Name="ProducerName" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddProduct">
+      <Parameter Name="ProductName" Mode="In" Type="String" />
+      <Parameter Name="Barcode" Mode="In" Type="String" />
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="ProducerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddUser">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="UserType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeactivateCategory">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeactivateProducer">
+      <Parameter Name="ProducerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeactivateProduct">
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeactivateUser">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SupermarketModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SupermarketModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="UpdateCategory">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="CategoryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateProducer">
+      <Parameter Name="ProducerID" Mode="In" Type="Int32" />
+      <Parameter Name="ProducerName" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateProduct">
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductName" Mode="In" Type="String" />
+      <Parameter Name="Barcode" Mode="In" Type="String" />
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="ProducerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateStockQuantity">
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+      <Parameter Name="QuantitySold" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateUser">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="UserType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ViewCategories" ReturnType="Collection(SupermarketModel.ViewCategories_Result)" />
+    <FunctionImport Name="ViewLargestDailyReceipt" ReturnType="Collection(SupermarketModel.ViewLargestDailyReceipt_Result)">
+      <Parameter Name="SelectedDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="ViewProducers" ReturnType="Collection(SupermarketModel.ViewProducers_Result)" />
+    <FunctionImport Name="ViewProducts" ReturnType="Collection(SupermarketModel.ViewProducts_Result)" />
+    <FunctionImport Name="ViewUsers" ReturnType="Collection(SupermarketModel.ViewUsers_Result)" />
+    <FunctionImport Name="ViewUserSalesByDay" ReturnType="Collection(SupermarketModel.ViewUserSalesByDay_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="Month" Mode="In" Type="Int32" />
+      <Parameter Name="Year" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ViewCategories_Result">
+    <Property Type="Int32" Name="CategorieID" Nullable="false" />
+    <Property Type="String" Name="NumeCategorie" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ViewLargestDailyReceipt_Result">
+    <Property Type="Int32" Name="BonID" Nullable="false" />
+    <Property Type="DateTime" Name="DataEliberarii" Nullable="false" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="38" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="ViewProducers_Result">
+    <Property Type="Int32" Name="ProducatorID" Nullable="false" />
+    <Property Type="String" Name="NumeProducator" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TaraOrigine" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ViewProducts_Result">
+    <Property Type="Int32" Name="ProdusID" Nullable="false" />
+    <Property Type="String" Name="NumeProdus" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CodBare" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="CategorieID" Nullable="false" />
+    <Property Type="Int32" Name="ProducatorID" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ViewUsers_Result">
+    <Property Type="Int32" Name="UtilizatorID" Nullable="false" />
+    <Property Type="String" Name="NumeUtilizator" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Parola" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TipUtilizator" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ViewUserSalesByDay_Result">
+    <Property Type="Int32" Name="DayOfMonth" Nullable="true" />
+    <Property Type="Decimal" Name="TotalSales" Nullable="true" Precision="38" Scale="2" />
+  </ComplexType>
+</Schema>
