@@ -39,9 +39,26 @@ namespace Supermarket.ViewModels
             }
         }
 
+        private ICommand switchToUsersCRUDCommand;
+        public ICommand SwitchToUsersCRUDCommand
+        {
+            get
+            {
+                if (switchToUsersCRUDCommand == null)
+                {
+                    switchToUsersCRUDCommand = new RelayPagesCommand(o => true, o => { OnSwitchToUsersCRUD(); });
+                }
+
+                return switchToUsersCRUDCommand;
+            }
+        }
+
         // DELEGATES
 
         public delegate void SwitchToLogin();
         public SwitchToLogin OnSwitchToLogin { get; set; }
+
+        public delegate void SwitchToUsersCRUD();
+        public SwitchToUsersCRUD OnSwitchToUsersCRUD { get; set; }
     }
 }
