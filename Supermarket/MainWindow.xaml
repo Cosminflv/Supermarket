@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Supermarket"
         xmlns:viewmodels="clr-namespace:Supermarket.ViewModels"
+        xmlns:adminVM="clr-namespace:Supermarket.ViewModels.AdministratorRelated"
         xmlns:views="clr-namespace:Supermarket.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -20,6 +21,14 @@
 
         <DataTemplate DataType="{x:Type viewmodels:CashierMenuVM}">
             <views:CashierMenuView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:UsersCRUDVM}">
+            <views:UsersCRUDView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type adminVM:AddUsersVM}">
+            <views:AddUsersView/>
         </DataTemplate>
 
     </Window.Resources>

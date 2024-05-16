@@ -38,10 +38,9 @@
         </Button>
 
         <Label Content="Users CRUD" Style="{StaticResource CustomLabelStyle}"/>
-        <Button Content="Add Users" HorizontalAlignment="Center" Margin="0,126,0,0" VerticalAlignment="Top" Height="47" Width="205"/>
+        <Button Command="{Binding SwitchToAddUsersPageCommand}" Content="Add Users" HorizontalAlignment="Center" Margin="0,126,0,0" VerticalAlignment="Top" Height="47" Width="205"/>
         <Button Content="Modify Users" HorizontalAlignment="Center" Margin="0,186,0,0" VerticalAlignment="Top" Height="47" Width="205"/>
         <Button Content="Delete Users" HorizontalAlignment="Center" Margin="0,247,0,0" VerticalAlignment="Top" Height="47" Width="205"/>
-        <Button Content="View Users" HorizontalAlignment="Center" Margin="0,309,0,0" VerticalAlignment="Top" Height="47" Width="204"/>
 
     </Grid>
 </UserControl>

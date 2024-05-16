@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\cosmi\Desktop\Supermarket\Supermarket\obj\Debug\
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\
 Supermarket
 none
 false
 DEBUG;TRACE
-C:\Users\cosmi\Desktop\Supermarket\Supermarket\App.xaml
-72085210655
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\App.xaml
+8710526567
 21555267277
-40714310400
-18-1890392412
-MainWindow.xaml;Views\AdministratorMenuView.xaml;Views\CashierMenuView.xaml;Views\CategoriesCRUDView.xaml;Views\LoginView.xaml;Views\ProducersCRUDView.xaml;Views\UsersCRUDView.xaml;
+43-1944279835
+181139880263
+MainWindow.xaml;Views\AddUsersView.xaml;Views\AdministratorMenuView.xaml;Views\CashierMenuView.xaml;Views\CategoriesCRUDView.xaml;Views\LoginView.xaml;Views\ProducersCRUDView.xaml;Views\UsersCRUDView.xaml;
 
 False
 

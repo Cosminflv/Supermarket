@@ -12,9 +12,9 @@ namespace Supermarket.ViewModels
     {
         UsersBLL usersBLL;
 
-        public LoginVM()
+        public LoginVM(UsersBLL usersBLLParam)
         {
-            usersBLL = new UsersBLL();
+            usersBLL = usersBLLParam;
             UsersList = usersBLL.GetAllUsers();
         }
 
@@ -22,6 +22,17 @@ namespace Supermarket.ViewModels
         {
             get => usersBLL.Users;
             set => usersBLL.Users = value;
+        }
+
+        private string errorMessage;
+        public string ErrorMessage
+        {
+            get => errorMessage;
+            set
+            {
+                errorMessage = value;
+                OnPropertyChanged("ErrorMessage");
+            }
         }
 
         private Visibility errorVisibility = Visibility.Collapsed;
@@ -144,10 +155,12 @@ namespace Supermarket.ViewModels
                 {
                     // User found, perform login actions
                     OnLoginSuccess?.Invoke(user);
+                    ErrorMessage = "";
                     return;
                 }
             }
             // No matching user found, display error message
+            ErrorMessage = "Invalid username/password!";
             ErrorVisibility = Visibility.Visible;
 
             // Set up a timer to hide the error message after 5 seconds
@@ -157,6 +170,7 @@ namespace Supermarket.ViewModels
             timer.Elapsed += (sender, e) =>
             {
                 ErrorVisibility = Visibility.Hidden;
+                ErrorMessage = "";
                 timer.Dispose(); // Dispose the timer to release resources
             };
             timer.Start();

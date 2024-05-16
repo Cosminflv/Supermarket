@@ -38,7 +38,7 @@
         </Button>
 
         <Label Content="Administrator" Style="{StaticResource CustomLabelStyle}"/>
-        <Button Content="Utilizatori" HorizontalAlignment="Left" Margin="80,133,0,0" VerticalAlignment="Top" Height="45" Width="186"/>
+        <Button Content="Utilizatori" Command="{Binding SwitchToUsersCRUDCommand}" HorizontalAlignment="Left" Margin="80,133,0,0" VerticalAlignment="Top" Height="45" Width="186"/>
         <Button Content="Categorii" HorizontalAlignment="Left" Margin="80,225,0,0" VerticalAlignment="Top" Height="45" Width="186"/>
         <Button Content="Producatori" HorizontalAlignment="Left" Margin="80,313,0,0" VerticalAlignment="Top" Height="45" Width="186"/>
         <Button Content="Produse" HorizontalAlignment="Left" Margin="495,133,0,0" VerticalAlignment="Top" Height="45" Width="186"/>

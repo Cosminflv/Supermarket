@@ -116,9 +116,10 @@
     <Compile Include="Models\ViewLargestDailyReceipt_Result.cs">
       <DependentUpon>SupermarketEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AdministratorMenuVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\AddUsersVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\AdministratorMenuVM.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
-    <Compile Include="ViewModels\CashierMenuVM.cs" />
+    <Compile Include="ViewModels\CashierRelated\CashierMenuVM.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
     <Compile Include="Models\ViewProducers_Result.cs">
@@ -126,6 +127,10 @@
     </Compile>
     <Compile Include="Models\ViewProducts_Result.cs">
       <DependentUpon>SupermarketEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AdministratorRelated\UsersCRUDVM.cs" />
+    <Compile Include="Views\AddUsersView.xaml.cs">
+      <DependentUpon>AddUsersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdministratorMenuView.xaml.cs">
       <DependentUpon>AdministratorMenuView.xaml</DependentUpon>
@@ -164,6 +169,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddUsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AdministratorMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

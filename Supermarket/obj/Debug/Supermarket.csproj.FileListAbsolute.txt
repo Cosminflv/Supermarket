@@ -30,3 +30,37 @@ C:\Users\cosmi\Desktop\Supermarket\Supermarket\obj\Debug\Supermarket.csproj.Core
 C:\Users\cosmi\Desktop\Supermarket\Supermarket\obj\Debug\Supermar.2B1DEBD3.Up2Date
 C:\Users\cosmi\Desktop\Supermarket\Supermarket\obj\Debug\Supermarket.exe
 C:\Users\cosmi\Desktop\Supermarket\Supermarket\obj\Debug\Supermarket.pdb
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\bin\Debug\Supermarket.exe.config
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\bin\Debug\Supermarket.exe
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\bin\Debug\Supermarket.pdb
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\bin\Debug\EntityFramework.dll
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\bin\Debug\EntityFramework.xml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket.csproj.AssemblyReference.cache
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\MainWindow.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\AdministratorMenuView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\CashierMenuView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\CategoriesCRUDView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\LoginView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\ProducersCRUDView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\UsersCRUDView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\App.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket_Content.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket_MarkupCompile.cache
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket_MarkupCompile.lref
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\MainWindow.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\AdministratorMenuView.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\CashierMenuView.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\CategoriesCRUDView.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\LoginView.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\ProducersCRUDView.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\UsersCRUDView.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket.g.resources
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket.Properties.Resources.resources
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket.csproj.GenerateResource.cache
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket.csproj.CoreCompileInputs.cache
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermar.2B1DEBD3.Up2Date
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket.exe
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket.pdb
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\AddUsersView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\AddUsersView.baml
