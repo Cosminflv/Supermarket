@@ -30,6 +30,8 @@ namespace Supermarket.ViewModels
 
         public ModifyUsersVM ModifyUsersViewModel { get; set; }
 
+        public DeleteUsersVM DeleteUsersViewmodel { get; set; } 
+
         #endregion
 
 
@@ -77,6 +79,7 @@ namespace Supermarket.ViewModels
             UsersCRUDViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user, usersBLL);
             UsersCRUDViewModel.OnSwitchToAddUsersPage = () => switchToAddUsersPage(user, usersBLL);
             UsersCRUDViewModel.OnSwitchToModifyUsersPage = () => switchToModifyUsersPage(user, usersBLL);
+            UsersCRUDViewModel.OnSwitchToDeleteUsersPage = () => switchToDeleteUsersPage(user, usersBLL);
             SelectedVM = UsersCRUDViewModel;
         }
 
@@ -92,6 +95,13 @@ namespace Supermarket.ViewModels
             ModifyUsersViewModel = new ModifyUsersVM(user, usersBLL);
             ModifyUsersViewModel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user, usersBLL);
             SelectedVM = ModifyUsersViewModel;
+        }
+
+        public void switchToDeleteUsersPage(Utilizatori user, UsersBLL usersBLL)
+        {
+            DeleteUsersViewmodel = new DeleteUsersVM(user, usersBLL);
+            DeleteUsersViewmodel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user, usersBLL);
+            SelectedVM = DeleteUsersViewmodel;
         }
     }
 }

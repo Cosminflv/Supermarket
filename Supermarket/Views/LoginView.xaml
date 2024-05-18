@@ -84,13 +84,14 @@
             Width="269"
             Height="30"
             Margin="0,123,0,0"
+            HorizontalAlignment="Center"
             FontSize="18"
             Foreground="Red"
             Style="{StaticResource CustomTextStyle}"
             Text="{Binding ErrorMessage}"
             TextAlignment="Center"
             TextWrapping="Wrap"
-            Visibility="{Binding ErrorVisibility}" HorizontalAlignment="Center" />
+            Visibility="{Binding ErrorVisibility}" />
 
     </Grid>
 </UserControl>

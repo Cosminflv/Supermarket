@@ -20,7 +20,7 @@ namespace Supermarket.ViewModels
 
         public ObservableCollection<Utilizatori> UsersList
         {
-            get => usersBLL.Users;
+            get => usersBLL.UsersActive;
             set => usersBLL.Users = value;
         }
 
@@ -151,7 +151,7 @@ namespace Supermarket.ViewModels
             // Find the user with the entered username and password
             foreach (var user in UsersList)
             {
-                if (user.NumeUtilizator == Username && user.Parola == Password)
+                if (user.NumeUtilizator == Username && user.Parola == Password && user.IsActive)
                 {
                     // User found, perform login actions
                     OnLoginSuccess?.Invoke(user);

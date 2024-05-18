@@ -35,6 +35,11 @@
             <views:ModifyUsersView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type adminVM:DeleteUsersVM}">
+            <views:DeleteUsersView/>
+        </DataTemplate>
+
+
     </Window.Resources>
 
     <ContentControl Content="{Binding SelectedVM}"/>

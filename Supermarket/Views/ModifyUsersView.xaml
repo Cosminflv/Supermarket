@@ -67,24 +67,6 @@
             Text="Select user"
             TextAlignment="Center"
             TextWrapping="Wrap" />
-        <!--<ComboBox  ItemsSource="{Binding Users}" DisplayMemberPath="NumeUtilizator" SelectedItem="{Binding SelectedUser, Mode=TwoWay}" HorizontalAlignment="Left" Margin="170,150,0,0" VerticalAlignment="Top" Width="268" Height="32"/>-->
-
-
-        <!--<controls:AutoCompleteBox x:Name="SearchTextBox" FontSize="15"
-                                  ItemsSource="{Binding UsersNames}" Margin="163,150,264,225">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="KeyDown">
-                    <i:InvokeCommandAction Command="{Binding KeyDownCommand}">
-                        <i:InvokeCommandAction.CommandParameter>
-                            <MultiBinding Converter="{StaticResource MultiParameterConverter}">
-                                <Binding ElementName="SearchTextBox" Path="Text"/>
-                                <Binding/>
-                            </MultiBinding>
-                        </i:InvokeCommandAction.CommandParameter>
-                    </i:InvokeCommandAction>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-        </controls:AutoCompleteBox>-->
 
         <controls:AutoCompleteBox
             x:Name="SearchTextBox"

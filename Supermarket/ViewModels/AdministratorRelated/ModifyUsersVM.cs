@@ -27,18 +27,10 @@ namespace Supermarket.ViewModels.AdministratorRelated
             }
         }
 
-        ObservableCollection<Utilizatori> users;
-        public ObservableCollection<Utilizatori> Users
+        public ObservableCollection<Utilizatori> UsersList
         {
-            get
-            {
-                return users;
-            }
-            set
-            {
-                users = value;
-                OnPropertyChanged("Users");
-            }
+            get => usersBLL.Users;
+            set => usersBLL.Users = value;
         }
 
         string inputText;
@@ -74,8 +66,7 @@ namespace Supermarket.ViewModels.AdministratorRelated
         {
             userOperating = user;
             usersBLL = userBLLParam;
-            users = usersBLL.GetAllUsers();
-            UsersNames = new ObservableCollection<string>(users.Select(userParsed => userParsed.NumeUtilizator).ToList());
+            UsersNames = new ObservableCollection<string>(UsersList.Select(userParsed => userParsed.NumeUtilizator).ToList());
             UserTypes = new ObservableCollection<string> { "Administrator", "Cashier" };
             SelectedUser = new Utilizatori();
         }
@@ -128,7 +119,7 @@ namespace Supermarket.ViewModels.AdministratorRelated
             {
                 if (e.Key == Key.Enter)
                 {
-                    SelectedUser = users.FirstOrDefault(userParsed => userParsed.NumeUtilizator == text);
+                    SelectedUser = UsersList.FirstOrDefault(userParsed => userParsed.NumeUtilizator == text);
                 }
             }
 
@@ -156,11 +147,9 @@ namespace Supermarket.ViewModels.AdministratorRelated
                 return;
             }
 
-            usersBLL.UpdateUser(obj);
+            usersBLL.UpdateUser(SelectedUser);
 
             UpdateLocalData();
-
-            // No matching user found, display error message
             InfoMessage = "User Modified!";
             InfoVisibility = Visibility.Visible;
 
@@ -179,8 +168,7 @@ namespace Supermarket.ViewModels.AdministratorRelated
 
         private void UpdateLocalData()
         {
-            users = usersBLL.GetAllUsers();
-            UsersNames = new ObservableCollection<string>(users.Select(userParsed => userParsed.NumeUtilizator).ToList());
+            UsersNames = new ObservableCollection<string>(UsersList.Select(userParsed => userParsed.NumeUtilizator).ToList());
             SelectedUser = new Utilizatori();
         }
 

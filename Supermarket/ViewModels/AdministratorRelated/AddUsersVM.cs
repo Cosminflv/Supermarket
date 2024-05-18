@@ -71,28 +71,28 @@ namespace Supermarket.ViewModels.AdministratorRelated
             }
         }
 
-        private string errorMessage;
-        public string ErrorMessage
+        private string infoMessage;
+        public string InfoMessage
         {
-            get => errorMessage;
+            get => infoMessage;
             set
             {
-                errorMessage = value;
-                OnPropertyChanged("ErrorMessage");
+                infoMessage = value;
+                OnPropertyChanged("InfoMessage");
             }
         }
 
-        private Visibility errorVisibility = Visibility.Collapsed;
+        private Visibility infoVisibility = Visibility.Collapsed;
 
-        public Visibility ErrorVisibility
+        public Visibility InfoVisibility
         {
             get
             {
-                return errorVisibility;
+                return infoVisibility;
             }
             set
             {
-                errorVisibility = value;
+                infoVisibility = value;
                 OnPropertyChanged("ErrorVisibility");
             }
         }
@@ -109,6 +109,20 @@ namespace Supermarket.ViewModels.AdministratorRelated
 
                 usersBLL.AddMethod(userToAdd);
 
+                InfoMessage = "User Added!";
+                // Set up a timer to hide the error message after 5 seconds
+                System.Timers.Timer timer = new System.Timers.Timer();
+                timer.Interval = 5000; // 5000 milliseconds = 5 seconds
+                timer.AutoReset = false; // Only fire once
+                timer.Elapsed += (sender, e) =>
+                {
+                    InfoVisibility = Visibility.Hidden;
+                    InfoMessage = "";
+                    timer.Dispose(); // Dispose the timer to release resources
+                };
+                timer.Start();
+
+
                 clearFields();
             }
         }
@@ -118,8 +132,8 @@ namespace Supermarket.ViewModels.AdministratorRelated
             Username = null;
             UserType = null;
             Password = null;
-            ErrorVisibility = Visibility.Collapsed;
-            ErrorMessage = string.Empty;
+            InfoVisibility = Visibility.Collapsed;
+            InfoMessage = string.Empty;
         }
 
         private bool CheckUniqueName()
@@ -130,8 +144,8 @@ namespace Supermarket.ViewModels.AdministratorRelated
 
             if (userExists)
             {
-                ErrorMessage = "Username already exists";
-                ErrorVisibility = Visibility.Visible;
+                InfoMessage = "Username already exists";
+                InfoVisibility = Visibility.Visible;
             }
 
             return !userExists;
@@ -141,22 +155,22 @@ namespace Supermarket.ViewModels.AdministratorRelated
         {
             if (Username == "")
             {
-                ErrorMessage = "Fill the username";
-                ErrorVisibility = Visibility.Visible;
+                InfoMessage = "Fill the username";
+                InfoVisibility = Visibility.Visible;
                 return false;
             }
 
             if (UserType == null)
             {
-                ErrorMessage = "Choose the type of user";
-                ErrorVisibility = Visibility.Visible;
+                InfoMessage = "Choose the type of user";
+                InfoVisibility = Visibility.Visible;
                 return false;
             }
 
             if (Password == null)
             {
-                ErrorMessage = "Fill the password";
-                ErrorVisibility = Visibility.Visible;
+                InfoMessage = "Fill the password";
+                InfoVisibility = Visibility.Visible;
                 return false;
             }
             return true;

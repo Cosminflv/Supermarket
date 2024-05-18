@@ -68,3 +68,5 @@ D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Superm
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermar.2B1DEBD3.Up2Date
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket.exe
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Supermarket.pdb
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\DeleteUsersView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\DeleteUsersView.baml

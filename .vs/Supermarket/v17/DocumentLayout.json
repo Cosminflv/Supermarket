@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\viewmodels\\administratorrelated\\modifyusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\modifyusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\administratorrelated\\addusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\addusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\addusersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\addusersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\administratorrelated\\modifyusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\modifyusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\modifyusersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\modifyusersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\administratorrelated\\addusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\addusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\views\\addusersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\addusersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\models\\businesslogiclayer\\usersbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\models\\businesslogiclayer\\usersbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\administratorrelated\\deleteusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\deleteusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\views\\deleteusersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\deleteusersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,26 +55,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AddUsersVM.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\AddUsersVM.cs",
-              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorRelated\\AddUsersVM.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\AddUsersVM.cs",
-              "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorRelated\\AddUsersVM.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAowI0AAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T06:39:22.758Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "AddUsersView.xaml",
               "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\AddUsersView.xaml",
               "RelativeDocumentMoniker": "Supermarket\\Views\\AddUsersView.xaml",
               "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\AddUsersView.xaml",
               "RelativeToolTip": "Supermarket\\Views\\AddUsersView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-18T06:06:19.275Z",
+              "WhenOpened": "2024-05-18T09:22:07.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddUsersVM.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\AddUsersVM.cs",
+              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorRelated\\AddUsersVM.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\AddUsersVM.cs",
+              "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorRelated\\AddUsersVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAG8AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T08:39:25.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsersBLL.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\BusinessLogicLayer\\UsersBLL.cs",
+              "RelativeDocumentMoniker": "Supermarket\\Models\\BusinessLogicLayer\\UsersBLL.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\BusinessLogicLayer\\UsersBLL.cs",
+              "RelativeToolTip": "Supermarket\\Models\\BusinessLogicLayer\\UsersBLL.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAtwEsAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T07:42:00.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DeleteUsersView.xaml",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\DeleteUsersView.xaml",
+              "RelativeDocumentMoniker": "Supermarket\\Views\\DeleteUsersView.xaml",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\DeleteUsersView.xaml",
+              "RelativeToolTip": "Supermarket\\Views\\DeleteUsersView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-18T06:55:04.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DeleteUsersVM.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\DeleteUsersVM.cs",
+              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorRelated\\DeleteUsersVM.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\DeleteUsersVM.cs",
+              "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorRelated\\DeleteUsersVM.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAvwBwAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T06:54:49.515Z",
               "EditorCaption": ""
             },
             {
@@ -79,13 +129,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ModifyUsersVM.cs",
               "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\ModifyUsersVM.cs",
               "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorRelated\\ModifyUsersVM.cs",
               "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\ModifyUsersVM.cs",
               "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorRelated\\ModifyUsersVM.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAAwIIAAABpAAAA",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAswJsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-16T13:29:38.181Z",
               "EditorCaption": ""

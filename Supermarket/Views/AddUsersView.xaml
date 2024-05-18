@@ -117,7 +117,7 @@
             Text="{Binding InfoMessage}"
             TextAlignment="Center"
             TextWrapping="Wrap"
-            Visibility="{Binding ErrorVisibility}" />
+            Visibility="{Binding InfoVisibility}" />
 
         <Button
             Width="132"
