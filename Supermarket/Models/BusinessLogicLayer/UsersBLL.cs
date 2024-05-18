@@ -45,5 +45,25 @@ namespace Supermarket.Models.BusinessLogicLayer
                 }
             }
         }
+
+        public void UpdateUser(object obj)
+        {
+            Utilizatori utilizator = obj as Utilizatori;
+
+            if(utilizator != null)
+            {
+                if (string.IsNullOrEmpty(utilizator.NumeUtilizator))
+                {
+                    ErrorMessage = "Name is required";
+                }
+                else
+                {
+                    context.UpdateUser(utilizator.UtilizatorID, utilizator.NumeUtilizator, utilizator.Parola, utilizator.TipUtilizator, utilizator.IsActive);
+                    context.SaveChanges();
+                    ErrorMessage = "";
+                  
+                }
+            }
+        }
     }
 }

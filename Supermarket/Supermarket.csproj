@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,9 +37,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -62,59 +61,74 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\BonuriCasa.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Categorii.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Commands\RelaySearchCommand.cs" />
+    <Compile Include="Converters\MultiParameterConverter.cs" />
+    <Compile Include="Custom\KeyDownInvokeCommandAction.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Commands\RelayPagesCommand.cs" />
-    <Compile Include="Models\DetaliiBon.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+    <Compile Include="Models\BonuriCasa.cs">
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BusinessLogicLayer\UsersBLL.cs" />
+    <Compile Include="Models\Categorii.cs">
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetaliiBon.cs">
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Producatori.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Produse.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Stocuri.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SupermarketEntities.Context.cs">
+    <Compile Include="Models\SupermarketEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SupermarketEntities.Context.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SupermarketEntities.cs">
+    <Compile Include="Models\SupermarketEntity.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SupermarketEntities.Designer.cs">
+    <Compile Include="Models\SupermarketEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SupermarketEntities.edmx</DependentUpon>
+      <DependentUpon>SupermarketEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Utilizatori.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewCategories_Result.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewLargestDailyReceipt_Result.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewProducers_Result.cs">
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewProducts_Result.cs">
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewUserSalesByDay_Result.cs">
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewUsers_Result.cs">
+      <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AdministratorRelated\AddUsersVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\AdministratorMenuVM.cs" />
@@ -123,12 +137,6 @@
     <Compile Include="ViewModels\CashierRelated\CashierMenuVM.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
-    <Compile Include="Models\ViewProducers_Result.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ViewProducts_Result.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\AdministratorRelated\UsersCRUDVM.cs" />
     <Compile Include="Views\AddUsersView.xaml.cs">
       <DependentUpon>AddUsersView.xaml</DependentUpon>
@@ -154,12 +162,6 @@
     </Compile>
     <Compile Include="Views\UsersCRUDView.xaml.cs">
       <DependentUpon>UsersCRUDView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ViewUserSalesByDay_Result.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ViewUsers_Result.cs">
-      <DependentUpon>SupermarketEntities.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -224,17 +226,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <EntityDeploy Include="Models\SupermarketEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SupermarketEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\SupermarketEntity.edmx.diagram">
+      <DependentUpon>SupermarketEntity.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <EntityDeploy Include="Models\SupermarketEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SupermarketEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Models\SupermarketEntities.edmx.diagram">
-      <DependentUpon>SupermarketEntities.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -244,15 +245,30 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\SupermarketEntities.Context.tt">
+    <PackageReference Include="DotNetProjects.WpfToolkit.Input">
+      <Version>6.1.94</Version>
+    </PackageReference>
+    <PackageReference Include="DotNetProjects.WpfToolkit.Input" Version="6.1.94" />
+    <PackageReference Include="EntityFramework">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
+      <Version>1.1.77</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.WindowsRuntime">
+      <Version>4.7.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\SupermarketEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SupermarketEntities.edmx</DependentUpon>
-      <LastGenOutput>SupermarketEntities.Context.cs</LastGenOutput>
+      <DependentUpon>SupermarketEntity.edmx</DependentUpon>
+      <LastGenOutput>SupermarketEntity.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\SupermarketEntities.tt">
+    <Content Include="Models\SupermarketEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SupermarketEntities.edmx</DependentUpon>
-      <LastGenOutput>SupermarketEntities.cs</LastGenOutput>
+      <DependentUpon>SupermarketEntity.edmx</DependentUpon>
+      <LastGenOutput>SupermarketEntity.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

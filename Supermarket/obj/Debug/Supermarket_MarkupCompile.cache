@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\App.xaml
-8710526567
-21555267277
-42137808783
-181139880263
-MainWindow.xaml;Views\AddUsersView.xaml;Views\AdministratorMenuView.xaml;Views\CashierMenuView.xaml;Views\CategoriesCRUDView.xaml;Views\LoginView.xaml;Views\ProducersCRUDView.xaml;Views\UsersCRUDView.xaml;
+9-815371274
+21420490243
+471693517484
+211999859923
+MainWindow.xaml;Views\AddUsersView.xaml;Views\AdministratorMenuView.xaml;Views\CashierMenuView.xaml;Views\CategoriesCRUDView.xaml;Views\LoginView.xaml;Views\ModifyUsersView.xaml;Views\ProducersCRUDView.xaml;Views\UsersCRUDView.xaml;
 
 False
 

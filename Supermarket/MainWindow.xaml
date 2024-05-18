@@ -31,6 +31,10 @@
             <views:AddUsersView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type adminVM:ModifyUsersVM}">
+            <views:ModifyUsersView/>
+        </DataTemplate>
+
     </Window.Resources>
 
     <ContentControl Content="{Binding SelectedVM}"/>

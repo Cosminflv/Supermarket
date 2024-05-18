@@ -17,6 +17,7 @@ namespace Supermarket.ViewModels
             set { selectedVM = value; OnPropertyChanged(); }
         }
 
+        #region ViewModelsDeclaration
         public AdministratorMenuVM AdministratorMenuViewModel { get; set; }
 
         public LoginVM LoginViewModel { get; set; }
@@ -26,6 +27,10 @@ namespace Supermarket.ViewModels
         public UsersCRUDVM UsersCRUDViewModel { get; set; }
 
         public AddUsersVM AddUsersViewModel { get; set; }
+
+        public ModifyUsersVM ModifyUsersViewModel { get; set; }
+
+        #endregion
 
 
         public MainWindowVM()
@@ -71,6 +76,7 @@ namespace Supermarket.ViewModels
             UsersCRUDViewModel = new UsersCRUDVM(user, usersBLL);
             UsersCRUDViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user, usersBLL);
             UsersCRUDViewModel.OnSwitchToAddUsersPage = () => switchToAddUsersPage(user, usersBLL);
+            UsersCRUDViewModel.OnSwitchToModifyUsersPage = () => switchToModifyUsersPage(user, usersBLL);
             SelectedVM = UsersCRUDViewModel;
         }
 
@@ -79,6 +85,13 @@ namespace Supermarket.ViewModels
             AddUsersViewModel = new AddUsersVM(user, usersBLL);
             AddUsersViewModel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user, usersBLL);
             SelectedVM = AddUsersViewModel;
+        }
+
+        public void switchToModifyUsersPage(Utilizatori user, UsersBLL usersBLL)
+        {
+            ModifyUsersViewModel = new ModifyUsersVM(user, usersBLL);
+            ModifyUsersViewModel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user, usersBLL);
+            SelectedVM = ModifyUsersViewModel;
         }
     }
 }
