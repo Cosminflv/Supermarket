@@ -163,7 +163,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="SupermarketEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="SupermarketEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BonuriCasas" EntityType="Self.BonuriCasa" />
     <EntitySet Name="Categoriis" EntityType="Self.Categorii" />
     <EntitySet Name="DetaliiBons" EntityType="Self.DetaliiBon" />
@@ -259,6 +259,7 @@
     <FunctionImport Name="UpdateCategory">
       <Parameter Name="CategoryID" Mode="In" Type="Int32" />
       <Parameter Name="CategoryName" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
     </FunctionImport>
     <FunctionImport Name="UpdateProducer">
       <Parameter Name="ProducerID" Mode="In" Type="Int32" />

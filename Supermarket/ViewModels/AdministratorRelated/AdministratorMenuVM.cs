@@ -23,6 +23,8 @@ namespace Supermarket.ViewModels
             User = userOperating; 
         }
 
+        #region Navigation
+
         // COMMANDS
 
         private ICommand switchToLoginCommand;
@@ -53,6 +55,20 @@ namespace Supermarket.ViewModels
             }
         }
 
+        private ICommand switchToCategoriesCRUDCommand;
+        public ICommand SwitchToCategoriesCRUDCommand
+        {
+            get
+            {
+                if (switchToCategoriesCRUDCommand == null)
+                {
+                    switchToCategoriesCRUDCommand = new RelayPagesCommand(o => true, o => { OnSwitchToCategoriesCRUD(); });
+                }
+
+                return switchToCategoriesCRUDCommand;
+            }
+        }
+
         // DELEGATES
 
         public delegate void SwitchToLogin();
@@ -60,5 +76,10 @@ namespace Supermarket.ViewModels
 
         public delegate void SwitchToUsersCRUD();
         public SwitchToUsersCRUD OnSwitchToUsersCRUD { get; set; }
+
+        public delegate void SwitchToCategoriesCRUD();
+
+        public SwitchToCategoriesCRUD OnSwitchToCategoriesCRUD { get; set; }
     }
+    #endregion
 }

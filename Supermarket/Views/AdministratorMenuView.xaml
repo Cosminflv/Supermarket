@@ -64,6 +64,7 @@
             Margin="80,225,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Command="{Binding SwitchToCategoriesCRUDCommand}"
             Content="Categorii" />
         <Button
             Width="186"

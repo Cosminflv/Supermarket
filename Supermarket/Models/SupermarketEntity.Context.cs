@@ -16,10 +16,10 @@ namespace Supermarket.Models
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class SupermarketEntities1 : DbContext
+    public partial class SupermarketEntities : DbContext
     {
-        public SupermarketEntities1()
-            : base("name=SupermarketEntities1")
+        public SupermarketEntities()
+            : base("name=SupermarketEntities")
         {
         }
     
@@ -236,7 +236,7 @@ namespace Supermarket.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual int UpdateCategory(Nullable<int> categoryID, string categoryName)
+        public virtual int UpdateCategory(Nullable<int> categoryID, string categoryName, Nullable<bool> isActive)
         {
             var categoryIDParameter = categoryID.HasValue ?
                 new ObjectParameter("CategoryID", categoryID) :
@@ -246,7 +246,11 @@ namespace Supermarket.Models
                 new ObjectParameter("CategoryName", categoryName) :
                 new ObjectParameter("CategoryName", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCategory", categoryIDParameter, categoryNameParameter);
+            var isActiveParameter = isActive.HasValue ?
+                new ObjectParameter("IsActive", isActive) :
+                new ObjectParameter("IsActive", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCategory", categoryIDParameter, categoryNameParameter, isActiveParameter);
         }
     
         public virtual int UpdateProducer(Nullable<int> producerID, string producerName, string country, Nullable<bool> isActive)

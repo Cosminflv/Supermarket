@@ -11,7 +11,7 @@ namespace Supermarket.Models.BusinessLogicLayer
             Users = GetAllUsers();
         }
 
-        private SupermarketEntities1 context = new SupermarketEntities1();
+        private SupermarketEntities context = new SupermarketEntities();
 
         public ObservableCollection<Utilizatori> Users {  get; set; }
 

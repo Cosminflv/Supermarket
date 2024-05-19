@@ -33,21 +33,6 @@ namespace Supermarket.ViewModels.AdministratorRelated
             set => usersBLL.Users = value;
         }
 
-        string inputText;
-
-        public string InputText
-        {
-            get
-            {
-                return inputText;
-            }
-            set
-            {
-                inputText = value;
-                OnPropertyChanged("InputText");
-            }
-        }
-
         ObservableCollection<string> usersNames;
         public ObservableCollection<string> UsersNames
         {

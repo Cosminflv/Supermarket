@@ -69,6 +69,7 @@
     <Compile Include="Models\BonuriCasa.cs">
       <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BusinessLogicLayer\CategoriesBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\UsersBLL.cs" />
     <Compile Include="Models\Categorii.cs">
       <DependentUpon>SupermarketEntity.tt</DependentUpon>
@@ -130,15 +131,22 @@
     <Compile Include="Models\ViewUsers_Result.cs">
       <DependentUpon>SupermarketEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AdministratorRelated\AddUsersVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Categories\AddCategoriesVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Categories\CategoriesCRUDVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Categories\DeleteCategoriesVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Categories\ModifyCategoriesVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Users\AddUsersVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\AdministratorMenuVM.cs" />
-    <Compile Include="ViewModels\AdministratorRelated\DeleteUsersVM.cs" />
-    <Compile Include="ViewModels\AdministratorRelated\ModifyUsersVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Users\DeleteUsersVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Users\ModifyUsersVM.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
     <Compile Include="ViewModels\CashierRelated\CashierMenuVM.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
-    <Compile Include="ViewModels\AdministratorRelated\UsersCRUDVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Users\UsersCRUDVM.cs" />
+    <Compile Include="Views\AddCategoriesView.xaml.cs">
+      <DependentUpon>AddCategoriesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddUsersView.xaml.cs">
       <DependentUpon>AddUsersView.xaml</DependentUpon>
     </Compile>
@@ -151,11 +159,17 @@
     <Compile Include="Views\CategoriesCRUDView.xaml.cs">
       <DependentUpon>CategoriesCRUDView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DeleteCategoriesView.xaml.cs">
+      <DependentUpon>DeleteCategoriesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DeleteUsersView.xaml.cs">
       <DependentUpon>DeleteUsersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModifyCategoriesView.xaml.cs">
+      <DependentUpon>ModifyCategoriesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ModifyUsersView.xaml.cs">
       <DependentUpon>ModifyUsersView.xaml</DependentUpon>
@@ -179,6 +193,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddCategoriesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddUsersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +213,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\DeleteCategoriesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DeleteUsersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -202,6 +224,10 @@
     <Page Include="Views\LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ModifyCategoriesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ModifyUsersView.xaml">
       <SubType>Designer</SubType>

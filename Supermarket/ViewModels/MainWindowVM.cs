@@ -2,6 +2,7 @@
 using Supermarket.Models;
 using Supermarket.Models.BusinessLogicLayer;
 using Supermarket.ViewModels.AdministratorRelated;
+using Supermarket.ViewModels.AdministratorRelated.Categories;
 
 namespace Supermarket.ViewModels
 {
@@ -10,6 +11,7 @@ namespace Supermarket.ViewModels
         private BaseVM selectedVM;
 
         UsersBLL usersBLL;
+        CategoriesBLL categoriesBLL;
 
         public BaseVM SelectedVM
         {
@@ -32,12 +34,21 @@ namespace Supermarket.ViewModels
 
         public DeleteUsersVM DeleteUsersViewmodel { get; set; } 
 
+        public CategoriesCRUDVM CategoriesCRUDViewModel { get; set; }
+
+        public AddCategoriesVM AddCategoriesViewModel { get; set; }
+
+        public ModifyCategoriesVM ModifyCategoriesViewModel { get; set; }  
+        
+        public DeleteCategoriesVM DeleteCategoriesViewModel {  get; set; }  
+
         #endregion
 
 
         public MainWindowVM()
         {
             usersBLL = new UsersBLL();
+            categoriesBLL = new CategoriesBLL();
             switchToLogin(usersBLL);
         }
 
@@ -48,7 +59,7 @@ namespace Supermarket.ViewModels
             {
                 if (user.TipUtilizator == "Administrator")
                 {
-                    switchToAdministratorMenu(user, usersBLL);
+                    switchToAdministratorMenu(user);
                 }
                 else
                 {
@@ -58,11 +69,12 @@ namespace Supermarket.ViewModels
             SelectedVM = LoginViewModel;
         }
 
-        public void switchToAdministratorMenu(Utilizatori user, UsersBLL usersBLL)
+        public void switchToAdministratorMenu(Utilizatori user)
         {
             AdministratorMenuViewModel = new AdministratorMenuVM(user);
             AdministratorMenuViewModel.OnSwitchToLogin = () => switchToLogin(usersBLL);
-            AdministratorMenuViewModel.OnSwitchToUsersCRUD = () => switchToUsersCRUDMenu(user, usersBLL);
+            AdministratorMenuViewModel.OnSwitchToUsersCRUD = () => switchToUsersCRUDMenu(user);
+            AdministratorMenuViewModel.OnSwitchToCategoriesCRUD = () => switchToCategoriesCRUDMenu(user);
             SelectedVM = AdministratorMenuViewModel;
         }
 
@@ -73,35 +85,72 @@ namespace Supermarket.ViewModels
             SelectedVM = CashierMenuViewModel;
         }
 
-        public void switchToUsersCRUDMenu(Utilizatori user, UsersBLL usersBLL)
+        #region UsersCRUD
+
+        public void switchToUsersCRUDMenu(Utilizatori user)
         {
             UsersCRUDViewModel = new UsersCRUDVM(user, usersBLL);
-            UsersCRUDViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user, usersBLL);
-            UsersCRUDViewModel.OnSwitchToAddUsersPage = () => switchToAddUsersPage(user, usersBLL);
-            UsersCRUDViewModel.OnSwitchToModifyUsersPage = () => switchToModifyUsersPage(user, usersBLL);
-            UsersCRUDViewModel.OnSwitchToDeleteUsersPage = () => switchToDeleteUsersPage(user, usersBLL);
+            UsersCRUDViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
+            UsersCRUDViewModel.OnSwitchToAddUsersPage = () => switchToAddUsersPage(user);
+            UsersCRUDViewModel.OnSwitchToModifyUsersPage = () => switchToModifyUsersPage(user);
+            UsersCRUDViewModel.OnSwitchToDeleteUsersPage = () => switchToDeleteUsersPage(user);
             SelectedVM = UsersCRUDViewModel;
         }
 
-        public void switchToAddUsersPage(Utilizatori user, UsersBLL usersBLL)
+        public void switchToAddUsersPage(Utilizatori user)
         {
             AddUsersViewModel = new AddUsersVM(user, usersBLL);
-            AddUsersViewModel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user, usersBLL);
+            AddUsersViewModel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user);
             SelectedVM = AddUsersViewModel;
         }
 
-        public void switchToModifyUsersPage(Utilizatori user, UsersBLL usersBLL)
+        public void switchToModifyUsersPage(Utilizatori user)
         {
             ModifyUsersViewModel = new ModifyUsersVM(user, usersBLL);
-            ModifyUsersViewModel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user, usersBLL);
+            ModifyUsersViewModel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user);
             SelectedVM = ModifyUsersViewModel;
         }
 
-        public void switchToDeleteUsersPage(Utilizatori user, UsersBLL usersBLL)
+        public void switchToDeleteUsersPage(Utilizatori user)
         {
             DeleteUsersViewmodel = new DeleteUsersVM(user, usersBLL);
-            DeleteUsersViewmodel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user, usersBLL);
+            DeleteUsersViewmodel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user);
             SelectedVM = DeleteUsersViewmodel;
         }
+        #endregion
+
+        #region CategoriesCRUD
+        public void switchToCategoriesCRUDMenu(Utilizatori user)
+        {
+            CategoriesCRUDViewModel = new CategoriesCRUDVM(user, categoriesBLL);
+            CategoriesCRUDViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
+            CategoriesCRUDViewModel.OnSwitchToAddCategoriesPage = () => switchToAddCategoriesPage(user);
+            CategoriesCRUDViewModel.OnSwitchToModifyCategoriesPage = () => switchToModifyCategoriesPage(user);
+            CategoriesCRUDViewModel.OnSwitchToDeleteCategoriesPage = () => switchToDeleteCategoriesPage(user);
+            SelectedVM = CategoriesCRUDViewModel;
+        }
+
+        public void switchToAddCategoriesPage(Utilizatori user)
+        {
+            AddCategoriesViewModel = new AddCategoriesVM(user, categoriesBLL);
+            AddCategoriesViewModel.OnSwitchToCategoriesCRUDMenu = () => switchToCategoriesCRUDMenu(user);
+            SelectedVM = AddCategoriesViewModel;
+        }
+
+        public void switchToModifyCategoriesPage(Utilizatori user)
+        {
+            ModifyCategoriesViewModel = new ModifyCategoriesVM(user, categoriesBLL);
+            ModifyCategoriesViewModel.OnSwitchToCategoriesCRUDMenu = () => switchToCategoriesCRUDMenu(user);
+            SelectedVM = ModifyCategoriesViewModel;
+        }
+
+        public void switchToDeleteCategoriesPage(Utilizatori user)
+        {
+            DeleteCategoriesViewModel = new DeleteCategoriesVM(user, categoriesBLL);
+            DeleteCategoriesViewModel.OnSwitchToCategoriesCRUDMenu = () => switchToCategoriesCRUDMenu(user);
+            SelectedVM = DeleteCategoriesViewModel;
+        }
+
+        #endregion
     }
 }

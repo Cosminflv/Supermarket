@@ -220,6 +220,7 @@
         <Function Name="UpdateCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CategoryID" Type="int" Mode="In" />
           <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsActive" Type="bit" Mode="In" />
         </Function>
         <Function Name="UpdateProducer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ProducerID" Type="int" Mode="In" />
@@ -459,7 +460,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SupermarketEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SupermarketEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BonuriCasas" EntityType="Self.BonuriCasa" />
           <EntitySet Name="Categoriis" EntityType="Self.Categorii" />
           <EntitySet Name="DetaliiBons" EntityType="Self.DetaliiBon" />
@@ -555,6 +556,7 @@
           <FunctionImport Name="UpdateCategory">
             <Parameter Name="CategoryID" Mode="In" Type="Int32" />
             <Parameter Name="CategoryName" Mode="In" Type="String" />
+            <Parameter Name="IsActive" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="UpdateProducer">
             <Parameter Name="ProducerID" Mode="In" Type="Int32" />
@@ -644,7 +646,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SupermarketModelStoreContainer" CdmEntityContainer="SupermarketEntities1">
+        <EntityContainerMapping StorageEntityContainer="SupermarketModelStoreContainer" CdmEntityContainer="SupermarketEntities">
           <EntitySetMapping Name="BonuriCasas">
             <EntityTypeMapping TypeName="SupermarketModel.BonuriCasa">
               <MappingFragment StoreEntitySet="BonuriCasa">

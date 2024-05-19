@@ -1,43 +1,43 @@
 ﻿using Supermarket.Commands;
-using Supermarket.Models;
 using Supermarket.Models.BusinessLogicLayer;
+using Supermarket.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
+using System.Windows;
 
-namespace Supermarket.ViewModels.AdministratorRelated
+namespace Supermarket.ViewModels.AdministratorRelated.Categories
 {
-    internal class DeleteUsersVM : BaseVM
+    internal class DeleteCategoriesVM : BaseVM
     {
         Utilizatori userOperating;
-        UsersBLL usersBLL;
+        CategoriesBLL categoriesBLL;
 
-        public DeleteUsersVM(Utilizatori user, UsersBLL usersBLLParam)
+        public DeleteCategoriesVM(Utilizatori user, CategoriesBLL categoriesBLLParam)
         {
             userOperating = user;
-            usersBLL = usersBLLParam;
-            SelectedUser = new Utilizatori();
+            categoriesBLL = categoriesBLLParam;
+            SelectedCategory = new Categorii();
         }
 
-        public ObservableCollection<Utilizatori> UsersList
+        public ObservableCollection<Categorii> CategoriesList
         {
-            get => usersBLL.UsersActive;
-            set => usersBLL.UsersActive = value;
+            get => categoriesBLL.CategoriesActive;
+            set => categoriesBLL.CategoriesActive = value;
         }
 
-        Utilizatori selectedUser;
-        public Utilizatori SelectedUser
+        Categorii selectedCategory;
+        public Categorii SelectedCategory
         {
-            get { return selectedUser; }
+            get { return selectedCategory; }
             set
             {
-                selectedUser = value;
-                OnPropertyChanged("SelectedUser");
+                selectedCategory = value;
+                OnPropertyChanged("SelectedCategory");
             }
         }
 
@@ -68,32 +68,33 @@ namespace Supermarket.ViewModels.AdministratorRelated
 
         }
 
-        private ICommand deleteUserCommand;
+        private ICommand deleteCategoryCommand;
 
-        public ICommand DeleteUserCommand
+        public ICommand DeleteCategoryCommand
         {
             get
             {
-                if (deleteUserCommand == null)
+                if (deleteCategoryCommand == null)
                 {
-                    deleteUserCommand = new RelayCommand<object>(DeleteUser);
+                    deleteCategoryCommand = new RelayCommand<object>(DeleteUser);
                 }
 
-                return deleteUserCommand;
+                return deleteCategoryCommand;
             }
         }
 
         private void DeleteUser(object obj)
         {
-            if(SelectedUser.NumeUtilizator == null)
+            if (SelectedCategory.NumeCategorie == null)
             {
-                InfoMessage = "Select an user!";
+                InfoMessage = "Select an category!";
                 InfoVisibility = Visibility.Visible;
+                return;
             }
 
-            usersBLL.DeleteUser(SelectedUser);
+            categoriesBLL.DeleteCategory(SelectedCategory);
 
-            SelectedUser = new Utilizatori();
+            SelectedCategory = new Categorii();
 
             InfoMessage = "User Deleted!";
             InfoVisibility = Visibility.Visible;
@@ -115,25 +116,25 @@ namespace Supermarket.ViewModels.AdministratorRelated
 
         // COMMANDS
 
-        private ICommand switchToUsersCRUDMenuCommand;
+        private ICommand switchToCategoriesCRUDMenuCommand;
 
-        public ICommand SwitchToUsersCRUDMenuCommand
+        public ICommand SwitchToCategoriesCRUDMenuCommand
         {
             get
             {
-                if (switchToUsersCRUDMenuCommand == null)
+                if (switchToCategoriesCRUDMenuCommand == null)
                 {
-                    switchToUsersCRUDMenuCommand = new RelayPagesCommand(o => true, o => { OnSwitchToUsersCRUDMenu(); });
+                    switchToCategoriesCRUDMenuCommand = new RelayPagesCommand(o => true, o => { OnSwitchToCategoriesCRUDMenu(); });
                 }
 
-                return switchToUsersCRUDMenuCommand;
+                return switchToCategoriesCRUDMenuCommand;
             }
         }
 
         // DELEGATES
 
-        public delegate void SwitchToUsersCRUDMenu();
-        public SwitchToUsersCRUDMenu OnSwitchToUsersCRUDMenu { get; set; }
+        public delegate void SwitchToCategoriesCRUDMenu();
+        public SwitchToCategoriesCRUDMenu OnSwitchToCategoriesCRUDMenu { get; set; }
 
         #endregion
     }
