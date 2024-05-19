@@ -56,6 +56,7 @@
             Margin="0,126,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
+            Command="{Binding SwitchToAddProducerPageCommand}"
             Content="Add Producers" />
         <Button
             Width="205"
@@ -63,6 +64,7 @@
             Margin="0,186,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
+            Command="{Binding SwitchToModifyProducersPageCommand}"
             Content="Modify Producers" />
         <Button
             Width="205"
@@ -70,14 +72,8 @@
             Margin="0,247,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
+            Command="{Binding SwitchToDeleteProducersPageCommand}"
             Content="Delete Producers" />
-        <Button
-            Width="204"
-            Height="47"
-            Margin="0,309,0,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Content="View Producers" />
 
     </Grid>
 </UserControl>

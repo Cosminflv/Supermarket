@@ -10,34 +10,35 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
 
-namespace Supermarket.ViewModels.AdministratorRelated.Categories
+namespace Supermarket.ViewModels.AdministratorRelated.Producers
 {
-    internal class DeleteCategoriesVM : BaseVM
+    internal class DeleteProducersVM : BaseVM
     {
-        Utilizatori userOperating;
-        CategoriesBLL categoriesBLL;
 
-        public DeleteCategoriesVM(Utilizatori user, CategoriesBLL categoriesBLLParam)
+        Utilizatori userOperating;
+        ProducersBLL producersBLL;
+
+        public DeleteProducersVM(Utilizatori user, ProducersBLL producersBLLParam)
         {
             userOperating = user;
-            categoriesBLL = categoriesBLLParam;
-            SelectedCategory = new Categorii();
+            producersBLL = producersBLLParam;
+
         }
 
-        public ObservableCollection<Categorii> CategoriesList
+        public ObservableCollection<Producatori> ProducersList
         {
-            get => categoriesBLL.CategoriesActive;
-            set => categoriesBLL.CategoriesActive = value;
+            get => producersBLL.ProducersActive;
+            set => producersBLL.ProducersActive = value;
         }
 
-        Categorii selectedCategory;
-        public Categorii SelectedCategory
+        Producatori selectedProducer;
+        public Producatori SelectedProducer
         {
-            get { return selectedCategory; }
+            get { return selectedProducer; }
             set
             {
-                selectedCategory = value;
-                OnPropertyChanged("SelectedCategory");
+                selectedProducer = value;
+                OnPropertyChanged("SelectedProducer");
             }
         }
 
@@ -68,35 +69,35 @@ namespace Supermarket.ViewModels.AdministratorRelated.Categories
 
         }
 
-        private ICommand deleteCategoryCommand;
+        private ICommand deleteProducerCommand;
 
-        public ICommand DeleteCategoryCommand
+        public ICommand DeleteProducerCommand
         {
             get
             {
-                if (deleteCategoryCommand == null)
+                if (deleteProducerCommand == null)
                 {
-                    deleteCategoryCommand = new RelayCommand<object>(DeleteUser);
+                    deleteProducerCommand = new RelayCommand<object>(DeleteProducer);
                 }
 
-                return deleteCategoryCommand;
+                return deleteProducerCommand;
             }
         }
 
-        private void DeleteUser(object obj)
+        private void DeleteProducer(object obj)
         {
-            if (SelectedCategory.NumeCategorie == null || SelectedCategory.NumeCategorie == "")
+            if (SelectedProducer.NumeProducator == null || SelectedProducer.NumeProducator == "")
             {
-                InfoMessage = "Select an category!";
+                InfoMessage = "Select a producer!";
                 InfoVisibility = Visibility.Visible;
                 return;
             }
 
-            categoriesBLL.DeleteCategory(SelectedCategory);
+            producersBLL.DeleteProducer(SelectedProducer);
 
-            SelectedCategory = new Categorii();
+            SelectedProducer = new Producatori();
 
-            InfoMessage = "User Deleted!";
+            InfoMessage = "Producer Deleted!";
             InfoVisibility = Visibility.Visible;
 
             // Set up a timer to hide the error message after 5 seconds
@@ -106,7 +107,6 @@ namespace Supermarket.ViewModels.AdministratorRelated.Categories
             timer.Elapsed += (sender, e) =>
             {
                 InfoVisibility = Visibility.Hidden;
-                InfoMessage = "User Deleted!";
                 timer.Dispose(); // Dispose the timer to release resources
             };
             timer.Start();
@@ -116,25 +116,25 @@ namespace Supermarket.ViewModels.AdministratorRelated.Categories
 
         // COMMANDS
 
-        private ICommand switchToCategoriesCRUDMenuCommand;
+        private ICommand switchToProducersCRUDMenuCommand;
 
-        public ICommand SwitchToCategoriesCRUDMenuCommand
+        public ICommand SwitchToProducersCRUDMenuCommand
         {
             get
             {
-                if (switchToCategoriesCRUDMenuCommand == null)
+                if (switchToProducersCRUDMenuCommand == null)
                 {
-                    switchToCategoriesCRUDMenuCommand = new RelayPagesCommand(o => true, o => { OnSwitchToCategoriesCRUDMenu(); });
+                    switchToProducersCRUDMenuCommand = new RelayPagesCommand(o => true, o => { OnSwitchToProducersCRUDMenu(); });
                 }
 
-                return switchToCategoriesCRUDMenuCommand;
+                return switchToProducersCRUDMenuCommand;
             }
         }
 
         // DELEGATES
 
-        public delegate void SwitchToCategoriesCRUDMenu();
-        public SwitchToCategoriesCRUDMenu OnSwitchToCategoriesCRUDMenu { get; set; }
+        public delegate void SwitchToProducersCRUDMenu();
+        public SwitchToProducersCRUDMenu OnSwitchToProducersCRUDMenu { get; set; }
 
         #endregion
     }

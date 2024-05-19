@@ -1,0 +1,153 @@
+﻿<UserControl
+    x:Class="Supermarket.Views.ModifyProducersView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+    xmlns:converters="clr-namespace:Supermarket.Converters"
+    xmlns:custom="clr-namespace:Supermarket.Custom"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Supermarket.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+
+        <converters:MultiParameterConverter x:Key="MultiParameterConverter" />
+
+        <Color x:Key="CustomGrayColor">#dadee6</Color>
+
+        <SolidColorBrush x:Key="CustomGrayBrush" Color="{StaticResource CustomGrayColor}" />
+
+        <Style x:Key="CustomLabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="0,25,0,160" />
+        </Style>
+        <Style x:Key="CustomTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Background" Value="{StaticResource CustomGrayBrush}" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Button
+            Width="36"
+            Height="27"
+            Margin="10,11,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="{StaticResource CustomGrayBrush}"
+            Command="{Binding SwitchToProducersCRUDMenuCommand}">
+            <Image
+                Width="30"
+                Source="D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\images\back_icon.png"
+                Stretch="Fill" />
+        </Button>
+
+        <Label Content="Modify Producers" Style="{StaticResource CustomLabelStyle}" />
+
+        <TextBlock
+            Width="152"
+            Height="32"
+            Margin="122,139,0,0"
+            FontSize="18"
+            Style="{StaticResource CustomTextStyle}"
+            Text="Select Producer"
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+
+        <controls:AutoCompleteBox
+            x:Name="SearchTextBox"
+            Margin="10,198,417,178"
+            FontSize="15"
+            ItemsSource="{Binding ProducersNames}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="KeyDown">
+                    <custom:KeyDownInvokeCommandAction Command="{Binding KeyDownCommand}" CommandParameter="{Binding Text, ElementName=SearchTextBox}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </controls:AutoCompleteBox>
+
+        <TextBlock
+            Width="126"
+            Height="32"
+            Margin="396,155,0,0"
+            FontSize="18"
+            Style="{StaticResource CustomTextStyle}"
+            Text="Name"
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+
+        <TextBlock
+            Width="126"
+            Height="32"
+            Margin="396,203,0,0"
+            FontSize="18"
+            Style="{StaticResource CustomTextStyle}"
+            Text="Country"
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+
+        <TextBox
+            Width="180"
+            Height="32"
+            Margin="554,155,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding SelectedProducer.NumeProducator}"
+            TextWrapping="Wrap" />
+
+        <TextBox
+            Width="180"
+            Height="32"
+            Margin="554,203,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding SelectedProducer.TaraOrigine}"
+            TextWrapping="Wrap" />
+
+        <CheckBox
+            Width="150"
+            Height="50"
+            Margin="554,256,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Is active"
+            FontSize="14"
+            Foreground="Black"
+            IsChecked="{Binding SelectedProducer.IsActive}">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+        <Button
+            Width="171"
+            Height="47"
+            Margin="468,331,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding ModifyProducerCommand}"
+            Content="Modify Producer"
+            FontSize="20" />
+        <TextBlock
+            Width="256"
+            Height="35"
+            Margin="70,343,0,0"
+            Foreground="Red"
+            Style="{StaticResource CustomTextStyle}"
+            Text="{Binding InfoMessage}"
+            TextAlignment="Center"
+            TextWrapping="Wrap"
+            Visibility="{Binding InfoVisibility}" />
+    </Grid>
+</UserControl>

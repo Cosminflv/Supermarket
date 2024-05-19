@@ -12,13 +12,8 @@ namespace Supermarket.ViewModels.AdministratorRelated.Categories
 {
     internal class CategoriesCRUDVM : BaseVM
     {
-        Utilizatori user;
-        CategoriesBLL usersBLL;
-
-        public CategoriesCRUDVM(Utilizatori userOperating, CategoriesBLL usersBLLParam)
+        public CategoriesCRUDVM()
         {
-            this.user = userOperating;
-            this.usersBLL = usersBLLParam;
         }
 
         #region Navigation

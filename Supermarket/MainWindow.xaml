@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Supermarket"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:producersVM="clr-namespace:Supermarket.ViewModels.AdministratorRelated.Producers"
     xmlns:viewmodels="clr-namespace:Supermarket.ViewModels"
     xmlns:views="clr-namespace:Supermarket.Views"
     Title="MainWindow"
@@ -59,8 +60,21 @@
             <views:DeleteCategoriesView />
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type producersVM:ProducersCRUDVM}">
+            <views:ProducersCRUDView />
+        </DataTemplate>
 
+        <DataTemplate DataType="{x:Type producersVM:AddProducersVM}">
+            <views:AddProducersView />
+        </DataTemplate>
 
+        <DataTemplate DataType="{x:Type producersVM:ModifyProducersVM}">
+            <views:ModifyProducersView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type producersVM:DeleteProducersVM}">
+            <views:DeleteProducersView />
+        </DataTemplate>
 
     </Window.Resources>
 

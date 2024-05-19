@@ -76,3 +76,9 @@ D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\ModifyCategoriesView.baml
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\DeleteCategoriesView.g.cs
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\DeleteCategoriesView.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\AddProducersView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\AddProducersView.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\ModifyProducersView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\ModifyProducersView.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\DeleteProducersView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\DeleteProducersView.baml

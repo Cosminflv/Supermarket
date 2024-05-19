@@ -161,8 +161,5 @@ namespace Supermarket.Models.BusinessLogicLayer
             }
             return true;
         }
-
-
-
     }
 }

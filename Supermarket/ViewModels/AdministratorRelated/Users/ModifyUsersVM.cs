@@ -53,7 +53,6 @@ namespace Supermarket.ViewModels.AdministratorRelated
             usersBLL = userBLLParam;
             UsersNames = new ObservableCollection<string>(UsersList.Select(userParsed => userParsed.NumeUtilizator).ToList());
             UserTypes = new ObservableCollection<string> { "Administrator", "Cashier" };
-            SelectedUser = new Utilizatori();
         }
 
         private ICommand keyDownCommand;
@@ -132,7 +131,22 @@ namespace Supermarket.ViewModels.AdministratorRelated
                 return;
             }
 
+            if (SelectedUser == null)
+            {
+                InfoMessage = "Select an user";
+                InfoVisibility = Visibility.Visible;
+                return;
+
+            }
+
             usersBLL.UpdateUser(SelectedUser);
+
+            if (usersBLL.ErrorMessage != "" && usersBLL.ErrorMessage != null)
+            {
+                InfoMessage = usersBLL.ErrorMessage;
+                InfoVisibility = Visibility.Visible;
+                return;
+            }
 
             UpdateLocalData();
             InfoMessage = "User Modified!";
@@ -154,7 +168,7 @@ namespace Supermarket.ViewModels.AdministratorRelated
         private void UpdateLocalData()
         {
             UsersNames = new ObservableCollection<string>(UsersList.Select(userParsed => userParsed.NumeUtilizator).ToList());
-            SelectedUser = new Utilizatori();
+            SelectedUser = null;
         }
 
         private bool ValidateFields()

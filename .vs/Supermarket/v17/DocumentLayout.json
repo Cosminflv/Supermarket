@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\views\\deleteproducersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\deleteproducersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\administratorrelated\\producers\\deleteproducersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\producers\\deleteproducersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\mainwindowvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\mainwindowvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\models\\businesslogiclayer\\categoriesbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\models\\businesslogiclayer\\categoriesbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\administratorrelated\\categories\\deletecategoriesvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\categories\\deletecategoriesvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\viewmodels\\administratorrelated\\categories\\modifycategoriesvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\categories\\modifycategoriesvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\administratorrelated\\users\\deleteusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\users\\deleteusersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\administratorrelated\\producers\\modifyproducersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\producers\\modifyproducersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\views\\modifyproducersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\views\\modifyproducersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,79 +50,77 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindowVM.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\MainWindowVM.cs",
-              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\MainWindowVM.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\MainWindowVM.cs",
-              "RelativeToolTip": "Supermarket\\ViewModels\\MainWindowVM.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAADwv4AAAABuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T07:04:31.332Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Supermarket\\MainWindow.xaml",
               "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\MainWindow.xaml",
               "RelativeToolTip": "Supermarket\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-19T07:03:39.471Z",
+              "WhenOpened": "2024-05-19T13:52:16.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeleteProducersView.xaml",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\DeleteProducersView.xaml",
+              "RelativeDocumentMoniker": "Supermarket\\Views\\DeleteProducersView.xaml",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\DeleteProducersView.xaml",
+              "RelativeToolTip": "Supermarket\\Views\\DeleteProducersView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-19T13:46:00.529Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CategoriesBLL.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\BusinessLogicLayer\\CategoriesBLL.cs",
-              "RelativeDocumentMoniker": "Supermarket\\Models\\BusinessLogicLayer\\CategoriesBLL.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\BusinessLogicLayer\\CategoriesBLL.cs",
-              "RelativeToolTip": "Supermarket\\Models\\BusinessLogicLayer\\CategoriesBLL.cs",
-              "ViewState": "AQIAAGIAAAAAAAAAAAAUwFkAAAAQAAAA",
+              "Title": "DeleteProducersVM.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Producers\\DeleteProducersVM.cs",
+              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorRelated\\Producers\\DeleteProducersVM.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Producers\\DeleteProducersVM.cs",
+              "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorRelated\\Producers\\DeleteProducersVM.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAIwEkAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T07:00:59.45Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ModifyCategoriesVM.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Categories\\ModifyCategoriesVM.cs",
-              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorRelated\\Categories\\ModifyCategoriesVM.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Categories\\ModifyCategoriesVM.cs",
-              "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorRelated\\Categories\\ModifyCategoriesVM.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAqwGoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T05:19:55.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DeleteUsersVM.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Users\\DeleteUsersVM.cs",
-              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorRelated\\Users\\DeleteUsersVM.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Users\\DeleteUsersVM.cs",
-              "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorRelated\\Users\\DeleteUsersVM.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAuwGUAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T06:56:42.463Z",
+              "WhenOpened": "2024-05-19T13:40:18.943Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DeleteCategoriesVM.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Categories\\DeleteCategoriesVM.cs",
-              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorRelated\\Categories\\DeleteCategoriesVM.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Categories\\DeleteCategoriesVM.cs",
-              "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorRelated\\Categories\\DeleteCategoriesVM.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA1wBwAAAATAAAA",
+              "Title": "MainWindowVM.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\MainWindowVM.cs",
+              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\MainWindowVM.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\MainWindowVM.cs",
+              "RelativeToolTip": "Supermarket\\ViewModels\\MainWindowVM.cs",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAIwLQAAABrAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T06:53:23.977Z",
+              "WhenOpened": "2024-05-19T13:08:39.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ModifyProducersView.xaml",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\ModifyProducersView.xaml",
+              "RelativeDocumentMoniker": "Supermarket\\Views\\ModifyProducersView.xaml",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\ModifyProducersView.xaml",
+              "RelativeToolTip": "Supermarket\\Views\\ModifyProducersView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-19T13:04:43.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ModifyProducersVM.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Producers\\ModifyProducersVM.cs",
+              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorRelated\\Producers\\ModifyProducersVM.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Producers\\ModifyProducersVM.cs",
+              "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorRelated\\Producers\\ModifyProducersVM.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAowGQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-19T12:53:50.706Z",
               "EditorCaption": ""
             }
           ]

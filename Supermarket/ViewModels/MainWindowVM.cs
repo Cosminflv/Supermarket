@@ -3,6 +3,8 @@ using Supermarket.Models;
 using Supermarket.Models.BusinessLogicLayer;
 using Supermarket.ViewModels.AdministratorRelated;
 using Supermarket.ViewModels.AdministratorRelated.Categories;
+using Supermarket.ViewModels.AdministratorRelated.Producers;
+using Supermarket.ViewModels.AdministratorRelated.Products;
 
 namespace Supermarket.ViewModels
 {
@@ -12,6 +14,7 @@ namespace Supermarket.ViewModels
 
         UsersBLL usersBLL;
         CategoriesBLL categoriesBLL;
+        ProducersBLL producersBLL;
 
         public BaseVM SelectedVM
         {
@@ -42,6 +45,18 @@ namespace Supermarket.ViewModels
         
         public DeleteCategoriesVM DeleteCategoriesViewModel {  get; set; }  
 
+        public ProducersCRUDVM ProducersCRUDViewModel { get; set; }
+
+        public AddProducersVM AddProducersViewModel { get; set; }
+
+        public ModifyProducersVM ModifyProducersViewModel { get; set; }
+
+        public DeleteProducersVM DeleteProducersViewModel { get; set; }
+
+        public ProductsCRUDVM ProductsCRUDViewModel { get; set; }   
+
+
+
         #endregion
 
 
@@ -49,6 +64,7 @@ namespace Supermarket.ViewModels
         {
             usersBLL = new UsersBLL();
             categoriesBLL = new CategoriesBLL();
+            producersBLL = new ProducersBLL();
             switchToLogin(usersBLL);
         }
 
@@ -75,6 +91,7 @@ namespace Supermarket.ViewModels
             AdministratorMenuViewModel.OnSwitchToLogin = () => switchToLogin(usersBLL);
             AdministratorMenuViewModel.OnSwitchToUsersCRUD = () => switchToUsersCRUDMenu(user);
             AdministratorMenuViewModel.OnSwitchToCategoriesCRUD = () => switchToCategoriesCRUDMenu(user);
+            AdministratorMenuViewModel.OnSwitchProducersCRUDViewModel = () => switchToProducersCRUDMenu(user);
             SelectedVM = AdministratorMenuViewModel;
         }
 
@@ -122,7 +139,7 @@ namespace Supermarket.ViewModels
         #region CategoriesCRUD
         public void switchToCategoriesCRUDMenu(Utilizatori user)
         {
-            CategoriesCRUDViewModel = new CategoriesCRUDVM(user, categoriesBLL);
+            CategoriesCRUDViewModel = new CategoriesCRUDVM();
             CategoriesCRUDViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
             CategoriesCRUDViewModel.OnSwitchToAddCategoriesPage = () => switchToAddCategoriesPage(user);
             CategoriesCRUDViewModel.OnSwitchToModifyCategoriesPage = () => switchToModifyCategoriesPage(user);
@@ -149,6 +166,52 @@ namespace Supermarket.ViewModels
             DeleteCategoriesViewModel = new DeleteCategoriesVM(user, categoriesBLL);
             DeleteCategoriesViewModel.OnSwitchToCategoriesCRUDMenu = () => switchToCategoriesCRUDMenu(user);
             SelectedVM = DeleteCategoriesViewModel;
+        }
+
+        #endregion
+
+        #region ProducersCRUD
+
+        public void switchToProducersCRUDMenu(Utilizatori user)
+        {
+            ProducersCRUDViewModel = new ProducersCRUDVM(user);
+            ProducersCRUDViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
+            ProducersCRUDViewModel.OnSwitchToAddProducersPage = () => switchToAddProducersPage(user);
+            ProducersCRUDViewModel.OnSwitchToModifyProducersPage = () => switchToModifyProducersPage(user);
+            ProducersCRUDViewModel.OnSwitchToDeleteProducersPage = () => switchToDeleteProducersPage(user);
+            SelectedVM = ProducersCRUDViewModel;
+        }
+
+        public void switchToAddProducersPage(Utilizatori user)
+        {
+            AddProducersViewModel = new AddProducersVM(user, producersBLL);
+            AddProducersViewModel.OnSwitchToProducersCRUDMenu = () => switchToProducersCRUDMenu(user);
+            SelectedVM = AddProducersViewModel;
+        }
+
+        public void switchToModifyProducersPage(Utilizatori user)
+        {
+            ModifyProducersViewModel = new ModifyProducersVM(user, producersBLL);
+            ModifyProducersViewModel.OnSwitchToProducersCRUDMenu = () => switchToProducersCRUDMenu(user);
+            SelectedVM = ModifyProducersViewModel;
+        }
+
+        public void switchToDeleteProducersPage(Utilizatori user)
+        {
+            DeleteProducersViewModel = new DeleteProducersVM(user, producersBLL);
+            DeleteProducersViewModel.OnSwitchToProducersCRUDMenu = () => switchToProducersCRUDMenu(user);
+            SelectedVM = DeleteProducersViewModel;
+        }
+
+        #endregion
+
+        #region ProductsCRUD
+
+        public void switchToProductsCRUDMenu(Utilizatori user)
+        {
+            ProductsCRUDViewModel = new ProductsCRUDVM(user);
+            ProductsCRUDViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
+            SelectedVM = ProductsCRUDViewModel;
         }
 
         #endregion

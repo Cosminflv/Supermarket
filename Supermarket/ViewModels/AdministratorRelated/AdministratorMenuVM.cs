@@ -69,6 +69,20 @@ namespace Supermarket.ViewModels
             }
         }
 
+        private ICommand switchToProducersCRUDCommand;
+        public ICommand SwitchToProducersCRUDCommand
+        {
+            get
+            {
+                if (switchToProducersCRUDCommand == null)
+                {
+                    switchToProducersCRUDCommand = new RelayPagesCommand(o => true, o => { OnSwitchProducersCRUDViewModel(); });
+                }
+
+                return switchToProducersCRUDCommand;
+            }
+        }
+
         // DELEGATES
 
         public delegate void SwitchToLogin();
@@ -80,6 +94,10 @@ namespace Supermarket.ViewModels
         public delegate void SwitchToCategoriesCRUD();
 
         public SwitchToCategoriesCRUD OnSwitchToCategoriesCRUD { get; set; }
+
+        public delegate void SwitchToProducersCRUD();
+
+        public SwitchToProducersCRUD OnSwitchProducersCRUDViewModel { get; set; }
     }
     #endregion
 }

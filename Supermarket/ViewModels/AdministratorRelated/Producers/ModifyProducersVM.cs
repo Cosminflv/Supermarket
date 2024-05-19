@@ -1,49 +1,44 @@
 ﻿using Supermarket.Commands;
-using System;
-using System.Collections.Generic;
+using Supermarket.Models.BusinessLogicLayer;
+using Supermarket.Models;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
-using System.Collections.ObjectModel;
-using Supermarket.Models;
-using Supermarket.Models.BusinessLogicLayer;
 
-namespace Supermarket.ViewModels.AdministratorRelated.Categories
+namespace Supermarket.ViewModels.AdministratorRelated.Producers
 {
-    internal class ModifyCategoriesVM : BaseVM
+    internal class ModifyProducersVM : BaseVM
     {
-
-        public ModifyCategoriesVM(Utilizatori userOperating, CategoriesBLL categoriesBLLParam)
+        public ModifyProducersVM(Utilizatori userOperating, ProducersBLL producersBLLParam)
         {
             userOperating = user;
-            categoriesBLL = categoriesBLLParam;
-            CategoriesNames = new ObservableCollection<string>(CategoriesList.Select(categoryParsed => categoryParsed.NumeCategorie).ToList());
+            producersBLL = producersBLLParam;
+            ProducersNames = new ObservableCollection<string>(ProducersList.Select(producerParsed => producerParsed.NumeProducator).ToList());
         }
 
-        public ObservableCollection<Categorii> CategoriesList
+        public ObservableCollection<Producatori> ProducersList
         {
-            get => categoriesBLL.Categories;
-            set => categoriesBLL.Categories = value;
+            get => producersBLL.Producers;
+            set => producersBLL.Producers = value;
         }
 
-        public ObservableCollection<string> CategoriesNames { get; set; }
+        public ObservableCollection<string> ProducersNames { get; set; }
 
-        Categorii selectedCategory;
+        Producatori selectedProducer;
 
-        public Categorii SelectedCategory
+        public Producatori SelectedProducer
         {
-            get => selectedCategory;
+            get => selectedProducer;
             set
             {
-                selectedCategory = value;
-                OnPropertyChanged("SelectedCategory");
+                selectedProducer = value;
+                OnPropertyChanged("SelectedProducer");
             }
         }
-        
+
         Utilizatori user;
-        CategoriesBLL categoriesBLL;
+        ProducersBLL producersBLL;
 
         private string infoMessage;
         public string InfoMessage
@@ -86,42 +81,42 @@ namespace Supermarket.ViewModels.AdministratorRelated.Categories
             }
         }
 
-        private ICommand modifyCategoryCommand;
+        private ICommand modifyProducerCommand;
 
-        public ICommand ModifyCategoryCommand
+        public ICommand ModifyProducerCommand
         {
             get
             {
-                if (modifyCategoryCommand == null)
+                if (modifyProducerCommand == null)
                 {
-                    modifyCategoryCommand = new RelayCommand<object>(ModifyCategory);
+                    modifyProducerCommand = new RelayCommand<object>(ModifyProducer);
                 }
 
-                return modifyCategoryCommand;
+                return modifyProducerCommand;
             }
         }
 
-        private void ModifyCategory(object obj)
+        private void ModifyProducer(object obj)
         {
-            if (SelectedCategory == null)
+            if(SelectedProducer == null)
             {
-                InfoMessage = "Select a category";
+                InfoMessage = "Select a producer";
                 InfoVisibility = Visibility.Visible;
                 return;
 
             }
 
-            categoriesBLL.UpdateCategory(SelectedCategory);
+            producersBLL.UpdateProducer(SelectedProducer);
 
-            if (categoriesBLL.ErrorMessage != "" && categoriesBLL.ErrorMessage != null)
+            if (producersBLL.ErrorMessage != "" && producersBLL.ErrorMessage != null)
             {
-                InfoMessage = categoriesBLL.ErrorMessage;
+                InfoMessage = producersBLL.ErrorMessage;
                 InfoVisibility = Visibility.Visible;
                 return;
             }
 
             UpdateLocalData();
-            InfoMessage = "User Modified!";
+            InfoMessage = "Producer Modified!";
             InfoVisibility = Visibility.Visible;
 
             // Set up a timer to hide the error message after 5 seconds
@@ -143,7 +138,7 @@ namespace Supermarket.ViewModels.AdministratorRelated.Categories
             {
                 if (e.Key == Key.Enter)
                 {
-                    SelectedCategory = CategoriesList.FirstOrDefault(categoryParsed => categoryParsed.NumeCategorie == text);
+                    SelectedProducer = ProducersList.FirstOrDefault(producerParsed => producerParsed.NumeProducator == text);
                 }
             }
 
@@ -151,34 +146,35 @@ namespace Supermarket.ViewModels.AdministratorRelated.Categories
 
         private void UpdateLocalData()
         {
-            CategoriesNames = new ObservableCollection<string>(CategoriesList.Select(categoryParsed => categoryParsed.NumeCategorie).ToList());
-            SelectedCategory = null;
+            ProducersNames = new ObservableCollection<string>(ProducersList.Select(categoryParsed => categoryParsed.NumeProducator).ToList());
+            SelectedProducer = null;
         }
 
         #region Navigation
 
         // COMMANDS
 
-        private ICommand switchToCategoriesCRUDMenuCommand;
+        private ICommand switchToProducersCRUDMenuCommand;
 
-        public ICommand SwitchToCategoriesCRUDMenuCommand
+        public ICommand SwitchToProducersCRUDMenuCommand
         {
             get
             {
-                if (switchToCategoriesCRUDMenuCommand == null)
+                if (switchToProducersCRUDMenuCommand == null)
                 {
-                    switchToCategoriesCRUDMenuCommand = new RelayPagesCommand(o => true, o => { OnSwitchToCategoriesCRUDMenu(); });
+                    switchToProducersCRUDMenuCommand = new RelayPagesCommand(o => true, o => { OnSwitchToProducersCRUDMenu(); });
                 }
 
-                return switchToCategoriesCRUDMenuCommand;
+                return switchToProducersCRUDMenuCommand;
             }
         }
 
         // DELEGATES
 
-        public delegate void SwitchToCategoriesCRUDMenu();
-        public SwitchToCategoriesCRUDMenu OnSwitchToCategoriesCRUDMenu { get; set; }
+        public delegate void SwitchToProducersCRUDMenu();
+        public SwitchToProducersCRUDMenu OnSwitchToProducersCRUDMenu { get; set; }
 
         #endregion
+
     }
 }
