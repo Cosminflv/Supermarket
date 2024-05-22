@@ -76,10 +76,24 @@ namespace Supermarket.ViewModels
             {
                 if (switchToProducersCRUDCommand == null)
                 {
-                    switchToProducersCRUDCommand = new RelayPagesCommand(o => true, o => { OnSwitchProducersCRUDViewModel(); });
+                    switchToProducersCRUDCommand = new RelayPagesCommand(o => true, o => { OnSwitchProducersCRUD(); });
                 }
 
                 return switchToProducersCRUDCommand;
+            }
+        }
+
+        private ICommand switchToProductsCRUDCommand;
+        public ICommand SwitchToProductsCRUDCommand
+        {
+            get
+            {
+                if (switchToProductsCRUDCommand == null)
+                {
+                    switchToProductsCRUDCommand = new RelayPagesCommand(o => true, o => { OnSwitchToProductsCRUD(); });
+                }
+
+                return switchToProductsCRUDCommand;
             }
         }
 
@@ -97,7 +111,11 @@ namespace Supermarket.ViewModels
 
         public delegate void SwitchToProducersCRUD();
 
-        public SwitchToProducersCRUD OnSwitchProducersCRUDViewModel { get; set; }
+        public SwitchToProducersCRUD OnSwitchProducersCRUD { get; set; }
+
+        public delegate void SwitchToProductsCRUD ();
+
+        public SwitchToProducersCRUD OnSwitchToProductsCRUD { get; set; }
     }
     #endregion
 }

@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="Supermarket.Views.ProducersCRUDView"
+    x:Class="Supermarket.Views.ProductsCRUDView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -49,15 +49,15 @@
                 Stretch="Fill" />
         </Button>
 
-        <Label Content="Producers CRUD" Style="{StaticResource CustomLabelStyle}" />
+        <Label Content="Products CRUD" Style="{StaticResource CustomLabelStyle}" />
         <Button
             Width="205"
             Height="47"
             Margin="0,126,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Command="{Binding SwitchToAddProducersPageCommand}"
-            Content="Add Producers" />
+            Command="{Binding SwitchToAddProductsPageCommand}"
+            Content="Add Products" />
         <Button
             Width="205"
             Height="47"
@@ -65,7 +65,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Command="{Binding SwitchToModifyProducersPageCommand}"
-            Content="Modify Producers" />
+            Content="Modify Products" />
         <Button
             Width="205"
             Height="47"
@@ -73,7 +73,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Command="{Binding SwitchToDeleteProducersPageCommand}"
-            Content="Delete Producers" />
+            Content="Delete Products" />
 
     </Grid>
 </UserControl>

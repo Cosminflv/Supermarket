@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="Models\BusinessLogicLayer\CategoriesBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ProducersBLL.cs" />
+    <Compile Include="Models\BusinessLogicLayer\ProductsBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\UsersBLL.cs" />
     <Compile Include="Models\Categorii.cs">
       <DependentUpon>SupermarketEntity.tt</DependentUpon>
@@ -140,6 +141,8 @@
     <Compile Include="ViewModels\AdministratorRelated\Producers\DeleteProducersVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Producers\ModifyProducersVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Producers\ProducersCRUDVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Products\AddProductsVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Products\ModifyProductsVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Products\ProductsCRUDVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Users\AddUsersVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\AdministratorMenuVM.cs" />
@@ -155,6 +158,9 @@
     </Compile>
     <Compile Include="Views\AddProducersView.xaml.cs">
       <DependentUpon>AddProducersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddProductsView.xaml.cs">
+      <DependentUpon>AddProductsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddUsersView.xaml.cs">
       <DependentUpon>AddUsersView.xaml</DependentUpon>
@@ -186,12 +192,18 @@
     <Compile Include="Views\ModifyProducersView.xaml.cs">
       <DependentUpon>ModifyProducersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ModifyProductsView.xaml.cs">
+      <DependentUpon>ModifyProductsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ModifyUsersView.xaml.cs">
       <DependentUpon>ModifyUsersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PasswordHelper.cs" />
     <Compile Include="Views\ProducersCRUDView.xaml.cs">
       <DependentUpon>ProducersCRUDView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductsCRUDView.xaml.cs">
+      <DependentUpon>ProductsCRUDView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UsersCRUDView.xaml.cs">
       <DependentUpon>UsersCRUDView.xaml</DependentUpon>
@@ -213,6 +225,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddProducersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddProductsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -256,6 +272,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ModifyProductsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ModifyUsersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -263,6 +283,10 @@
     <Page Include="Views\ProducersCRUDView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductsCRUDView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UsersCRUDView.xaml">
       <Generator>MSBuild:Compile</Generator>

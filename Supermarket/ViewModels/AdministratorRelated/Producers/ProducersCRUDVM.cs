@@ -36,17 +36,17 @@ namespace Supermarket.ViewModels.AdministratorRelated.Producers
             }
         }
 
-        private ICommand switchToAddProducerPageCommand;
-        public ICommand SwitchToAddProducerPageCommand
+        private ICommand switchToAddProducersPageCommand;
+        public ICommand SwitchToAddProducersPageCommand
         {
             get
             {
-                if (switchToAddProducerPageCommand == null)
+                if (switchToAddProducersPageCommand == null)
                 {
-                    switchToAddProducerPageCommand = new RelayPagesCommand(o => true, o => { OnSwitchToAddProducersPage(); });
+                    switchToAddProducersPageCommand = new RelayPagesCommand(o => true, o => { OnSwitchToAddProducersPage(); });
                 }
 
-                return switchToAddProducerPageCommand;
+                return switchToAddProducersPageCommand;
             }
         }
 

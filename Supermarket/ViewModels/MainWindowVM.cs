@@ -15,6 +15,7 @@ namespace Supermarket.ViewModels
         UsersBLL usersBLL;
         CategoriesBLL categoriesBLL;
         ProducersBLL producersBLL;
+        ProductsBLL productsBLL;
 
         public BaseVM SelectedVM
         {
@@ -55,6 +56,10 @@ namespace Supermarket.ViewModels
 
         public ProductsCRUDVM ProductsCRUDViewModel { get; set; }   
 
+        public AddProductsVM AddProductsViewModel { get; set; }
+
+        public ModifyProductsVM ModifyProductsViewModel { get; set; }
+
 
 
         #endregion
@@ -65,6 +70,7 @@ namespace Supermarket.ViewModels
             usersBLL = new UsersBLL();
             categoriesBLL = new CategoriesBLL();
             producersBLL = new ProducersBLL();
+            productsBLL = new ProductsBLL();
             switchToLogin(usersBLL);
         }
 
@@ -91,7 +97,8 @@ namespace Supermarket.ViewModels
             AdministratorMenuViewModel.OnSwitchToLogin = () => switchToLogin(usersBLL);
             AdministratorMenuViewModel.OnSwitchToUsersCRUD = () => switchToUsersCRUDMenu(user);
             AdministratorMenuViewModel.OnSwitchToCategoriesCRUD = () => switchToCategoriesCRUDMenu(user);
-            AdministratorMenuViewModel.OnSwitchProducersCRUDViewModel = () => switchToProducersCRUDMenu(user);
+            AdministratorMenuViewModel.OnSwitchProducersCRUD = () => switchToProducersCRUDMenu(user);
+            AdministratorMenuViewModel.OnSwitchToProductsCRUD = () => switchToProductsCRUDMenu(user);
             SelectedVM = AdministratorMenuViewModel;
         }
 
@@ -211,8 +218,27 @@ namespace Supermarket.ViewModels
         {
             ProductsCRUDViewModel = new ProductsCRUDVM(user);
             ProductsCRUDViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
+            ProductsCRUDViewModel.OnSwitchToAddProductsPage = () => switchToAddProductsPage(user);
+            ProductsCRUDViewModel.OnSwitchToModifyProductsPage = () => switchToModifyProductsPage(user);
+
             SelectedVM = ProductsCRUDViewModel;
         }
+
+        public void switchToAddProductsPage(Utilizatori user)
+        {
+            AddProductsViewModel = new AddProductsVM(user, categoriesBLL, producersBLL, productsBLL);
+            AddProductsViewModel.OnSwitchToProductsCRUDMenu = () => switchToProductsCRUDMenu(user);
+            SelectedVM = AddProductsViewModel;
+        }
+
+        public void switchToModifyProductsPage(Utilizatori user)
+        {
+            ModifyProductsViewModel = new ModifyProductsVM(user, categoriesBLL, producersBLL, productsBLL);
+            ModifyProductsViewModel.OnSwitchToProductsCRUDMenu = () => switchToProductsCRUDMenu(user);
+            SelectedVM = ModifyProductsViewModel;
+        }
+
+
 
         #endregion
     }
