@@ -99,7 +99,7 @@ namespace Supermarket.ViewModels.AdministratorRelated
 
         private void AddUser(object obj)
         {
-            if (ValidateFields() && CheckUniqueName())
+            if (ValidateFields())
             {
                 Utilizatori userToAdd = new Utilizatori();
                 userToAdd.NumeUtilizator = Username;

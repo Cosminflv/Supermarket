@@ -5,7 +5,7 @@ using System.Linq;
 namespace Supermarket.Models.BusinessLogicLayer
 {
     class UsersBLL
-    { 
+    {
         public UsersBLL()
         {
             Users = GetAllUsers();
@@ -13,7 +13,7 @@ namespace Supermarket.Models.BusinessLogicLayer
 
         private SupermarketEntities context = new SupermarketEntities();
 
-        public ObservableCollection<Utilizatori> Users {  get; set; }
+        public ObservableCollection<Utilizatori> Users { get; set; }
 
         public ObservableCollection<Utilizatori> UsersActive { get; set; }
 
@@ -26,8 +26,9 @@ namespace Supermarket.Models.BusinessLogicLayer
             ObservableCollection<Utilizatori> result = new ObservableCollection<Utilizatori>();
             UsersActive = new ObservableCollection<Utilizatori>();
 
-            foreach (Utilizatori user in Users) {
-                    result.Add(user);
+            foreach (Utilizatori user in Users)
+            {
+                result.Add(user);
 
                 if (user.IsActive)
                 {
@@ -42,21 +43,24 @@ namespace Supermarket.Models.BusinessLogicLayer
         {
             Utilizatori utilizator = obj as Utilizatori;
 
-            if(utilizator != null)
+            if (utilizator != null)
             {
                 if (string.IsNullOrEmpty(utilizator.NumeUtilizator))
                 {
                     ErrorMessage = "Name is required";
                 }
-                else
+
+                if (!checkUniqueUser(utilizator.NumeUtilizator))
                 {
-                    context.Utilizatoris.Add(utilizator);
-                    context.SaveChanges();
-                    utilizator.UtilizatorID = context.Utilizatoris.Max(item => item.UtilizatorID);
-                    Users.Add(utilizator);
-                    UsersActive.Add(utilizator);
-                    ErrorMessage = "";
+                    return;
                 }
+                context.Utilizatoris.Add(utilizator);
+                context.SaveChanges();
+                utilizator.UtilizatorID = context.Utilizatoris.Max(item => item.UtilizatorID);
+                Users.Add(utilizator);
+                UsersActive.Add(utilizator);
+                ErrorMessage = "";
+
             }
         }
 
@@ -64,37 +68,37 @@ namespace Supermarket.Models.BusinessLogicLayer
         {
             Utilizatori utilizator = obj as Utilizatori;
 
-            if(utilizator != null)
+            if (utilizator != null)
             {
                 if (string.IsNullOrEmpty(utilizator.NumeUtilizator))
                 {
                     ErrorMessage = "Name is required";
+                    return;
+                }
+
+                Users[Users.IndexOf(utilizator)] = utilizator;
+                if (utilizator.IsActive)
+                {
+                    UsersActive.Add(utilizator);
                 }
                 else
                 {
-                    Users[Users.IndexOf(utilizator)] = utilizator;
-                    if (utilizator.IsActive)
-                    {
-                        UsersActive.Add(utilizator);
-                    }
-                    else
-                    {
-                        UsersActive.Remove(utilizator);
-                    }
-                     
-                    context.UpdateUser(utilizator.UtilizatorID, utilizator.NumeUtilizator, utilizator.Parola, utilizator.TipUtilizator, utilizator.IsActive);
-                    context.SaveChanges();
-                    ErrorMessage = "";
-                  
+                    UsersActive.Remove(utilizator);
                 }
+
+                context.UpdateUser(utilizator.UtilizatorID, utilizator.NumeUtilizator, utilizator.Parola, utilizator.TipUtilizator, utilizator.IsActive);
+                context.SaveChanges();
+                ErrorMessage = "";
+
             }
+
         }
 
         public void DeleteUser(object obj)
         {
             Utilizatori utilizator = obj as Utilizatori;
 
-            if(utilizator != null)
+            if (utilizator != null)
             {
                 if (string.IsNullOrEmpty(utilizator.NumeUtilizator))
                 {
@@ -110,5 +114,29 @@ namespace Supermarket.Models.BusinessLogicLayer
                 }
             }
         }
+
+        private bool checkUniqueUser(string userName)
+        {
+            foreach (Utilizatori user in Users)
+            {
+                if (user.NumeUtilizator == userName)
+                {
+                    if (!user.IsActive) //IN CASE THERE IS A USER NOT ACTIVE WE UPDATE IT TO ACTIVE INSTEAD OF ADDING IT AGAIN
+                    {
+                        UsersActive.Add(user);
+                        Users[Users.IndexOf(user)].IsActive = true;
+                        context.UpdateUser(user.UtilizatorID, user.NumeUtilizator, user.Parola, user.TipUtilizator, user.IsActive);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        ErrorMessage = "Producer already exists";
+                    }
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
+
