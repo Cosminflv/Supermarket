@@ -76,6 +76,20 @@ namespace Supermarket.ViewModels.AdministratorRelated.Categories
             }
         }
 
+        private ICommand switchToCategoryValuePageCommand;
+        public ICommand SwitchToCategoryValuePageCommand
+        {
+            get
+            {
+                if (switchToCategoryValuePageCommand == null)
+                {
+                    switchToCategoryValuePageCommand = new RelayPagesCommand(o => true, o => { OnSwitchToCategoryValuePage(); });
+                }
+
+                return switchToCategoryValuePageCommand;
+            }
+        }
+
         // DELEGATES
 
         public delegate void SwitchToAdministratorMenu();
@@ -91,6 +105,12 @@ namespace Supermarket.ViewModels.AdministratorRelated.Categories
         public delegate void SwitchToDeleteCategoriesPage();
 
         public SwitchToDeleteCategoriesPage OnSwitchToDeleteCategoriesPage { get; set; }
+
+        public delegate void SwitchToCategoryValuePage();
+
+        public SwitchToCategoryValuePage OnSwitchToCategoryValuePage { get; set; }
+
+
 
         #endregion
     }

@@ -125,6 +125,7 @@
     <Compile Include="ViewLargestDailyReceipt_Result.cs">
       <DependentUpon>SupermarketEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AdministratorRelated\Categories\CategoryValueVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Producers\ProducerProductsVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Stocks\AddStocksVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Categories\AddCategoriesVM.cs" />
@@ -177,6 +178,9 @@
     </Compile>
     <Compile Include="Views\CategoriesCRUDView.xaml.cs">
       <DependentUpon>CategoriesCRUDView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryValueView.xaml.cs">
+      <DependentUpon>CategoryValueView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DeleteCategoriesView.xaml.cs">
       <DependentUpon>DeleteCategoriesView.xaml</DependentUpon>
@@ -267,6 +271,10 @@
     <Page Include="Views\CategoriesCRUDView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CategoryValueView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DeleteCategoriesView.xaml">
       <SubType>Designer</SubType>

@@ -48,6 +48,8 @@ namespace Supermarket.ViewModels
         
         public DeleteCategoriesVM DeleteCategoriesViewModel {  get; set; }  
 
+        public CategoryValueVM CategoryValueViewModel { get; set; } 
+
         public ProducersCRUDVM ProducersCRUDViewModel { get; set; }
 
         public AddProducersVM AddProducersViewModel { get; set; }
@@ -161,6 +163,8 @@ namespace Supermarket.ViewModels
             CategoriesCRUDViewModel.OnSwitchToAddCategoriesPage = () => switchToAddCategoriesPage(user);
             CategoriesCRUDViewModel.OnSwitchToModifyCategoriesPage = () => switchToModifyCategoriesPage(user);
             CategoriesCRUDViewModel.OnSwitchToDeleteCategoriesPage = () => switchToDeleteCategoriesPage(user);
+            CategoriesCRUDViewModel.OnSwitchToCategoryValuePage = () => switchToCategoryValuePage(user);
+           
             SelectedVM = CategoriesCRUDViewModel;
         }
 
@@ -183,6 +187,13 @@ namespace Supermarket.ViewModels
             DeleteCategoriesViewModel = new DeleteCategoriesVM(user, categoriesBLL);
             DeleteCategoriesViewModel.OnSwitchToCategoriesCRUDMenu = () => switchToCategoriesCRUDMenu(user);
             SelectedVM = DeleteCategoriesViewModel;
+        }
+
+        public void switchToCategoryValuePage(Utilizatori user)
+        {
+            CategoryValueViewModel = new CategoryValueVM(user, categoriesBLL);
+            CategoryValueViewModel.OnSwitchToCategoriesCRUDMenu = () => switchToCategoriesCRUDMenu(user);
+            SelectedVM = CategoryValueViewModel;
         }
 
         #endregion

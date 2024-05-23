@@ -43,7 +43,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="{StaticResource CustomGrayBrush}"
-            Command="{Binding SwitchToCategoriesCRUDMenuCommand}">
+            Command="{Binding SwitchToProducersCRUDMenuCommand}">
             <Image
                 Width="30"
                 Source="D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\images\back_icon.png"

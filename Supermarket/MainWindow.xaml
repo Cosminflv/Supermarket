@@ -62,6 +62,10 @@
             <views:DeleteCategoriesView />
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type categoriesVM:CategoryValueVM}">
+            <views:CategoryValueView />
+        </DataTemplate>
+
         <DataTemplate DataType="{x:Type producersVM:ProducersCRUDVM}">
             <views:ProducersCRUDView />
         </DataTemplate>

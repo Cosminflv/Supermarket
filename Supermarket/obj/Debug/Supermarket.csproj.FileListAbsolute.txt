@@ -102,3 +102,5 @@ D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\bin\Debug\GalaSo
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\bin\Debug\GalaSoft.MvvmLight.pdb
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\bin\Debug\System.Windows.Interactivity.dll
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\ProducerProductsView.baml
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\CategoryValueView.g.cs
+D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\obj\Debug\Views\CategoryValueView.baml

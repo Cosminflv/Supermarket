@@ -129,7 +129,7 @@ namespace Supermarket.ViewModels.AdministratorRelated.Producers
 
         private ICommand switchToProducersCRUDMenuCommand;
 
-        public ICommand SwitchToCategoriesCRUDMenuCommand
+        public ICommand SwitchToProducersCRUDMenuCommand
         {
             get
             {
