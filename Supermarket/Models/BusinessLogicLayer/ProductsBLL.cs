@@ -46,7 +46,7 @@ namespace Supermarket.Models.BusinessLogicLayer
         {
             Produse product = obj as Produse;
 
-            if (isBarCodeUnique(product))
+            if (!isBarCodeUnique(product))
             {
                 ErrorMessage = "Barcode already exists";
                 return;
@@ -62,7 +62,6 @@ namespace Supermarket.Models.BusinessLogicLayer
 
                 context.Produses.Add(product);
                 context.SaveChanges();
-                product.ProducatorID = context.Producatoris.Max(item => item.ProducatorID);
                 Products.Add(product);
                 ProductsActive.Add(product);
                 ErrorMessage = "";
@@ -73,8 +72,9 @@ namespace Supermarket.Models.BusinessLogicLayer
         {
             foreach(Produse product in Products)
             {
-                if(product.NumeProdus == productToCheck.NumeProdus && product.ProdusID != productToCheck.ProdusID)
+                if(product.CodBare == productToCheck.CodBare && product.ProdusID != productToCheck.ProdusID)
                 {
+                   
                     return false;
                 }
             }
@@ -90,12 +90,6 @@ namespace Supermarket.Models.BusinessLogicLayer
                 if (string.IsNullOrEmpty(product.NumeProdus))
                 {
                     ErrorMessage = "Name is required";
-                    return;
-                }
-
-                if (!checkUniqueProductName(product))
-                {
-                    ErrorMessage = "Producer Exists";
                     return;
                 }
 
@@ -134,26 +128,13 @@ namespace Supermarket.Models.BusinessLogicLayer
                 }
                 else
                 {
-                    context.DeactivateProducer(product.ProducatorID);
+                    context.DeactivateProduct(product.ProdusID);
                     context.SaveChanges();
                     ProductsActive.Remove(product);
                     Products[Products.IndexOf(product)].IsActive = false;
                     ErrorMessage = "";
                 }
             }
-        }
-
-        private bool checkUniqueProductName(Produse productToCheck)
-        {
-            foreach (Produse product in Products)
-            {
-                if (product.NumeProdus == productToCheck.NumeProdus && product.ProdusID != productToCheck.ProdusID)
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
     }
 }

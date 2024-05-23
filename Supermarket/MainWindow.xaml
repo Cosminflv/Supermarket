@@ -89,6 +89,10 @@
             <views:ModifyProductsView />
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type productsVM:DeleteProductsVM}">
+            <views:DeleteProductsView />
+        </DataTemplate>
+
     </Window.Resources>
 
     <ContentControl Content="{Binding SelectedVM}" />

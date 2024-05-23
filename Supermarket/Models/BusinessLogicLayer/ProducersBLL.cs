@@ -123,6 +123,11 @@ namespace Supermarket.Models.BusinessLogicLayer
             }
         }
 
+        public string GetProducerNameFromId(int id)
+        {
+            return Producers.FirstOrDefault(item => item.ProducatorID == id).NumeProducator;
+        }
+
         private bool checkUniqueProducerName(Producatori producerToCheck)
         {
             foreach (Producatori producer in Producers)

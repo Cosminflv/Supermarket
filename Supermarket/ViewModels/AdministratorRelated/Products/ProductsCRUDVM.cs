@@ -51,7 +51,7 @@ namespace Supermarket.ViewModels.AdministratorRelated.Products
         }
 
         private ICommand switchToModifyProductsPageCommand;
-        public ICommand SwitchToModifyProducersPageCommand
+        public ICommand SwitchToModifyProductsPageCommand
         {
             get
             {
@@ -65,7 +65,7 @@ namespace Supermarket.ViewModels.AdministratorRelated.Products
         }
 
         private ICommand switchToDeleteProductsPageCommand;
-        public ICommand SwitchToDeleteProducersPageCommand
+        public ICommand SwitchToDeleteProductsPageCommand
         {
             get
             {

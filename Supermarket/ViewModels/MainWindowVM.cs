@@ -60,6 +60,8 @@ namespace Supermarket.ViewModels
 
         public ModifyProductsVM ModifyProductsViewModel { get; set; }
 
+        public DeleteProductsVM DeleteProductsViewModel { get; set; }
+
 
 
         #endregion
@@ -220,6 +222,7 @@ namespace Supermarket.ViewModels
             ProductsCRUDViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
             ProductsCRUDViewModel.OnSwitchToAddProductsPage = () => switchToAddProductsPage(user);
             ProductsCRUDViewModel.OnSwitchToModifyProductsPage = () => switchToModifyProductsPage(user);
+            ProductsCRUDViewModel.OnSwitchToDeleteProductsPage = () => switchToDeleteProductsPage(user);
 
             SelectedVM = ProductsCRUDViewModel;
         }
@@ -238,8 +241,12 @@ namespace Supermarket.ViewModels
             SelectedVM = ModifyProductsViewModel;
         }
 
-
-
+        public void switchToDeleteProductsPage(Utilizatori user)
+        {
+            DeleteProductsViewModel = new DeleteProductsVM(user, productsBLL, producersBLL, categoriesBLL);
+            DeleteProductsViewModel.OnSwitchToProductsCRUDMenu = () => switchToProductsCRUDMenu(user);
+            SelectedVM = DeleteProductsViewModel;
+        }
         #endregion
     }
 }

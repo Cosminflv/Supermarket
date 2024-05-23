@@ -64,7 +64,7 @@
             Margin="0,186,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Command="{Binding SwitchToModifyProducersPageCommand}"
+            Command="{Binding SwitchToModifyProductsPageCommand}"
             Content="Modify Products" />
         <Button
             Width="205"
@@ -72,7 +72,7 @@
             Margin="0,247,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Command="{Binding SwitchToDeleteProducersPageCommand}"
+            Command="{Binding SwitchToDeleteProductsPageCommand}"
             Content="Delete Products" />
 
     </Grid>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\App.xaml
-19-556020177
+20-1912638127
 21420490243
-7241568597
+76211308190
 211999859923
-MainWindow.xaml;Views\AddCategoriesView.xaml;Views\AddProducersView.xaml;Views\AddProductsView.xaml;Views\AddUsersView.xaml;Views\AdministratorMenuView.xaml;Views\CashierMenuView.xaml;Views\CategoriesCRUDView.xaml;Views\DeleteCategoriesView.xaml;Views\DeleteProducersView.xaml;Views\DeleteUsersView.xaml;Views\LoginView.xaml;Views\ModifyCategoriesView.xaml;Views\ModifyProducersView.xaml;Views\ModifyProductsView.xaml;Views\ModifyUsersView.xaml;Views\ProducersCRUDView.xaml;Views\ProductsCRUDView.xaml;Views\UsersCRUDView.xaml;
+MainWindow.xaml;Views\AddCategoriesView.xaml;Views\AddProducersView.xaml;Views\AddProductsView.xaml;Views\AddUsersView.xaml;Views\AdministratorMenuView.xaml;Views\CashierMenuView.xaml;Views\CategoriesCRUDView.xaml;Views\DeleteCategoriesView.xaml;Views\DeleteProducersView.xaml;Views\DeleteProductsView.xaml;Views\DeleteUsersView.xaml;Views\LoginView.xaml;Views\ModifyCategoriesView.xaml;Views\ModifyProducersView.xaml;Views\ModifyProductsView.xaml;Views\ModifyUsersView.xaml;Views\ProducersCRUDView.xaml;Views\ProductsCRUDView.xaml;Views\UsersCRUDView.xaml;
 
 False
 

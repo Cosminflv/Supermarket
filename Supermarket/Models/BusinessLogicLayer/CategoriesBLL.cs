@@ -161,5 +161,10 @@ namespace Supermarket.Models.BusinessLogicLayer
             }
             return true;
         }
+
+        public string GetCategoryNameFromId(int id)
+        {
+            return Categories.FirstOrDefault(item => item.CategorieID == id).NumeCategorie;
+        }
     }
 }

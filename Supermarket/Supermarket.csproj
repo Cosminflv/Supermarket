@@ -62,7 +62,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelaySearchCommand.cs" />
+    <Compile Include="Converters\CategoryIdToNameCategory.cs" />
     <Compile Include="Converters\MultiParameterConverter.cs" />
+    <Compile Include="Converters\ProducerIdToNameConverter.cs" />
     <Compile Include="Custom\KeyDownInvokeCommandAction.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Commands\RelayPagesCommand.cs" />
@@ -142,6 +144,7 @@
     <Compile Include="ViewModels\AdministratorRelated\Producers\ModifyProducersVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Producers\ProducersCRUDVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Products\AddProductsVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Products\DeleteProductsVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Products\ModifyProductsVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Products\ProductsCRUDVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Users\AddUsersVM.cs" />
@@ -179,6 +182,9 @@
     </Compile>
     <Compile Include="Views\DeleteProducersView.xaml.cs">
       <DependentUpon>DeleteProducersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteProductsView.xaml.cs">
+      <DependentUpon>DeleteProductsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DeleteUsersView.xaml.cs">
       <DependentUpon>DeleteUsersView.xaml</DependentUpon>
@@ -253,6 +259,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DeleteProducersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DeleteProductsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

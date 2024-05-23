@@ -123,14 +123,14 @@ namespace Supermarket.ViewModels.AdministratorRelated.Products
             {
                 if (addProductCommand == null)
                 {
-                    addProductCommand = new RelayCommand<object>(AddProducer);
+                    addProductCommand = new RelayCommand<object>(AddProduct);
                 }
 
                 return addProductCommand;
             }
         }
 
-        private void AddProducer(object obj)
+        private void AddProduct(object obj)
         {
             if(SelectedCategory == null)
             {
@@ -177,9 +177,7 @@ namespace Supermarket.ViewModels.AdministratorRelated.Products
             };
             timer.Start();
 
-            SelectedProducer.NumeProducator = null;
             SelectedProducer = null;
-            SelectedCategory.NumeCategorie = null;
             SelectedCategory = null;
             ProductName = "";
             BarCode = "";
