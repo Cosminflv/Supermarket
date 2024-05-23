@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Informatica\ANUL II\MAP\MAPTema3\Supermarket.git\Supermarket\App.xaml
-211082326612
+22-392010087
 2-785167741
-79-183141332
-211999859923
-MainWindow.xaml;Views\AddCategoriesView.xaml;Views\AddProducersView.xaml;Views\AddProductsView.xaml;Views\AddStocksView.xaml;Views\AddUsersView.xaml;Views\AdministratorMenuView.xaml;Views\CashierMenuView.xaml;Views\CategoriesCRUDView.xaml;Views\DeleteCategoriesView.xaml;Views\DeleteProducersView.xaml;Views\DeleteProductsView.xaml;Views\DeleteUsersView.xaml;Views\LoginView.xaml;Views\ModifyCategoriesView.xaml;Views\ModifyProducersView.xaml;Views\ModifyProductsView.xaml;Views\ModifyUsersView.xaml;Views\ProducersCRUDView.xaml;Views\ProductsCRUDView.xaml;Views\UsersCRUDView.xaml;
+82-104739462
+130-695873481
+MainWindow.xaml;Views\AddCategoriesView.xaml;Views\AddProducersView.xaml;Views\AddProductsView.xaml;Views\AddStocksView.xaml;Views\AddUsersView.xaml;Views\AdministratorMenuView.xaml;Views\CashierMenuView.xaml;Views\CategoriesCRUDView.xaml;Views\DeleteCategoriesView.xaml;Views\DeleteProducersView.xaml;Views\DeleteProductsView.xaml;Views\DeleteUsersView.xaml;Views\LoginView.xaml;Views\ModifyCategoriesView.xaml;Views\ModifyProducersView.xaml;Views\ModifyProductsView.xaml;Views\ModifyUsersView.xaml;Views\ProducerProductsView.xaml;Views\ProducersCRUDView.xaml;Views\ProductsCRUDView.xaml;Views\UsersCRUDView.xaml;
 
 False
 

@@ -78,6 +78,10 @@
             <views:DeleteProducersView />
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type producersVM:ProducerProductsVM}">
+            <views:ProducerProductsView />
+        </DataTemplate>
+
         <DataTemplate DataType="{x:Type productsVM:ProductsCRUDVM}">
             <views:ProductsCRUDView />
         </DataTemplate>

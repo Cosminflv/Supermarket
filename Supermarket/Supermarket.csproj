@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Behaviours\InvokeCommandOnSelectionChanged.cs" />
     <Compile Include="BonuriCasa.cs">
       <DependentUpon>SupermarketEntities.tt</DependentUpon>
     </Compile>
@@ -124,6 +125,7 @@
     <Compile Include="ViewLargestDailyReceipt_Result.cs">
       <DependentUpon>SupermarketEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AdministratorRelated\Producers\ProducerProductsVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Stocks\AddStocksVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Categories\AddCategoriesVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Categories\CategoriesCRUDVM.cs" />
@@ -204,6 +206,9 @@
       <DependentUpon>ModifyUsersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PasswordHelper.cs" />
+    <Compile Include="Views\ProducerProductsView.xaml.cs">
+      <DependentUpon>ProducerProductsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProducersCRUDView.xaml.cs">
       <DependentUpon>ProducersCRUDView.xaml</DependentUpon>
     </Compile>
@@ -299,6 +304,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ProducerProductsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ProducersCRUDView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -358,6 +367,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
       <Version>1.1.77</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmLightLibs">
+      <Version>5.4.1.1</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.WindowsRuntime">
       <Version>4.7.0</Version>

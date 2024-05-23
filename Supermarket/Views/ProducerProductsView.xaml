@@ -1,0 +1,104 @@
+﻿<UserControl
+    x:Class="Supermarket.Views.ProducerProductsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behaviors="clr-namespace:Supermarket.Behaviours"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Supermarket.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:converters="clr-namespace:Supermarket.Converters"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <converters:CategoryIdToNameCategory x:Key="CategoryIdToNameCategory" />
+
+        <Color x:Key="CustomGrayColor">#dadee6</Color>
+
+        <SolidColorBrush x:Key="CustomGrayBrush" Color="{StaticResource CustomGrayColor}" />
+
+        <Style x:Key="CustomLabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="0,25,0,160" />
+        </Style>
+        <Style x:Key="CustomTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Background" Value="{StaticResource CustomGrayBrush}" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Button
+            Width="36"
+            Height="27"
+            Margin="10,11,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="{StaticResource CustomGrayBrush}"
+            Command="{Binding SwitchToProducersCRUDMenuCommand}">
+            <Image
+                Width="30"
+                Source="D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\images\back_icon.png"
+                Stretch="Fill" />
+        </Button>
+
+        <Label Content="Producer's Products" Style="{StaticResource CustomLabelStyle}" />
+
+        <ComboBox
+            Width="209"
+            Height="28"
+            Margin="191,125,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="NumeProducator"
+            ItemsSource="{Binding Producers}"
+            SelectedItem="{Binding SelectedProducer, Mode=TwoWay}">
+            <i:Interaction.Behaviors>
+                <behaviors:InvokeCommandOnSelectionChanged Command="{Binding ProducerSelectedCommand}" />
+            </i:Interaction.Behaviors>
+        </ComboBox>
+
+        <TextBlock
+            Width="153"
+            Margin="10,125,0,0"
+            Style="{StaticResource CustomTextStyle}"
+            Text="Select Producer"
+            TextWrapping="Wrap" />
+
+        <ListBox Margin="417,125,23,27" ItemsSource="{Binding GroupedAndSortedProducts}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding Converter="{StaticResource CategoryIdToNameCategory}">
+                                    <Binding Path="Key" />
+                                    <Binding Path="DataContext.CategoriesBLL" RelativeSource="{RelativeSource AncestorType=UserControl}" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <ItemsControl ItemsSource="{Binding Value}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Margin="15,0" Text="{Binding NumeProdus}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+    </Grid>
+</UserControl>

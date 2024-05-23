@@ -78,6 +78,20 @@ namespace Supermarket.ViewModels.AdministratorRelated.Producers
             }
         }
 
+        private ICommand switchToProducerProductsPageCommand;
+        public ICommand SwitchToProducerProductsPageCommand
+        {
+            get
+            {
+                if (switchToProducerProductsPageCommand == null)
+                {
+                    switchToProducerProductsPageCommand = new RelayPagesCommand(o => true, o => { OnSwitchToProducerProductsPage(); });
+                }
+
+                return switchToProducerProductsPageCommand;
+            }
+        }
+
         // DELEGATES
 
         public delegate void SwitchToAdministratorMenu();
@@ -93,6 +107,10 @@ namespace Supermarket.ViewModels.AdministratorRelated.Producers
         public delegate void SwitchToDeleteProducersPage();
 
         public SwitchToDeleteProducersPage OnSwitchToDeleteProducersPage { get; set; }
+
+        public delegate void SwitchToProducerProductsPage();
+
+        public SwitchToProducerProductsPage OnSwitchToProducerProductsPage { get; set; }    
 
         #endregion
     }

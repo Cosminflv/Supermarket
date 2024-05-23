@@ -66,6 +66,8 @@ namespace Supermarket.ViewModels
 
         public AddStocksVM AddStocksViewModel { get; set; } 
 
+        public ProducerProductsVM ProducerProductsViewModel { get; set; }
+
 
 
         #endregion
@@ -194,6 +196,7 @@ namespace Supermarket.ViewModels
             ProducersCRUDViewModel.OnSwitchToAddProducersPage = () => switchToAddProducersPage(user);
             ProducersCRUDViewModel.OnSwitchToModifyProducersPage = () => switchToModifyProducersPage(user);
             ProducersCRUDViewModel.OnSwitchToDeleteProducersPage = () => switchToDeleteProducersPage(user);
+            ProducersCRUDViewModel.OnSwitchToProducerProductsPage = () => switchToProducerProductsPage(user);
             SelectedVM = ProducersCRUDViewModel;
         }
 
@@ -216,6 +219,13 @@ namespace Supermarket.ViewModels
             DeleteProducersViewModel = new DeleteProducersVM(user, producersBLL);
             DeleteProducersViewModel.OnSwitchToProducersCRUDMenu = () => switchToProducersCRUDMenu(user);
             SelectedVM = DeleteProducersViewModel;
+        }
+
+        public void switchToProducerProductsPage(Utilizatori user)
+        {
+            ProducerProductsViewModel = new ProducerProductsVM(user, producersBLL, categoriesBLL);
+            ProducerProductsViewModel.OnSwitchToProducersCRUDMenu = () => switchToProducersCRUDMenu(user);
+            SelectedVM = ProducerProductsViewModel;
         }
 
         #endregion

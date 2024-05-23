@@ -75,5 +75,14 @@
             Command="{Binding SwitchToDeleteProducersPageCommand}"
             Content="Delete Producers" />
 
+        <Button
+            Width="205"
+            Height="47"
+            Margin="0,311,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Command="{Binding SwitchToProducerProductsPageCommand}"
+            Content="View Products" />
+
     </Grid>
 </UserControl>

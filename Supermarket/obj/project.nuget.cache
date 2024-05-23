@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "p/1e2h7RHeIPCw9woBkZMQ5170HPFBeYMoH85dEvLJ7AHGzI/5FB53U1fsnU6unjMt25lR18XhdLhMVRWlWosw==",
+  "dgSpecHash": "2sftSGdX0T3AoaGkyJZSCQlajG0ocemC5mWFLIfZKCw7Kt425WW2Gb9i33p8RTf61vAIZ58ncRoSmZRg4Tthog==",
   "success": true,
   "projectFilePath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Supermarket.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\cosmi\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
     "C:\\Users\\cosmi\\.nuget\\packages\\dotnetprojects.wpftoolkit.input\\6.1.94\\dotnetprojects.wpftoolkit.input.6.1.94.nupkg.sha512",
     "C:\\Users\\cosmi\\.nuget\\packages\\entityframework\\5.0.0\\entityframework.5.0.0.nupkg.sha512",
     "C:\\Users\\cosmi\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.77\\microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512",
+    "C:\\Users\\cosmi\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512",
     "C:\\Users\\cosmi\\.nuget\\packages\\system.runtime.windowsruntime\\4.7.0\\system.runtime.windowsruntime.4.7.0.nupkg.sha512"
   ],
   "logs": []
