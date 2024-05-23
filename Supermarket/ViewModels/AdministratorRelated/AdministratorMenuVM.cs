@@ -97,6 +97,22 @@ namespace Supermarket.ViewModels
             }
         }
 
+        private ICommand switchToAddStocksCommand;
+        public ICommand SwitchToAddStocksCommand
+        {
+            get
+            {
+                if (switchToAddStocksCommand == null)
+                {
+                    switchToAddStocksCommand = new RelayPagesCommand(o => true, o => { OnSwitchToAddStocks(); });
+                }
+
+                return switchToAddStocksCommand;
+            }
+        }
+
+
+
         // DELEGATES
 
         public delegate void SwitchToLogin();
@@ -116,6 +132,10 @@ namespace Supermarket.ViewModels
         public delegate void SwitchToProductsCRUD ();
 
         public SwitchToProducersCRUD OnSwitchToProductsCRUD { get; set; }
+
+        public delegate void SwitchToAddStocks();
+
+        public SwitchToAddStocks OnSwitchToAddStocks { get; set;}
     }
     #endregion
 }

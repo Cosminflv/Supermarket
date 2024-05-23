@@ -9,6 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:producersVM="clr-namespace:Supermarket.ViewModels.AdministratorRelated.Producers"
     xmlns:productsVM="clr-namespace:Supermarket.ViewModels.AdministratorRelated.Products"
+    xmlns:stocksVM="clr-namespace:Supermarket.ViewModels.AdministratorRelated.Stocks"
     xmlns:viewmodels="clr-namespace:Supermarket.ViewModels"
     xmlns:views="clr-namespace:Supermarket.Views"
     Title="MainWindow"
@@ -91,6 +92,10 @@
 
         <DataTemplate DataType="{x:Type productsVM:DeleteProductsVM}">
             <views:DeleteProductsView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type stocksVM:AddStocksVM}">
+            <views:AddStocksView />
         </DataTemplate>
 
     </Window.Resources>

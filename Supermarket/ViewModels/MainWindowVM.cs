@@ -1,10 +1,11 @@
 ﻿
-using Supermarket.Models;
+
 using Supermarket.Models.BusinessLogicLayer;
 using Supermarket.ViewModels.AdministratorRelated;
 using Supermarket.ViewModels.AdministratorRelated.Categories;
 using Supermarket.ViewModels.AdministratorRelated.Producers;
 using Supermarket.ViewModels.AdministratorRelated.Products;
+using Supermarket.ViewModels.AdministratorRelated.Stocks;
 
 namespace Supermarket.ViewModels
 {
@@ -16,6 +17,7 @@ namespace Supermarket.ViewModels
         CategoriesBLL categoriesBLL;
         ProducersBLL producersBLL;
         ProductsBLL productsBLL;
+        StocksBLL stocksBLL;
 
         public BaseVM SelectedVM
         {
@@ -62,6 +64,8 @@ namespace Supermarket.ViewModels
 
         public DeleteProductsVM DeleteProductsViewModel { get; set; }
 
+        public AddStocksVM AddStocksViewModel { get; set; } 
+
 
 
         #endregion
@@ -73,6 +77,7 @@ namespace Supermarket.ViewModels
             categoriesBLL = new CategoriesBLL();
             producersBLL = new ProducersBLL();
             productsBLL = new ProductsBLL();
+            stocksBLL = new StocksBLL();
             switchToLogin(usersBLL);
         }
 
@@ -101,6 +106,7 @@ namespace Supermarket.ViewModels
             AdministratorMenuViewModel.OnSwitchToCategoriesCRUD = () => switchToCategoriesCRUDMenu(user);
             AdministratorMenuViewModel.OnSwitchProducersCRUD = () => switchToProducersCRUDMenu(user);
             AdministratorMenuViewModel.OnSwitchToProductsCRUD = () => switchToProductsCRUDMenu(user);
+            AdministratorMenuViewModel.OnSwitchToAddStocks = () => switchToAddStocksPage(user);
             SelectedVM = AdministratorMenuViewModel;
         }
 
@@ -246,6 +252,15 @@ namespace Supermarket.ViewModels
             DeleteProductsViewModel = new DeleteProductsVM(user, productsBLL, producersBLL, categoriesBLL);
             DeleteProductsViewModel.OnSwitchToProductsCRUDMenu = () => switchToProductsCRUDMenu(user);
             SelectedVM = DeleteProductsViewModel;
+        }
+        #endregion
+
+        #region Stocks
+        public void switchToAddStocksPage(Utilizatori user)
+        {
+            AddStocksViewModel = new AddStocksVM(user, stocksBLL, productsBLL);
+            AddStocksViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
+            SelectedVM = AddStocksViewModel;
         }
         #endregion
     }
