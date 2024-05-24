@@ -75,5 +75,14 @@
             Command="{Binding SwitchToDeleteUsersPageCommand}"
             Content="Delete Users" />
 
+        <Button
+            Width="204"
+            Height="47"
+            Margin="0,311,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Command="{Binding SwitchToUserSalesPageCommand}"
+            Content="User Sales" />
+
     </Grid>
 </UserControl>

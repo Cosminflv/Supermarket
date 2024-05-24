@@ -1,0 +1,123 @@
+﻿<UserControl
+    x:Class="Supermarket.Views.UserSlsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behaviors="clr-namespace:Supermarket.Behaviours"
+    xmlns:converters="clr-namespace:Supermarket.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Supermarket.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <converters:CategoryIdToNameCategory x:Key="CategoryIdToNameCategory" />
+
+        <Color x:Key="CustomGrayColor">#dadee6</Color>
+
+        <SolidColorBrush x:Key="CustomGrayBrush" Color="{StaticResource CustomGrayColor}" />
+
+        <Style x:Key="CustomLabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="0,25,0,160" />
+        </Style>
+        <Style x:Key="CustomTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Background" Value="{StaticResource CustomGrayBrush}" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Button
+            Width="36"
+            Height="27"
+            Margin="10,11,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="{StaticResource CustomGrayBrush}"
+            Command="{Binding SwitchToUsersCRUDMenuCommand}">
+            <Image
+                Width="30"
+                Source="D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\images\back_icon.png"
+                Stretch="Fill" />
+        </Button>
+
+        <Label Content="User Sales" Style="{StaticResource CustomLabelStyle}" />
+
+        <ComboBox
+            Width="209"
+            Height="28"
+            Margin="191,125,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="NumeUtilizator"
+            ItemsSource="{Binding UsersList}"
+            SelectedItem="{Binding SelectedUser, Mode=TwoWay}" />
+
+        <TextBlock
+            Width="153"
+            Margin="10,125,0,0"
+            Style="{StaticResource CustomTextStyle}"
+            Text="Select User"
+            TextWrapping="Wrap" />
+
+        <TextBlock
+            Width="153"
+            Margin="10,250,0,0"
+            Style="{StaticResource CustomTextStyle}"
+            Text="Select Date"
+            TextWrapping="Wrap" />
+
+        <ListBox Margin="417,125,23,27" ItemsSource="{Binding SalesPerDay}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,0,10,0" Text="{Binding Key}" />
+                        <TextBlock Text="{Binding Value}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBlock
+            Width="284"
+            Height="30"
+            Margin="62,184,0,0"
+            FontSize="18"
+            Foreground="Red"
+            Style="{StaticResource CustomTextStyle}"
+            Text="{Binding InfoMessage}"
+            TextAlignment="Center"
+            TextWrapping="Wrap"
+            Visibility="{Binding InfoVisibility}" />
+
+        <DatePicker
+            Width="206"
+            Height="27"
+            Margin="194,250,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            SelectedDate="{Binding SelectedDate}" />
+        <Button
+            Width="103"
+            Height="39"
+            Margin="152,338,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding DisplaySalesCommand}"
+            Content="Display Sales" />
+
+
+    </Grid>
+</UserControl>

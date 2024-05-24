@@ -144,6 +144,7 @@
     <Compile Include="ViewModels\AdministratorRelated\AdministratorMenuVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Users\DeleteUsersVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Users\ModifyUsersVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Users\UserSalesVM.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
     <Compile Include="ViewModels\CashierRelated\CashierMenuVM.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
@@ -221,6 +222,9 @@
     </Compile>
     <Compile Include="Views\UsersCRUDView.xaml.cs">
       <DependentUpon>UsersCRUDView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserSlsView.xaml.cs">
+      <DependentUpon>UserSlsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewUserSalesByDay_Result.cs">
       <DependentUpon>SupermarketEntities.tt</DependentUpon>
@@ -327,6 +331,10 @@
     <Page Include="Views\UsersCRUDView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UserSlsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

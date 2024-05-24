@@ -6,6 +6,7 @@ using Supermarket.ViewModels.AdministratorRelated.Categories;
 using Supermarket.ViewModels.AdministratorRelated.Producers;
 using Supermarket.ViewModels.AdministratorRelated.Products;
 using Supermarket.ViewModels.AdministratorRelated.Stocks;
+using Supermarket.ViewModels.AdministratorRelated.Users;
 
 namespace Supermarket.ViewModels
 {
@@ -70,6 +71,8 @@ namespace Supermarket.ViewModels
 
         public ProducerProductsVM ProducerProductsViewModel { get; set; }
 
+        public UserSalesVM UserSalesViewModel { get; set; }
+
 
 
         #endregion
@@ -130,6 +133,7 @@ namespace Supermarket.ViewModels
             UsersCRUDViewModel.OnSwitchToAddUsersPage = () => switchToAddUsersPage(user);
             UsersCRUDViewModel.OnSwitchToModifyUsersPage = () => switchToModifyUsersPage(user);
             UsersCRUDViewModel.OnSwitchToDeleteUsersPage = () => switchToDeleteUsersPage(user);
+            UsersCRUDViewModel.OnSwitchToUsersSalesPage = () => switchToUserSalesPage(user);
             SelectedVM = UsersCRUDViewModel;
         }
 
@@ -152,6 +156,13 @@ namespace Supermarket.ViewModels
             DeleteUsersViewmodel = new DeleteUsersVM(user, usersBLL);
             DeleteUsersViewmodel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user);
             SelectedVM = DeleteUsersViewmodel;
+        }
+
+        public void switchToUserSalesPage(Utilizatori user)
+        {
+            UserSalesViewModel = new UserSalesVM(user, usersBLL);
+            UserSalesViewModel.OnSwitchToUsersCRUDMenu = () => switchToUsersCRUDMenu(user);
+            SelectedVM = UserSalesViewModel;
         }
         #endregion
 

@@ -10,6 +10,7 @@
     xmlns:producersVM="clr-namespace:Supermarket.ViewModels.AdministratorRelated.Producers"
     xmlns:productsVM="clr-namespace:Supermarket.ViewModels.AdministratorRelated.Products"
     xmlns:stocksVM="clr-namespace:Supermarket.ViewModels.AdministratorRelated.Stocks"
+    xmlns:usersVM="clr-namespace:Supermarket.ViewModels.AdministratorRelated.Users"
     xmlns:viewmodels="clr-namespace:Supermarket.ViewModels"
     xmlns:views="clr-namespace:Supermarket.Views"
     Title="MainWindow"
@@ -44,6 +45,10 @@
 
         <DataTemplate DataType="{x:Type adminVM:DeleteUsersVM}">
             <views:DeleteUsersView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type usersVM:UserSalesVM}">
+            <views:UserSlsView />
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type categoriesVM:CategoriesCRUDVM}">

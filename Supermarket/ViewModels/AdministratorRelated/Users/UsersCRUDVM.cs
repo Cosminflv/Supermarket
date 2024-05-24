@@ -81,6 +81,20 @@ namespace Supermarket.ViewModels
             }
         }
 
+        private ICommand switchToUserSalesPageCommand;
+        public ICommand SwitchToUserSalesPageCommand
+        {
+            get
+            {
+                if (switchToUserSalesPageCommand == null)
+                {
+                    switchToUserSalesPageCommand = new RelayPagesCommand(o => true, o => { OnSwitchToUsersSalesPage(); });
+                }
+
+                return switchToUserSalesPageCommand;
+            }
+        }
+
         // DELEGATES
 
         public delegate void SwitchToAdministratorMenu();
@@ -96,6 +110,11 @@ namespace Supermarket.ViewModels
         public delegate void SwitchToDeleteUsersPage();
 
         public SwitchToDeleteUsersPage OnSwitchToDeleteUsersPage { get; set; }
+
+
+        public delegate void SwitchToUserSalesPage();
+
+        public SwitchToUserSalesPage OnSwitchToUsersSalesPage { get; set; }
 
         #endregion
     }

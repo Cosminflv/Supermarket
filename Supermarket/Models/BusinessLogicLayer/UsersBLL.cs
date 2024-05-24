@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -136,6 +137,33 @@ namespace Supermarket.Models.BusinessLogicLayer
                 }
             }
             return true;
+        }
+
+        public Dictionary<DateTime, decimal> GetSalesPerDay(int utilizatorId, int month, int year)
+        {
+            // Get all receipts issued by the specified user in the selected month and year
+            var receipts = context.BonuriCasas
+                .Where(b => b.UtilizatorID == utilizatorId
+                            && b.DataEliberarii.Month == month
+                            && b.DataEliberarii.Year == year)
+                .ToList();
+
+            // Group receipts by day and calculate the total amount received each day
+            var dailyIncome = receipts
+                .GroupBy(b => b.DataEliberarii.Date)
+                .Select(g => new
+                {
+                    Date = g.Key,
+                    TotalIncome = g.Sum(b => b.DetaliiBons.Sum(db =>
+                    {
+                        var stock = context.Stocuris.FirstOrDefault(s => s.ProdusID == db.ProdusID);
+                        var pricePerUnit = stock != null && stock.Cantitate > 0 ? (stock.PretVanzare ?? 0) / stock.Cantitate : 0;
+                        return db.Cantitate * pricePerUnit;
+                    }))
+                })
+                .ToDictionary(x => x.Date, x => x.TotalIncome);
+
+            return dailyIncome;
         }
     }
 }
