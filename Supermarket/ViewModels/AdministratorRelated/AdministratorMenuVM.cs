@@ -111,6 +111,20 @@ namespace Supermarket.ViewModels
             }
         }
 
+        private ICommand switchToViewReceiptsCommand;
+        public ICommand SwitchToViewReceiptsCommand
+        {
+            get
+            {
+                if (switchToViewReceiptsCommand == null)
+                {
+                    switchToViewReceiptsCommand = new RelayPagesCommand(o => true, o => { OnSwitchToViewReceipts(); });
+                }
+
+                return switchToViewReceiptsCommand;
+            }
+        }
+
 
 
         // DELEGATES
@@ -136,6 +150,10 @@ namespace Supermarket.ViewModels
         public delegate void SwitchToAddStocks();
 
         public SwitchToAddStocks OnSwitchToAddStocks { get; set;}
+
+        public delegate void SwitchToViewReceipts();
+
+        public SwitchToViewReceipts OnSwitchToViewReceipts { get; set; }
     }
     #endregion
 }

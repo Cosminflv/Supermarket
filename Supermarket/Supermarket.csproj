@@ -81,6 +81,7 @@
     <Compile Include="Models\BusinessLogicLayer\CategoriesBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ProducersBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\ProductsBLL.cs" />
+    <Compile Include="Models\BusinessLogicLayer\RecieptsBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\StocksBLL.cs" />
     <Compile Include="Models\BusinessLogicLayer\UsersBLL.cs" />
     <Compile Include="Producatori.cs">
@@ -127,6 +128,7 @@
     </Compile>
     <Compile Include="ViewModels\AdministratorRelated\Categories\CategoryValueVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Producers\ProducerProductsVM.cs" />
+    <Compile Include="ViewModels\AdministratorRelated\Reciepts\ViewRecieptVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Stocks\AddStocksVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Categories\AddCategoriesVM.cs" />
     <Compile Include="ViewModels\AdministratorRelated\Categories\CategoriesCRUDVM.cs" />
@@ -225,6 +227,9 @@
     </Compile>
     <Compile Include="Views\UserSlsView.xaml.cs">
       <DependentUpon>UserSlsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewRecieptView.xaml.cs">
+      <DependentUpon>ViewRecieptView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewUserSalesByDay_Result.cs">
       <DependentUpon>SupermarketEntities.tt</DependentUpon>
@@ -333,6 +338,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\UserSlsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewRecieptView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -5,6 +5,7 @@ using Supermarket.ViewModels.AdministratorRelated;
 using Supermarket.ViewModels.AdministratorRelated.Categories;
 using Supermarket.ViewModels.AdministratorRelated.Producers;
 using Supermarket.ViewModels.AdministratorRelated.Products;
+using Supermarket.ViewModels.AdministratorRelated.Reciepts;
 using Supermarket.ViewModels.AdministratorRelated.Stocks;
 using Supermarket.ViewModels.AdministratorRelated.Users;
 
@@ -19,6 +20,7 @@ namespace Supermarket.ViewModels
         ProducersBLL producersBLL;
         ProductsBLL productsBLL;
         StocksBLL stocksBLL;
+        RecieptsBLL recieptsBLL;
 
         public BaseVM SelectedVM
         {
@@ -73,6 +75,7 @@ namespace Supermarket.ViewModels
 
         public UserSalesVM UserSalesViewModel { get; set; }
 
+        public ViewRecieptVM ViewRecieptViewModel { get; set; } 
 
 
         #endregion
@@ -85,6 +88,7 @@ namespace Supermarket.ViewModels
             producersBLL = new ProducersBLL();
             productsBLL = new ProductsBLL();
             stocksBLL = new StocksBLL();
+            recieptsBLL = new RecieptsBLL(productsBLL);
             switchToLogin(usersBLL);
         }
 
@@ -114,6 +118,7 @@ namespace Supermarket.ViewModels
             AdministratorMenuViewModel.OnSwitchProducersCRUD = () => switchToProducersCRUDMenu(user);
             AdministratorMenuViewModel.OnSwitchToProductsCRUD = () => switchToProductsCRUDMenu(user);
             AdministratorMenuViewModel.OnSwitchToAddStocks = () => switchToAddStocksPage(user);
+            AdministratorMenuViewModel.OnSwitchToViewReceipts = () => switchToViewReceiptsPage(user);
             SelectedVM = AdministratorMenuViewModel;
         }
 
@@ -295,5 +300,12 @@ namespace Supermarket.ViewModels
             SelectedVM = AddStocksViewModel;
         }
         #endregion
+
+        public void switchToViewReceiptsPage (Utilizatori user)
+        {
+            ViewRecieptViewModel = new ViewRecieptVM(user, recieptsBLL);
+            ViewRecieptViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
+            SelectedVM = ViewRecieptViewModel;
+        }
     }
 }

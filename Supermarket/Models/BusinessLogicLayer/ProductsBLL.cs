@@ -22,6 +22,32 @@ namespace Supermarket.Models.BusinessLogicLayer
 
         public string ErrorMessage { get; set; }
 
+        public decimal CalculateProductPrice(int produsID)
+        {
+            // Find the stock entry for the specified product ID
+            var stockEntry = context.Stocuris.FirstOrDefault(stoc => stoc.ProdusID == produsID);
+
+            if (stockEntry != null)
+            {
+                // Calculate the price of the product
+                if (stockEntry.Cantitate != 0)
+                {
+                    decimal productPrice = (decimal)(stockEntry.PretVanzare ?? 0) / stockEntry.Cantitate;
+                    return productPrice;
+                }
+                else
+                {
+                    // Cantitate is zero, handle as needed
+                    return 0; // or throw an exception
+                }
+            }
+            else
+            {
+                // No stock entry found for the specified product ID
+                return 0; // or throw an exception
+            }
+        }
+
         public ObservableCollection<Produse> GetAllProducts()
         {
             List<Produse> products = context.Produses.ToList();

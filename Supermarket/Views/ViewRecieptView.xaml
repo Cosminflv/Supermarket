@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="Supermarket.Views.AdministratorMenuView"
+    x:Class="Supermarket.Views.ViewRecieptView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -42,63 +42,44 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="{StaticResource CustomGrayBrush}"
-            Command="{Binding SwitchToLoginCommand}">
+            Command="{Binding SwitchToAdministratorMenuCommand}">
             <Image
                 Width="30"
                 Source="D:\Informatica\ANUL II\MAP\MAPTema1\Tema1\images\back_icon.png"
                 Stretch="Fill" />
         </Button>
 
-        <Label Content="Administrator" Style="{StaticResource CustomLabelStyle}" />
-        <Button
-            Width="186"
-            Height="45"
-            Margin="80,133,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Command="{Binding SwitchToUsersCRUDCommand}"
-            Content="Utilizatori" />
-        <Button
-            Width="186"
-            Height="45"
-            Margin="80,225,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Command="{Binding SwitchToCategoriesCRUDCommand}"
-            Content="Categorii" />
-        <Button
-            Width="186"
-            Height="45"
-            Margin="80,313,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Command="{Binding SwitchToProducersCRUDCommand}"
-            Content="Producatori" />
-        <Button
-            Width="186"
-            Height="45"
-            Margin="495,133,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Command="{Binding SwitchToProductsCRUDCommand}"
-            Content="Produse" />
-        <Button
-            Width="186"
-            Height="45"
-            Margin="495,225,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Command="{Binding SwitchToAddStocksCommand}"
-            Content="Adauga Stocuri" />
+        <Label Content="View Receipt" Style="{StaticResource CustomLabelStyle}" />
 
-        <Button
-            Width="186"
-            Height="45"
-            Margin="495,308,0,0"
+        <TextBlock
+            Width="153"
+            Margin="102,92,0,0"
+            Style="{StaticResource CustomTextStyle}"
+            Text="Select Date"
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <DatePicker
+            Width="225"
+            Height="46"
+            Margin="66,143,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Command="{Binding SwitchToViewReceiptsCommand}"
-            Content="Bonuri" />
+            FontSize="20"
+            SelectedDate="{Binding SelectedDate}" />
+        <Button
+            Width="132"
+            Height="45"
+            Margin="102,246,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding DisplayReceiptCommand}"
+            Content="Display Receipt" />
 
+        <!--  Receipt ID  -->
+
+        <!--  Issuing Date  -->
+
+        <!--  Details  -->
     </Grid>
+
 </UserControl>
