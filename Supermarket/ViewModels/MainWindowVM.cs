@@ -114,7 +114,7 @@ namespace Supermarket.ViewModels
 
         public void switchToCashierMenu(Utilizatori user)
         {
-            CashierMenuViewModel = new CashierMenuVM(user, producersBLL, productsBLL, categoriesBLL);
+            CashierMenuViewModel = new CashierMenuVM(user, producersBLL, productsBLL, categoriesBLL, stocksBLL, recieptsBLL);
             CashierMenuViewModel.OnSwitchToLogin = () => switchToLogin(usersBLL);
             SelectedVM = CashierMenuViewModel;
         }

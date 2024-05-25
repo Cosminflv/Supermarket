@@ -37,6 +37,19 @@ namespace Supermarket
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Utilizatori> Utilizatoris { get; set; }
     
+        public virtual ObjectResult<Nullable<decimal>> AddBonCasa(Nullable<System.DateTime> dataEliberarii, Nullable<int> utilizatorID)
+        {
+            var dataEliberariiParameter = dataEliberarii.HasValue ?
+                new ObjectParameter("DataEliberarii", dataEliberarii) :
+                new ObjectParameter("DataEliberarii", typeof(System.DateTime));
+    
+            var utilizatorIDParameter = utilizatorID.HasValue ?
+                new ObjectParameter("UtilizatorID", utilizatorID) :
+                new ObjectParameter("UtilizatorID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("AddBonCasa", dataEliberariiParameter, utilizatorIDParameter);
+        }
+    
         public virtual int AddCategory(string categoryName)
         {
             var categoryNameParameter = categoryName != null ?
@@ -44,6 +57,23 @@ namespace Supermarket
                 new ObjectParameter("CategoryName", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddCategory", categoryNameParameter);
+        }
+    
+        public virtual int AddDetaliuBon(Nullable<int> bonID, Nullable<int> produsID, Nullable<int> cantitate)
+        {
+            var bonIDParameter = bonID.HasValue ?
+                new ObjectParameter("BonID", bonID) :
+                new ObjectParameter("BonID", typeof(int));
+    
+            var produsIDParameter = produsID.HasValue ?
+                new ObjectParameter("ProdusID", produsID) :
+                new ObjectParameter("ProdusID", typeof(int));
+    
+            var cantitateParameter = cantitate.HasValue ?
+                new ObjectParameter("Cantitate", cantitate) :
+                new ObjectParameter("Cantitate", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddDetaliuBon", bonIDParameter, produsIDParameter, cantitateParameter);
         }
     
         public virtual int AddProducer(string producerName, string country)
@@ -177,6 +207,20 @@ namespace Supermarket
                 new ObjectParameter("UserID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeactivateUser", userIDParameter);
+        }
+    
+        public virtual ObjectResult<SelectBonuriCasa_Result> SelectBonuriCasa()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectBonuriCasa_Result>("SelectBonuriCasa");
+        }
+    
+        public virtual ObjectResult<SelectDetaliiBon_Result> SelectDetaliiBon(Nullable<int> bonID)
+        {
+            var bonIDParameter = bonID.HasValue ?
+                new ObjectParameter("BonID", bonID) :
+                new ObjectParameter("BonID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectDetaliiBon_Result>("SelectDetaliiBon", bonIDParameter);
         }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

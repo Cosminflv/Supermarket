@@ -156,8 +156,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="AddBonCasa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DataEliberarii" Type="date" Mode="In" />
+          <Parameter Name="UtilizatorID" Type="int" Mode="In" />
+        </Function>
         <Function Name="AddCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="AddDetaliuBon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BonID" Type="int" Mode="In" />
+          <Parameter Name="ProdusID" Type="int" Mode="In" />
+          <Parameter Name="Cantitate" Type="int" Mode="In" />
         </Function>
         <Function Name="AddProducer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ProducerName" Type="nvarchar" Mode="In" />
@@ -200,6 +209,10 @@
           <Parameter Name="UserID" Type="int" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="SelectBonuriCasa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectDetaliiBon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BonID" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -506,8 +519,17 @@
             <End Role="Produse" EntitySet="Produses" />
             <End Role="Stocuri" EntitySet="Stocuris" />
           </AssociationSet>
+          <FunctionImport Name="AddBonCasa" ReturnType="Collection(Decimal)">
+            <Parameter Name="DataEliberarii" Mode="In" Type="DateTime" />
+            <Parameter Name="UtilizatorID" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="AddCategory">
             <Parameter Name="CategoryName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AddDetaliuBon">
+            <Parameter Name="BonID" Mode="In" Type="Int32" />
+            <Parameter Name="ProdusID" Mode="In" Type="Int32" />
+            <Parameter Name="Cantitate" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="AddProducer">
             <Parameter Name="ProducerName" Mode="In" Type="String" />
@@ -548,6 +570,10 @@
           </FunctionImport>
           <FunctionImport Name="DeactivateUser">
             <Parameter Name="UserID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SelectBonuriCasa" ReturnType="Collection(SupermarketModel.SelectBonuriCasa_Result)" />
+          <FunctionImport Name="SelectDetaliiBon" ReturnType="Collection(SupermarketModel.SelectDetaliiBon_Result)">
+            <Parameter Name="BonID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -621,6 +647,17 @@
             <Parameter Name="Year" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="SelectBonuriCasa_Result">
+          <Property Type="Int32" Name="BonID" Nullable="false" />
+          <Property Type="DateTime" Name="DataEliberarii" Nullable="false" />
+          <Property Type="Int32" Name="UtilizatorID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SelectDetaliiBon_Result">
+          <Property Type="Int32" Name="DetaliuID" Nullable="false" />
+          <Property Type="Int32" Name="BonID" Nullable="false" />
+          <Property Type="Int32" Name="ProdusID" Nullable="false" />
+          <Property Type="Int32" Name="Cantitate" Nullable="false" />
+        </ComplexType>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -760,7 +797,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddBonCasa" FunctionName="SupermarketModel.Store.AddBonCasa" />
           <FunctionImportMapping FunctionImportName="AddCategory" FunctionName="SupermarketModel.Store.AddCategory" />
+          <FunctionImportMapping FunctionImportName="AddDetaliuBon" FunctionName="SupermarketModel.Store.AddDetaliuBon" />
           <FunctionImportMapping FunctionImportName="AddProducer" FunctionName="SupermarketModel.Store.AddProducer" />
           <FunctionImportMapping FunctionImportName="AddProduct" FunctionName="SupermarketModel.Store.AddProduct" />
           <FunctionImportMapping FunctionImportName="AddStock" FunctionName="SupermarketModel.Store.AddStock" />
@@ -770,6 +809,25 @@
           <FunctionImportMapping FunctionImportName="DeactivateProduct" FunctionName="SupermarketModel.Store.DeactivateProduct" />
           <FunctionImportMapping FunctionImportName="DeactivateStoc" FunctionName="SupermarketModel.Store.DeactivateStoc" />
           <FunctionImportMapping FunctionImportName="DeactivateUser" FunctionName="SupermarketModel.Store.DeactivateUser" />
+          <FunctionImportMapping FunctionImportName="SelectBonuriCasa" FunctionName="SupermarketModel.Store.SelectBonuriCasa">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SupermarketModel.SelectBonuriCasa_Result">
+                <ScalarProperty Name="BonID" ColumnName="BonID" />
+                <ScalarProperty Name="DataEliberarii" ColumnName="DataEliberarii" />
+                <ScalarProperty Name="UtilizatorID" ColumnName="UtilizatorID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SelectDetaliiBon" FunctionName="SupermarketModel.Store.SelectDetaliiBon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SupermarketModel.SelectDetaliiBon_Result">
+                <ScalarProperty Name="DetaliuID" ColumnName="DetaliuID" />
+                <ScalarProperty Name="BonID" ColumnName="BonID" />
+                <ScalarProperty Name="ProdusID" ColumnName="ProdusID" />
+                <ScalarProperty Name="Cantitate" ColumnName="Cantitate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SupermarketModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SupermarketModel.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SupermarketModel.Store.sp_dropdiagram" />

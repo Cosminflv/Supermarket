@@ -40,6 +40,24 @@
 
     <Grid>
 
+        <Grid>
+            <ListView Margin="488,160,30,27" ItemsSource="{Binding SelectedProducts}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn
+                            Width="140"
+                            DisplayMemberBinding="{Binding Key}"
+                            Header="Product Name" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Value.Item2}" Header="Quantity" />
+                        <GridViewColumn
+                            Width="80"
+                            DisplayMemberBinding="{Binding Value.Item3}"
+                            Header="Price" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
         <Button
             Width="36"
             Height="27"

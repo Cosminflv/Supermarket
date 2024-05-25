@@ -196,8 +196,17 @@
       <End Role="Produse" EntitySet="Produses" />
       <End Role="Stocuri" EntitySet="Stocuris" />
     </AssociationSet>
+    <FunctionImport Name="AddBonCasa" ReturnType="Collection(Decimal)">
+      <Parameter Name="DataEliberarii" Mode="In" Type="DateTime" />
+      <Parameter Name="UtilizatorID" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="AddCategory">
       <Parameter Name="CategoryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddDetaliuBon">
+      <Parameter Name="BonID" Mode="In" Type="Int32" />
+      <Parameter Name="ProdusID" Mode="In" Type="Int32" />
+      <Parameter Name="Cantitate" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="AddProducer">
       <Parameter Name="ProducerName" Mode="In" Type="String" />
@@ -238,6 +247,10 @@
     </FunctionImport>
     <FunctionImport Name="DeactivateUser">
       <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectBonuriCasa" ReturnType="Collection(SupermarketModel.SelectBonuriCasa_Result)" />
+    <FunctionImport Name="SelectDetaliiBon" ReturnType="Collection(SupermarketModel.SelectDetaliiBon_Result)">
+      <Parameter Name="BonID" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -311,6 +324,17 @@
       <Parameter Name="Year" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="SelectBonuriCasa_Result">
+    <Property Type="Int32" Name="BonID" Nullable="false" />
+    <Property Type="DateTime" Name="DataEliberarii" Nullable="false" />
+    <Property Type="Int32" Name="UtilizatorID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SelectDetaliiBon_Result">
+    <Property Type="Int32" Name="DetaliuID" Nullable="false" />
+    <Property Type="Int32" Name="BonID" Nullable="false" />
+    <Property Type="Int32" Name="ProdusID" Nullable="false" />
+    <Property Type="Int32" Name="Cantitate" Nullable="false" />
+  </ComplexType>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
     <Property Type="Binary" Name="definition" Nullable="true" />

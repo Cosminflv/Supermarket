@@ -72,5 +72,10 @@ namespace Supermarket.Models.BusinessLogicLayer
 
             }
         }
+
+        public bool IsProductAvailable(int productID)
+        {
+            return StocksActive.Any(item => item.ProdusID == productID);
+        }
     }
 }

@@ -24,6 +24,24 @@ namespace Supermarket.Models.BusinessLogicLayer
 
         public string ErrorMessage { get; set; }
 
+        public int GetLastReceiptID()
+        {
+            return Reciepts.Last().BonID;
+        }
+
+        public void AddReceipt(DateTime releaseDay, int utilizatorID)
+        {
+            context.AddBonCasa(releaseDay, utilizatorID);
+            context.SaveChanges();
+            Reciepts = new ObservableCollection<BonuriCasa>(context.BonuriCasas.ToList());
+        }
+
+        public void AddReceiptDetail(int receiptID, int productID, int quantity)
+        {
+            context.AddDetaliuBon(receiptID, productID, quantity);
+            context.SaveChanges();
+        }
+
         private List<BonuriCasa> GetReceiptsFromDate(DateTime selectedDate)
         {
             // Retrieve all receipts from the specified date

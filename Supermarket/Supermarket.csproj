@@ -90,6 +90,12 @@
     <Compile Include="Produse.cs">
       <DependentUpon>SupermarketEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="SelectBonuriCasa_Result.cs">
+      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectDetaliiBon_Result.cs">
+      <DependentUpon>SupermarketEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>SupermarketEntities.tt</DependentUpon>
     </Compile>
@@ -412,6 +418,5 @@
       <LastGenOutput>SupermarketEntities.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

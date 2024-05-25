@@ -88,7 +88,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddBonCasa" FunctionName="SupermarketModel.Store.AddBonCasa" />
     <FunctionImportMapping FunctionImportName="AddCategory" FunctionName="SupermarketModel.Store.AddCategory" />
+    <FunctionImportMapping FunctionImportName="AddDetaliuBon" FunctionName="SupermarketModel.Store.AddDetaliuBon" />
     <FunctionImportMapping FunctionImportName="AddProducer" FunctionName="SupermarketModel.Store.AddProducer" />
     <FunctionImportMapping FunctionImportName="AddProduct" FunctionName="SupermarketModel.Store.AddProduct" />
     <FunctionImportMapping FunctionImportName="AddStock" FunctionName="SupermarketModel.Store.AddStock" />
@@ -98,6 +100,25 @@
     <FunctionImportMapping FunctionImportName="DeactivateProduct" FunctionName="SupermarketModel.Store.DeactivateProduct" />
     <FunctionImportMapping FunctionImportName="DeactivateStoc" FunctionName="SupermarketModel.Store.DeactivateStoc" />
     <FunctionImportMapping FunctionImportName="DeactivateUser" FunctionName="SupermarketModel.Store.DeactivateUser" />
+    <FunctionImportMapping FunctionImportName="SelectBonuriCasa" FunctionName="SupermarketModel.Store.SelectBonuriCasa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SupermarketModel.SelectBonuriCasa_Result">
+          <ScalarProperty Name="BonID" ColumnName="BonID" />
+          <ScalarProperty Name="DataEliberarii" ColumnName="DataEliberarii" />
+          <ScalarProperty Name="UtilizatorID" ColumnName="UtilizatorID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectDetaliiBon" FunctionName="SupermarketModel.Store.SelectDetaliiBon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SupermarketModel.SelectDetaliiBon_Result">
+          <ScalarProperty Name="DetaliuID" ColumnName="DetaliuID" />
+          <ScalarProperty Name="BonID" ColumnName="BonID" />
+          <ScalarProperty Name="ProdusID" ColumnName="ProdusID" />
+          <ScalarProperty Name="Cantitate" ColumnName="Cantitate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SupermarketModel.Store.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SupermarketModel.Store.sp_creatediagram" />
     <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SupermarketModel.Store.sp_dropdiagram" />

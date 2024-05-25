@@ -1,6 +1,7 @@
 ﻿using Supermarket.Commands;
 using Supermarket.Models.BusinessLogicLayer;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Documents;
@@ -14,16 +15,21 @@ namespace Supermarket.ViewModels.CashierRelated
         ProducersBLL producersBLL;
         ProductsBLL productsBLL;
         CategoriesBLL categoriesBLL;
+        StocksBLL stocksBLL;
+        RecieptsBLL recieptsBLL;
 
-        public CashierMenuVM(Utilizatori user, ProducersBLL producersBLLParam, ProductsBLL productsBLLParam, CategoriesBLL categoriesBLLParam)
+        public CashierMenuVM(Utilizatori user, ProducersBLL producersBLLParam, ProductsBLL productsBLLParam, CategoriesBLL categoriesBLLParam, StocksBLL stocksBLLParam, RecieptsBLL recieptsBLLParam)
         {
             this.user = user;
             productsBLL = productsBLLParam;
             producersBLL = producersBLLParam;
             categoriesBLL = categoriesBLLParam;
+            stocksBLL = stocksBLLParam;
+            recieptsBLL = recieptsBLLParam;
             FilteredProducts = productsBLL.ProductsActive;
             FilteredProductsNames = new ObservableCollection<string>(FilteredProducts.Select(producerParsed => producerParsed.NumeProdus).ToList());
             SelectedExpiringDate = DateTime.Now;
+            SelectedProducts = new Dictionary<string, Tuple<Produse, int, decimal>>();
         }
 
         ObservableCollection<string> filteredProductsNames;
@@ -55,6 +61,23 @@ namespace Supermarket.ViewModels.CashierRelated
                 OnPropertyChanged("SelectedProducts");
             }
         }
+
+         Dictionary<string, Tuple<Produse, int, decimal>> selectedProducts;
+
+        public Dictionary<string, Tuple<Produse, int, decimal>> SelectedProducts
+        {
+            get
+            {
+                return selectedProducts;
+            }
+            set
+            {
+                selectedProducts = value;
+                OnPropertyChanged("SelectedProducts");
+            }
+        }
+
+
 
         string barcode;
 
@@ -284,12 +307,37 @@ namespace Supermarket.ViewModels.CashierRelated
 
         private void AddProduct(object obj)
         {
+            bool isStock = stocksBLL.IsProductAvailable(SelectedProduct.ProdusID);
 
+            if (isStock)
+            {
+                decimal productPrice = productsBLL.CalculateProductPrice(SelectedProduct.ProdusID);
+
+                // Create a new dictionary
+                Dictionary<string, Tuple<Produse, int, decimal>> newDict = copyDict(SelectedProducts);
+
+
+                if (!SelectedProducts.ContainsKey(SelectedProduct.NumeProdus))
+                {
+                    newDict[SelectedProduct.NumeProdus] = new Tuple<Produse, int, decimal>(SelectedProduct, 1, productPrice);
+                    SelectedProducts = newDict;
+                    return;
+                }
+                newDict[SelectedProduct.NumeProdus] = new Tuple<Produse, int, decimal>(SelectedProduct, newDict[SelectedProduct.NumeProdus].Item2 + 1, newDict[SelectedProduct.NumeProdus].Item3 + productPrice);
+                SelectedProducts = newDict;
+            }
         }
 
         private void EmitReceipt(object obj)
         {
+            recieptsBLL.AddReceipt(DateTime.Now, user.UtilizatorID);
 
+            foreach(var pair in SelectedProducts)
+            {
+                string productName = pair.Key;
+                Tuple<Produse, int, decimal> productDetails = pair.Value;
+                recieptsBLL.AddReceiptDetail(recieptsBLL.GetLastReceiptID(), productDetails.Item1.ProdusID, productDetails.Item2);
+            }
         }
 
         public void KeyboardKeyDown(object[] parameters)
@@ -302,6 +350,38 @@ namespace Supermarket.ViewModels.CashierRelated
                 }
             }
 
+        }
+
+        Dictionary<string, Tuple<Produse, int, decimal>> copyDict(Dictionary<string, Tuple<Produse, int, decimal>> dictToCopy)
+        {
+            Dictionary<string, Tuple<Produse, int, decimal>> newDict = new Dictionary<string, Tuple<Produse, int, decimal>>();
+
+            // Iterate over the original dictionary and add each key-value pair to the new dictionary
+            foreach (var kvp in dictToCopy)
+            {
+                // Assuming Produse is a reference type and needs to be cloned if you want a deep copy.
+                // For now, we'll just use the same instance of Produse.
+                Produse productCopy = new Produse
+                {
+                    ProdusID = kvp.Value.Item1.ProdusID,
+                    NumeProdus = kvp.Value.Item1.NumeProdus,
+                    CodBare = kvp.Value.Item1.CodBare,
+                    CategorieID = kvp.Value.Item1.CategorieID,
+                    ProducatorID = kvp.Value.Item1.ProducatorID,
+                    IsActive = kvp.Value.Item1.IsActive,
+                    Categorii = kvp.Value.Item1.Categorii,
+                    DetaliiBons = kvp.Value.Item1.DetaliiBons,
+                    Producatori = kvp.Value.Item1.Producatori,
+                    Stocuris = kvp.Value.Item1.Stocuris,
+
+                    // Copy other properties if needed
+                };
+
+                // Add the copied key-value pair to the new dictionary
+                newDict[kvp.Key] = new Tuple<Produse, int, decimal>(productCopy, kvp.Value.Item2, kvp.Value.Item3);
+            }
+
+            return newDict;
         }
 
         #region Navigation
