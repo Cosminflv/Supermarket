@@ -86,10 +86,29 @@ namespace Supermarket.Models.BusinessLogicLayer
                     return;
                 }
 
+                // Ensure CategorieID is valid and fetch the corresponding category
+                var category = context.Categoriis.Find(product.CategorieID);
+                if (category == null)
+                {
+                    ErrorMessage = "Invalid Category ID";
+                    return;
+                }
+
+                var producer = context.Producatoris.Find(product.ProducatorID);
+                if (producer == null)
+                {
+                    ErrorMessage = "Invalid Producer ID";
+                    return;
+                }
                 context.Produses.Add(product);
                 context.SaveChanges();
+
+                product.Categorii = category; // Assign the loaded category
+                product.Producatori = producer; // Assign the loaded producer
+
                 Products.Add(product);
                 ProductsActive.Add(product);
+
                 ErrorMessage = "";
             }
         }

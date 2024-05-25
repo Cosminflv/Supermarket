@@ -166,5 +166,12 @@ namespace Supermarket.Models.BusinessLogicLayer
         {
             return Categories.FirstOrDefault(item => item.CategorieID == id).NumeCategorie;
         }
+
+        public ObservableCollection<Produse> GetProductsBasedOnCategory(Categorii category)
+        {
+            ICollection<Produse> products = Categories[Categories.IndexOf(category)].Produses;
+
+            return new ObservableCollection<Produse>(products);
+        }
     }
 }

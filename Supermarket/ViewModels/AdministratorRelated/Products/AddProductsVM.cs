@@ -177,8 +177,6 @@ namespace Supermarket.ViewModels.AdministratorRelated.Products
             };
             timer.Start();
 
-            SelectedProducer = null;
-            SelectedCategory = null;
             ProductName = "";
             BarCode = "";
         }

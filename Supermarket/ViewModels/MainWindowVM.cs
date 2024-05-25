@@ -8,6 +8,7 @@ using Supermarket.ViewModels.AdministratorRelated.Products;
 using Supermarket.ViewModels.AdministratorRelated.Reciepts;
 using Supermarket.ViewModels.AdministratorRelated.Stocks;
 using Supermarket.ViewModels.AdministratorRelated.Users;
+using Supermarket.ViewModels.CashierRelated;
 
 namespace Supermarket.ViewModels
 {
@@ -31,9 +32,9 @@ namespace Supermarket.ViewModels
         #region ViewModelsDeclaration
         public AdministratorMenuVM AdministratorMenuViewModel { get; set; }
 
-        public LoginVM LoginViewModel { get; set; }
+        public CashierMenuVM CashierMenuViewModel { get; set; } 
 
-        public CashierMenuVM CashierMenuViewModel { get; set; }
+        public LoginVM LoginViewModel { get; set; }
 
         public UsersCRUDVM UsersCRUDViewModel { get; set; }
 
@@ -109,6 +110,19 @@ namespace Supermarket.ViewModels
             SelectedVM = LoginViewModel;
         }
 
+        #region Cashier
+
+        public void switchToCashierMenu(Utilizatori user)
+        {
+            CashierMenuViewModel = new CashierMenuVM(user, producersBLL, productsBLL, categoriesBLL);
+            CashierMenuViewModel.OnSwitchToLogin = () => switchToLogin(usersBLL);
+            SelectedVM = CashierMenuViewModel;
+        }
+
+        #endregion
+
+        #region Administrator
+
         public void switchToAdministratorMenu(Utilizatori user)
         {
             AdministratorMenuViewModel = new AdministratorMenuVM(user);
@@ -120,14 +134,16 @@ namespace Supermarket.ViewModels
             AdministratorMenuViewModel.OnSwitchToAddStocks = () => switchToAddStocksPage(user);
             AdministratorMenuViewModel.OnSwitchToViewReceipts = () => switchToViewReceiptsPage(user);
             SelectedVM = AdministratorMenuViewModel;
+
         }
 
-        public void switchToCashierMenu(Utilizatori user)
+        public void switchToViewReceiptsPage(Utilizatori user)
         {
-            CashierMenuViewModel = new CashierMenuVM(user);
-            CashierMenuViewModel.OnSwitchToLogin = () => switchToLogin(usersBLL);
-            SelectedVM = CashierMenuViewModel;
+            ViewRecieptViewModel = new ViewRecieptVM(user, recieptsBLL);
+            ViewRecieptViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
+            SelectedVM = ViewRecieptViewModel;
         }
+
 
         #region UsersCRUD
 
@@ -301,11 +317,7 @@ namespace Supermarket.ViewModels
         }
         #endregion
 
-        public void switchToViewReceiptsPage (Utilizatori user)
-        {
-            ViewRecieptViewModel = new ViewRecieptVM(user, recieptsBLL);
-            ViewRecieptViewModel.OnSwitchToAdministratorMenu = () => switchToAdministratorMenu(user);
-            SelectedVM = ViewRecieptViewModel;
-        }
+
+        #endregion
     }
 }
