@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\viewmodels\\cashierrelated\\cashiermenuvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\cashierrelated\\cashiermenuvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\cashierrelated\\cashiermenuvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\models\\businesslogiclayer\\recieptsbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\models\\businesslogiclayer\\recieptsbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\viewmodels\\administratorrelated\\producers\\addproducersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\administratorrelated\\producers\\addproducersvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\viewmodels\\mainwindowvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\viewmodels\\mainwindowvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\bonuricasa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\bonuricasa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|d:\\informatica\\anul ii\\map\\maptema3\\supermarket.git\\supermarket\\detaliibon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\detaliibon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\models\\businesslogiclayer\\stocksbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|solutionrelative:supermarket\\models\\businesslogiclayer\\stocksbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDA3575C-1893-41FC-9ABE-AC0CBCB6C4EA}|Supermarket\\Supermarket.csproj|D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\supermarket\\views\\cashiermenuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,55 +42,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindowVM.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\MainWindowVM.cs",
-              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\MainWindowVM.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\MainWindowVM.cs",
-              "RelativeToolTip": "Supermarket\\ViewModels\\MainWindowVM.cs",
-              "ViewState": "AQIAAGEAAAAAAAAAAAAYwGsAAAARAAAA",
+              "DocumentIndex": 1,
+              "Title": "AddProducersVM.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Producers\\AddProducersVM.cs",
+              "RelativeDocumentMoniker": "Supermarket\\ViewModels\\AdministratorRelated\\Producers\\AddProducersVM.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\AdministratorRelated\\Producers\\AddProducersVM.cs",
+              "RelativeToolTip": "Supermarket\\ViewModels\\AdministratorRelated\\Producers\\AddProducersVM.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAuwGoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T07:00:02.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-27T18:44:05.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StocksBLL.cs",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\BusinessLogicLayer\\StocksBLL.cs",
+              "RelativeDocumentMoniker": "Supermarket\\Models\\BusinessLogicLayer\\StocksBLL.cs",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\BusinessLogicLayer\\StocksBLL.cs",
+              "RelativeToolTip": "Supermarket\\Models\\BusinessLogicLayer\\StocksBLL.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAUwC0AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T18:36:46.894Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BonuriCasa.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\BonuriCasa.cs",
-              "RelativeDocumentMoniker": "Supermarket\\BonuriCasa.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\BonuriCasa.cs",
-              "RelativeToolTip": "Supermarket\\BonuriCasa.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T06:46:53.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DetaliiBon.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\DetaliiBon.cs",
-              "RelativeDocumentMoniker": "Supermarket\\DetaliiBon.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\DetaliiBon.cs",
-              "RelativeToolTip": "Supermarket\\DetaliiBon.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T06:46:50.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RecieptsBLL.cs",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\BusinessLogicLayer\\RecieptsBLL.cs",
-              "RelativeDocumentMoniker": "Supermarket\\Models\\BusinessLogicLayer\\RecieptsBLL.cs",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Models\\BusinessLogicLayer\\RecieptsBLL.cs",
-              "RelativeToolTip": "Supermarket\\Models\\BusinessLogicLayer\\RecieptsBLL.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAAACoAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T06:19:48.765Z",
-              "EditorCaption": ""
+              "Title": "CashierMenuView.xaml",
+              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\CashierMenuView.xaml",
+              "RelativeDocumentMoniker": "Supermarket\\Views\\CashierMenuView.xaml",
+              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\CashierMenuView.xaml",
+              "RelativeToolTip": "Supermarket\\Views\\CashierMenuView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-27T12:23:16.334Z"
             },
             {
               "$type": "Document",
@@ -108,21 +83,9 @@
               "RelativeDocumentMoniker": "Supermarket\\ViewModels\\CashierRelated\\CashierMenuVM.cs",
               "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\ViewModels\\CashierRelated\\CashierMenuVM.cs",
               "RelativeToolTip": "Supermarket\\ViewModels\\CashierRelated\\CashierMenuVM.cs",
-              "ViewState": "AQIAADUBAAAAAAAAAAAqwFABAAAuAAAA",
+              "ViewState": "AQIAAHMBAAAAAAAAAAAAwIsBAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T18:17:58.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CashierMenuView.xaml",
-              "DocumentMoniker": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\CashierMenuView.xaml",
-              "RelativeDocumentMoniker": "Supermarket\\Views\\CashierMenuView.xaml",
-              "ToolTip": "D:\\Informatica\\ANUL II\\MAP\\MAPTema3\\Supermarket.git\\Supermarket\\Views\\CashierMenuView.xaml",
-              "RelativeToolTip": "Supermarket\\Views\\CashierMenuView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-24T18:14:59.039Z",
+              "WhenOpened": "2024-05-27T11:50:44.178Z",
               "EditorCaption": ""
             }
           ]

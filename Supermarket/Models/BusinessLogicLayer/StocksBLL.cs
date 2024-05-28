@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -42,6 +43,24 @@ namespace Supermarket.Models.BusinessLogicLayer
             return result;
         }
 
+        public bool SubstractStockQuantity(int stockID, int valueToSubstract)
+        {
+            bool hasBecomeInactive = false;
+            context.SubtractQuantity(stockID, valueToSubstract);
+            context.SaveChanges();
+
+            Stocks[Stocks.IndexOf(Stocks.First(item => item.StocID == stockID))].Cantitate -= valueToSubstract;
+            if(Stocks[Stocks.IndexOf(Stocks.First(item => item.StocID == stockID))].Cantitate == 0)
+            {
+            Stocks[Stocks.IndexOf(Stocks.First(item => item.StocID == stockID))].IsActive = false;
+            context.SaveChanges();
+                hasBecomeInactive = true;
+            }
+
+            UpdateProductIsActiveBasedOnStock(stockID);
+            return hasBecomeInactive;
+        }
+
         public void AddMethod(object obj)
         {
             Stocuri stock = obj as Stocuri;
@@ -73,9 +92,51 @@ namespace Supermarket.Models.BusinessLogicLayer
             }
         }
 
-        public bool IsProductAvailable(int productID)
+        public bool IsProductAvailable(int productID, int selectedQuantity)
         {
-            return StocksActive.Any(item => item.ProdusID == productID);
+            foreach (Stocuri stock in StocksActive)
+            {
+                if(stock.ProdusID == productID && stock.Cantitate - selectedQuantity >= 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool IsEnoughStock(int productID, int selectedQuantity)
+        {
+            foreach (Stocuri stock in StocksActive)
+            {
+                if (stock.ProdusID == productID && stock.Cantitate - selectedQuantity >= 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void UpdateProductIsActiveBasedOnStock(int stockID)
+        {
+            Stocuri stockToUpdate = Stocks.FirstOrDefault(s => s.StocID == stockID);
+
+            if (stockToUpdate != null)
+            {
+                Produse product = context.Produses.Find(stockToUpdate.ProdusID);
+
+                if (product != null && stockToUpdate.IsActive != product.IsActive)
+                {
+                    product.IsActive = stockToUpdate.IsActive;
+                    context.SaveChanges();
+
+                    // Update in-memory collections (optional)
+                    int productIndex = Stocks.IndexOf(Stocks.FirstOrDefault(s => s.ProdusID == product.ProdusID));
+                    if (productIndex > -1)
+                    {
+                        Stocks[productIndex].Produse.IsActive = product.IsActive;
+                    }
+                }
+            }
         }
     }
 }

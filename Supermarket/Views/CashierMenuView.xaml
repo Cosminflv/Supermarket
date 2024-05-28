@@ -39,6 +39,16 @@
     </UserControl.Resources>
 
     <Grid>
+        <TextBlock
+            Width="226"
+            Height="30"
+            Margin="542,38,0,0"
+            Foreground="Red"
+            Style="{StaticResource CustomTextStyle}"
+            Text="{Binding InfoMessage}"
+            TextAlignment="Center"
+            TextWrapping="Wrap"
+            Visibility="{Binding InfoVisibility}" />
 
         <Grid>
             <ListView Margin="488,160,30,27" ItemsSource="{Binding SelectedProducts}">
@@ -191,7 +201,7 @@
             Content="Add Product" />
 
         <Button
-            Width="144"
+            Width="124"
             Height="39"
             Margin="0,365,0,0"
             HorizontalAlignment="Center"
@@ -200,13 +210,22 @@
             Content="Emit Receipt" />
 
         <Button
-            Width="144"
+            Width="112"
             Height="39"
-            Margin="100,365,0,0"
+            Margin="28,365,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Command="{Binding ResetFiltersCommand}"
             Content="Reset Filters" />
+
+        <Button
+            Width="112"
+            Height="39"
+            Margin="183,365,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding ResetSelectionCommand}"
+            Content="Clear Selection" />
 
 
     </Grid>

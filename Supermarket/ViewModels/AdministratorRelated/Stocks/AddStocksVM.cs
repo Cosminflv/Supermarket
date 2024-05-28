@@ -25,8 +25,8 @@ namespace Supermarket.ViewModels.AdministratorRelated.Stocks
 
         public ObservableCollection<Produse> ProductsList
         {
-            get => productsBLL.ProductsActive;
-            set => productsBLL.ProductsActive = value;
+            get => productsBLL.Products;
+            set => productsBLL.Products = value;
         }
 
         Produse selectedProduct;
@@ -210,6 +210,9 @@ namespace Supermarket.ViewModels.AdministratorRelated.Stocks
                 stockToAdd.PretAchizitie = decimal.Parse(PurchasePrice);
                 stockToAdd.PretVanzare = calculateRetailPrice(1.2m);
                 stockToAdd.IsActive = true;
+
+                SelectedProduct.IsActive = true;
+                productsBLL.UpdateProduct(SelectedProduct);
 
                 stocksBLL.AddMethod(stockToAdd);
 

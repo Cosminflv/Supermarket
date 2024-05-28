@@ -22,6 +22,7 @@ namespace Supermarket
         public int BonID { get; set; }
         public System.DateTime DataEliberarii { get; set; }
         public int UtilizatorID { get; set; }
+        public Nullable<decimal> SumaIncasata { get; set; }
     
         public virtual Utilizatori Utilizatori { get; set; }
         public virtual ICollection<DetaliiBon> DetaliiBons { get; set; }

@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
 
@@ -62,7 +64,7 @@ namespace Supermarket.ViewModels.CashierRelated
             }
         }
 
-         Dictionary<string, Tuple<Produse, int, decimal>> selectedProducts;
+        Dictionary<string, Tuple<Produse, int, decimal>> selectedProducts;
 
         public Dictionary<string, Tuple<Produse, int, decimal>> SelectedProducts
         {
@@ -166,6 +168,33 @@ namespace Supermarket.ViewModels.CashierRelated
                 selectedProducer = value;
                 OnPropertyChanged("SelectedProducer");
             }
+        }
+
+        private string infoMessage;
+        public string InfoMessage
+        {
+            get => infoMessage;
+            set
+            {
+                infoMessage = value;
+                OnPropertyChanged("InfoMessage");
+            }
+        }
+
+        private Visibility infoVisibility = Visibility.Collapsed;
+
+        public Visibility InfoVisibility
+        {
+            get
+            {
+                return infoVisibility;
+            }
+            set
+            {
+                infoVisibility = value;
+                OnPropertyChanged("InfoVisibility");
+            }
+
         }
 
         private Categorii selectedCategory;
@@ -276,6 +305,29 @@ namespace Supermarket.ViewModels.CashierRelated
             }
         }
 
+        private ICommand resetSelectionCommand;
+
+        public ICommand ResetSelectionCommand
+        {
+            get
+            {
+                if (resetSelectionCommand == null)
+                {
+                    resetSelectionCommand = new RelayCommand<object>(ResetSelection);
+                }
+
+                return resetSelectionCommand;
+            }
+        }
+
+        private void ResetSelection(object obj)
+        {
+            FilteredProducts = productsBLL.ProductsActive;
+            FilteredProductsNames = new ObservableCollection<string>(FilteredProducts.Select(producerParsed => producerParsed.NumeProdus).ToList());
+            SelectedExpiringDate = DateTime.Now;
+            SelectedProducts = new Dictionary<string, Tuple<Produse, int, decimal>>();
+        }
+
         private void ResetFilters(object obj)
         {
             FilteredProducts = productsBLL.ProductsActive;
@@ -307,37 +359,80 @@ namespace Supermarket.ViewModels.CashierRelated
 
         private void AddProduct(object obj)
         {
-            bool isStock = stocksBLL.IsProductAvailable(SelectedProduct.ProdusID);
 
-            if (isStock)
+            decimal productPrice = productsBLL.CalculateProductPrice(SelectedProduct.ProdusID);
+
+            // Create a new dictionary
+            Dictionary<string, Tuple<Produse, int, decimal>> newDict = copyDict(SelectedProducts);
+
+            if (!SelectedProducts.ContainsKey(SelectedProduct.NumeProdus))
             {
-                decimal productPrice = productsBLL.CalculateProductPrice(SelectedProduct.ProdusID);
-
-                // Create a new dictionary
-                Dictionary<string, Tuple<Produse, int, decimal>> newDict = copyDict(SelectedProducts);
-
-
-                if (!SelectedProducts.ContainsKey(SelectedProduct.NumeProdus))
+                newDict[SelectedProduct.NumeProdus] = new Tuple<Produse, int, decimal>(SelectedProduct, 1, productPrice);
+                SelectedProducts = newDict;
+                if (!isStockAvailable())
                 {
-                    newDict[SelectedProduct.NumeProdus] = new Tuple<Produse, int, decimal>(SelectedProduct, 1, productPrice);
-                    SelectedProducts = newDict;
                     return;
                 }
-                newDict[SelectedProduct.NumeProdus] = new Tuple<Produse, int, decimal>(SelectedProduct, newDict[SelectedProduct.NumeProdus].Item2 + 1, newDict[SelectedProduct.NumeProdus].Item3 + productPrice);
-                SelectedProducts = newDict;
+                return;
             }
+            newDict[SelectedProduct.NumeProdus] = new Tuple<Produse, int, decimal>(SelectedProduct, newDict[SelectedProduct.NumeProdus].Item2 + 1, newDict[SelectedProduct.NumeProdus].Item3 + productPrice);
+            SelectedProducts = newDict;
+
+            if (!isStockAvailable())
+            {
+                return;
+            }
+
         }
 
         private void EmitReceipt(object obj)
         {
-            recieptsBLL.AddReceipt(DateTime.Now, user.UtilizatorID);
+            if (!isStockAvailable())
+            {
+                return;
+            }
 
-            foreach(var pair in SelectedProducts)
+            decimal totalSum = 0;
+            foreach (var pair in SelectedProducts)
+            {
+                Tuple<Produse, int, decimal> productDetails = pair.Value;
+                totalSum = totalSum + productDetails.Item3;
+            }
+
+            recieptsBLL.AddReceipt(DateTime.Now, user.UtilizatorID, totalSum);
+
+            foreach (var pair in SelectedProducts)
             {
                 string productName = pair.Key;
                 Tuple<Produse, int, decimal> productDetails = pair.Value;
+                bool isProductInactive = stocksBLL.SubstractStockQuantity(productDetails.Item1.Stocuris.First().StocID, productDetails.Item2);
                 recieptsBLL.AddReceiptDetail(recieptsBLL.GetLastReceiptID(), productDetails.Item1.ProdusID, productDetails.Item2);
+                if (isProductInactive)
+                {
+                    productsBLL.DeleteProduct(productDetails.Item1);
+                }
+                FilteredProducts = productsBLL.ProductsActive;
+                FilteredProductsNames = new ObservableCollection<string>(FilteredProducts.Select(producerParsed => producerParsed.NumeProdus).ToList());
             }
+
+            ResetFilters(0);
+            ResetSelection(0);
+
+            InfoVisibility = Visibility.Visible;
+            InfoMessage = "Receipt emitted!";
+
+            // Set up a timer to hide the error message after 5 seconds
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Interval = 5000; // 5000 milliseconds = 5 seconds
+            timer.AutoReset = false; // Only fire once
+            timer.Elapsed += (sender, e) =>
+            {
+                InfoVisibility = Visibility.Hidden;
+                InfoMessage = "";
+                timer.Dispose(); // Dispose the timer to release resources
+            };
+            timer.Start();
+
         }
 
         public void KeyboardKeyDown(object[] parameters)
@@ -382,6 +477,34 @@ namespace Supermarket.ViewModels.CashierRelated
             }
 
             return newDict;
+        }
+
+        private bool isStockAvailable()
+        {
+            foreach (var pair in SelectedProducts)
+            {
+                if (!stocksBLL.IsProductAvailable(SelectedProduct.ProdusID, pair.Value.Item2))
+                {
+                    InfoVisibility = Visibility.Visible;
+                    InfoMessage = "Not enough stock";
+
+                    // Set up a timer to hide the error message after 5 seconds
+                    System.Timers.Timer timer = new System.Timers.Timer();
+                    timer.Interval = 5000; // 5000 milliseconds = 5 seconds
+                    timer.AutoReset = false; // Only fire once
+                    timer.Elapsed += (sender, e) =>
+                    {
+                        InfoVisibility = Visibility.Hidden;
+                        InfoMessage = "";
+                        timer.Dispose(); // Dispose the timer to release resources
+                    };
+                    timer.Start();
+
+                    SelectedProducts = new Dictionary<string, Tuple<Produse, int, decimal>>();
+                    return false;
+                }
+            }
+            return true;
         }
 
         #region Navigation

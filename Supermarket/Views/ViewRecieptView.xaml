@@ -75,11 +75,37 @@
             Command="{Binding DisplayReceiptCommand}"
             Content="Display Receipt" />
 
-        <!--  Receipt ID  -->
 
-        <!--  Issuing Date  -->
+        <StackPanel Margin="400,105,34,45">
+            <TextBlock
+                FontSize="16"
+                FontWeight="Bold"
+                Text="Highest Value Receipt" />
+            <TextBlock Margin="5" Text="{Binding HighestValueReceipt.Utilizatori.NumeUtilizator}" />
+            <TextBlock Margin="5" Text="{Binding Path=HighestValueReceipt.SumaIncasata, StringFormat='Suma incasata: {0}'}" />
 
-        <!--  Details  -->
+            <TextBlock
+                Margin="5,20,5,5"
+                FontSize="16"
+                FontWeight="Bold"
+                Text="Details:" />
+
+            <ListBox
+                Margin="5"
+                ItemsSource="{Binding ReceiptDetails}"
+                ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Margin="5" Text="{Binding Produse.NumeProdus}" />
+                            <TextBlock Margin="5" Text="{Binding Cantitate}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+
     </Grid>
 
 </UserControl>

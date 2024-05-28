@@ -12,6 +12,7 @@
           <Property Name="BonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DataEliberarii" Type="date" Nullable="false" />
           <Property Name="UtilizatorID" Type="int" Nullable="false" />
+          <Property Name="SumaIncasata" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Categorii">
           <Key>
@@ -159,6 +160,7 @@
         <Function Name="AddBonCasa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="DataEliberarii" Type="date" Mode="In" />
           <Parameter Name="UtilizatorID" Type="int" Mode="In" />
+          <Parameter Name="SumaIncasata" Type="decimal" Mode="In" />
         </Function>
         <Function Name="AddCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
@@ -196,6 +198,7 @@
         <Function Name="DeactivateCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CategoryID" Type="int" Mode="In" />
         </Function>
+        <Function Name="DeactivateExpiredStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="DeactivateProducer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ProducerID" Type="int" Mode="In" />
         </Function>
@@ -243,6 +246,10 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SubtractQuantity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StocID" Type="int" Mode="In" />
+          <Parameter Name="SubtractValue" Type="int" Mode="In" />
+        </Function>
         <Function Name="UpdateCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CategoryID" Type="int" Mode="In" />
           <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
@@ -330,6 +337,7 @@
           <Property Name="BonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DataEliberarii" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="UtilizatorID" Type="Int32" Nullable="false" />
+          <Property Name="SumaIncasata" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="Utilizatori" Relationship="Self.FK__BonuriCas__Utili__5629CD9C" FromRole="BonuriCasa" ToRole="Utilizatori" />
           <NavigationProperty Name="DetaliiBons" Relationship="Self.FK__DetaliiBo__BonID__59063A47" FromRole="BonuriCasa" ToRole="DetaliiBon" />
         </EntityType>
@@ -522,6 +530,7 @@
           <FunctionImport Name="AddBonCasa" ReturnType="Collection(Decimal)">
             <Parameter Name="DataEliberarii" Mode="In" Type="DateTime" />
             <Parameter Name="UtilizatorID" Mode="In" Type="Int32" />
+            <Parameter Name="SumaIncasata" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="AddCategory">
             <Parameter Name="CategoryName" Mode="In" Type="String" />
@@ -559,6 +568,7 @@
           <FunctionImport Name="DeactivateCategory">
             <Parameter Name="CategoryID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="DeactivateExpiredStock" />
           <FunctionImport Name="DeactivateProducer">
             <Parameter Name="ProducerID" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -605,6 +615,10 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="SubtractQuantity">
+            <Parameter Name="StocID" Mode="In" Type="Int32" />
+            <Parameter Name="SubtractValue" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="UpdateCategory">
             <Parameter Name="CategoryID" Mode="In" Type="Int32" />
             <Parameter Name="CategoryName" Mode="In" Type="String" />
@@ -651,6 +665,7 @@
           <Property Type="Int32" Name="BonID" Nullable="false" />
           <Property Type="DateTime" Name="DataEliberarii" Nullable="false" />
           <Property Type="Int32" Name="UtilizatorID" Nullable="false" />
+          <Property Type="Decimal" Name="SumaIncasata" Nullable="true" Precision="18" Scale="2" />
         </ComplexType>
         <ComplexType Name="SelectDetaliiBon_Result">
           <Property Type="Int32" Name="DetaliuID" Nullable="false" />
@@ -716,6 +731,7 @@
                 <ScalarProperty Name="BonID" ColumnName="BonID" />
                 <ScalarProperty Name="DataEliberarii" ColumnName="DataEliberarii" />
                 <ScalarProperty Name="UtilizatorID" ColumnName="UtilizatorID" />
+                <ScalarProperty Name="SumaIncasata" ColumnName="SumaIncasata" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -805,6 +821,7 @@
           <FunctionImportMapping FunctionImportName="AddStock" FunctionName="SupermarketModel.Store.AddStock" />
           <FunctionImportMapping FunctionImportName="AddUser" FunctionName="SupermarketModel.Store.AddUser" />
           <FunctionImportMapping FunctionImportName="DeactivateCategory" FunctionName="SupermarketModel.Store.DeactivateCategory" />
+          <FunctionImportMapping FunctionImportName="DeactivateExpiredStock" FunctionName="SupermarketModel.Store.DeactivateExpiredStock" />
           <FunctionImportMapping FunctionImportName="DeactivateProducer" FunctionName="SupermarketModel.Store.DeactivateProducer" />
           <FunctionImportMapping FunctionImportName="DeactivateProduct" FunctionName="SupermarketModel.Store.DeactivateProduct" />
           <FunctionImportMapping FunctionImportName="DeactivateStoc" FunctionName="SupermarketModel.Store.DeactivateStoc" />
@@ -815,6 +832,7 @@
                 <ScalarProperty Name="BonID" ColumnName="BonID" />
                 <ScalarProperty Name="DataEliberarii" ColumnName="DataEliberarii" />
                 <ScalarProperty Name="UtilizatorID" ColumnName="UtilizatorID" />
+                <ScalarProperty Name="SumaIncasata" ColumnName="SumaIncasata" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -852,6 +870,7 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SupermarketModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SupermarketModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="SubtractQuantity" FunctionName="SupermarketModel.Store.SubtractQuantity" />
           <FunctionImportMapping FunctionImportName="UpdateCategory" FunctionName="SupermarketModel.Store.UpdateCategory" />
           <FunctionImportMapping FunctionImportName="UpdateProducer" FunctionName="SupermarketModel.Store.UpdateProducer" />
           <FunctionImportMapping FunctionImportName="UpdateProduct" FunctionName="SupermarketModel.Store.UpdateProduct" />

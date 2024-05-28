@@ -85,9 +85,9 @@ namespace Supermarket.ViewModels.AdministratorRelated.Users
             }
         }
 
-        Dictionary<DateTime, decimal> salesPerDay;
+        Dictionary<DateTime, decimal?> salesPerDay;
 
-        public Dictionary<DateTime, decimal> SalesPerDay
+        public Dictionary<DateTime, decimal?> SalesPerDay
         {
             get
             {

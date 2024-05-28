@@ -25,7 +25,7 @@ namespace Supermarket.Models.BusinessLogicLayer
         public decimal CalculateProductPrice(int produsID)
         {
             // Find the stock entry for the specified product ID
-            var stockEntry = context.Stocuris.FirstOrDefault(stoc => stoc.ProdusID == produsID);
+            var stockEntry = context.Stocuris.FirstOrDefault(stoc => stoc.ProdusID == produsID && stoc.Cantitate != 0);
 
             if (stockEntry != null)
             {
@@ -107,7 +107,6 @@ namespace Supermarket.Models.BusinessLogicLayer
                 product.Producatori = producer; // Assign the loaded producer
 
                 Products.Add(product);
-                ProductsActive.Add(product);
 
                 ErrorMessage = "";
             }

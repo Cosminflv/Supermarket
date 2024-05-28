@@ -53,7 +53,7 @@
                 Stretch="Fill" />
         </Button>
 
-        <Label Content="Add Products" Style="{StaticResource CustomLabelStyle}" />
+        <Label Content="Add Stocks" Style="{StaticResource CustomLabelStyle}" />
 
         <TextBlock
             Width="220"

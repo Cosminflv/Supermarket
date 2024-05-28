@@ -238,7 +238,6 @@
     <FunctionImport Name="DeactivateCategory">
       <Parameter Name="CategoryID" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="DeactivateExpiredStock" />
     <FunctionImport Name="DeactivateProducer">
       <Parameter Name="ProducerID" Mode="In" Type="Int32" />
     </FunctionImport>
@@ -285,10 +284,6 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
-    <FunctionImport Name="SubtractQuantity">
-      <Parameter Name="StocID" Mode="In" Type="Int32" />
-      <Parameter Name="SubtractValue" Mode="In" Type="Int32" />
-    </FunctionImport>
     <FunctionImport Name="UpdateCategory">
       <Parameter Name="CategoryID" Mode="In" Type="Int32" />
       <Parameter Name="CategoryName" Mode="In" Type="String" />

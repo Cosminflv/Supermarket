@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3771e310f6c04aed84bca61fa6ffb458" Name="Diagram1">
-        <EntityTypeShape EntityType="SupermarketModel.BonuriCasa" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+      <Diagram DiagramId="12c78e117a5d4ef49044b2fddecfcb78" Name="Diagram1">
+        <EntityTypeShape EntityType="SupermarketModel.BonuriCasa" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SupermarketModel.Categorii" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SupermarketModel.DetaliiBon" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SupermarketModel.Producatori" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />

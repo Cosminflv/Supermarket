@@ -14,6 +14,7 @@
 
     <UserControl.Resources>
         <converters:CategoryIdToNameCategory x:Key="CategoryIdToNameCategory" />
+        <converters:DateConverter x:Key="DateConverter" />
 
         <Color x:Key="CustomGrayColor">#dadee6</Color>
 
@@ -83,7 +84,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="0,0,10,0" Text="{Binding Key}" />
+                        <TextBlock Margin="0,0,10,0" Text="{Binding Key, Converter={StaticResource DateConverter}}" />
                         <TextBlock Text="{Binding Value}" />
                     </StackPanel>
                 </DataTemplate>

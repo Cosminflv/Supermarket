@@ -29,9 +29,9 @@ namespace Supermarket.Models.BusinessLogicLayer
             return Reciepts.Last().BonID;
         }
 
-        public void AddReceipt(DateTime releaseDay, int utilizatorID)
+        public void AddReceipt(DateTime releaseDay, int utilizatorID, decimal totalSum)
         {
-            context.AddBonCasa(releaseDay, utilizatorID);
+            context.AddBonCasa(releaseDay, utilizatorID, totalSum);
             context.SaveChanges();
             Reciepts = new ObservableCollection<BonuriCasa>(context.BonuriCasas.ToList());
         }

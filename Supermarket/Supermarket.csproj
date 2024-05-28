@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="Commands\RelaySearchCommand.cs" />
     <Compile Include="Converters\CategoryIdToNameCategory.cs" />
+    <Compile Include="Converters\DateConverter.cs" />
     <Compile Include="Converters\MultiParameterConverter.cs" />
     <Compile Include="Converters\ProducerIdToNameConverter.cs" />
     <Compile Include="Custom\KeyDownInvokeCommandAction.cs" />

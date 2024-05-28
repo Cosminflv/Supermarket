@@ -2,6 +2,7 @@
 using Supermarket.Models.BusinessLogicLayer;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,22 @@ namespace Supermarket.ViewModels.AdministratorRelated.Reciepts
             SelectedDate = DateTime.Now;
         }
 
-        public BonuriCasa HighestValueReciept;
+        public ObservableCollection<DetaliiBon> ReceiptDetails { get; } = new ObservableCollection<DetaliiBon>();
+
+        BonuriCasa highestValueReceipt;
+
+        public BonuriCasa HighestValueReceipt
+        {
+            get
+            {
+                return highestValueReceipt;
+            }
+            set
+            {
+                highestValueReceipt = value;
+                OnPropertyChanged("HighestValueReceipt");
+            }
+        }
 
         private System.DateTime selectedDate;
 
@@ -84,7 +100,19 @@ namespace Supermarket.ViewModels.AdministratorRelated.Reciepts
 
         private void GetHighesValueReciept(object obj)
         {
-            HighestValueReciept = recieptsBLL.GetReceiptWithHighestValue(SelectedDate);
+            HighestValueReceipt = recieptsBLL.GetReceiptWithHighestValue(SelectedDate);
+
+            if (HighestValueReceipt != null)
+            {
+                // Clear existing details
+                ReceiptDetails.Clear();
+
+                // Add details of the highest value receipt
+                foreach (var detaliiBon in HighestValueReceipt.DetaliiBons)
+                {
+                    ReceiptDetails.Add(detaliiBon);
+                }
+            }
         }
 
         #region Navigation

@@ -37,7 +37,7 @@ namespace Supermarket
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Utilizatori> Utilizatoris { get; set; }
     
-        public virtual ObjectResult<Nullable<decimal>> AddBonCasa(Nullable<System.DateTime> dataEliberarii, Nullable<int> utilizatorID)
+        public virtual ObjectResult<Nullable<decimal>> AddBonCasa(Nullable<System.DateTime> dataEliberarii, Nullable<int> utilizatorID, Nullable<decimal> sumaIncasata)
         {
             var dataEliberariiParameter = dataEliberarii.HasValue ?
                 new ObjectParameter("DataEliberarii", dataEliberarii) :
@@ -47,7 +47,11 @@ namespace Supermarket
                 new ObjectParameter("UtilizatorID", utilizatorID) :
                 new ObjectParameter("UtilizatorID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("AddBonCasa", dataEliberariiParameter, utilizatorIDParameter);
+            var sumaIncasataParameter = sumaIncasata.HasValue ?
+                new ObjectParameter("SumaIncasata", sumaIncasata) :
+                new ObjectParameter("SumaIncasata", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("AddBonCasa", dataEliberariiParameter, utilizatorIDParameter, sumaIncasataParameter);
         }
     
         public virtual int AddCategory(string categoryName)
@@ -171,6 +175,11 @@ namespace Supermarket
                 new ObjectParameter("CategoryID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeactivateCategory", categoryIDParameter);
+        }
+    
+        public virtual int DeactivateExpiredStock()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeactivateExpiredStock");
         }
     
         public virtual int DeactivateProducer(Nullable<int> producerID)
@@ -324,6 +333,19 @@ namespace Supermarket
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual int SubtractQuantity(Nullable<int> stocID, Nullable<int> subtractValue)
+        {
+            var stocIDParameter = stocID.HasValue ?
+                new ObjectParameter("StocID", stocID) :
+                new ObjectParameter("StocID", typeof(int));
+    
+            var subtractValueParameter = subtractValue.HasValue ?
+                new ObjectParameter("SubtractValue", subtractValue) :
+                new ObjectParameter("SubtractValue", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SubtractQuantity", stocIDParameter, subtractValueParameter);
         }
     
         public virtual int UpdateCategory(Nullable<int> categoryID, string categoryName, Nullable<bool> isActive)
